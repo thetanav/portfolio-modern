@@ -5,23 +5,13 @@ import { GeistMono } from 'geist/font/mono';
 import { Navbar } from './components/nav';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { SandpackCSS } from './blog/[slug]/sandpack';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://leerob.io'),
   title: {
-    default: 'Lee Robinson',
-    template: '%s | Lee Robinson',
+    default: 'Tanav Poswal',
+    template: '%s | Tanav Poswal',
   },
-  description: 'Developer, writer, and creator.',
-  openGraph: {
-    title: 'Lee Robinson',
-    description: 'Developer, writer, and creator.',
-    url: 'https://leerob.io',
-    siteName: 'Lee Robinson',
-    locale: 'en_US',
-    type: 'website',
-  },
+  description: 'Developer, problem solver and creator.',
   robots: {
     index: true,
     follow: true,
@@ -34,7 +24,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: 'Lee Robinson',
+    title: 'Tanav Poswal',
     card: 'summary_large_image',
   },
   verification: {
@@ -59,9 +49,6 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
-      <head>
-        <SandpackCSS />
-      </head>
       <body className="antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />

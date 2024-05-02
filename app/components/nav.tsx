@@ -7,12 +7,9 @@ const navItems = {
   '/work': {
     name: 'work',
   },
-  '/blog': {
-    name: 'blog',
-  },
-  '/guestbook': {
-    name: 'guestbook',
-  },
+  '/projects': {
+    name: 'projects',
+  }
 };
 
 export function Navbar() {
@@ -29,9 +26,10 @@ export function Navbar() {
                 <Link
                   key={path}
                   href={path}
-                  className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2"
+                  className="transition-all hover:text-neutral-800 dark:hover:text-neutral-300 flex align-middle relative py-1 px-2 group flex flex-col"
                 >
                   {name}
+                  <div className="bg-neutral-200 h-[2px] w-0 group-hover:w-full transition-all duration-500 flex"></div>
                 </Link>
               );
             })}
