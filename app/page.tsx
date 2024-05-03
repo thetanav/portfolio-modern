@@ -10,7 +10,7 @@ function ChannelLink({ img, link, name, subimg, count }) {
       <a
         href={link}
         target="_blank"
-        className="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800"
+        className="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800 hover:border-neutral-500 hover:ring-4 ring-white/15 transition"
       >
         <div className="flex items-center space-x-3">
           <div className="relative h-16">
@@ -35,7 +35,7 @@ function ChannelLink({ img, link, name, subimg, count }) {
             </Suspense>
           </div>
         </div>
-        <div className="transform text-neutral-700 transition-transform duration-300 group-hover:-rotate-12 dark:text-neutral-300">
+        <div className="transform text-neutral-700 transition-transform duration-200 group-hover:-rotate-12 dark:text-neutral-300">
           <ArrowIcon />
         </div>
       </a>
@@ -100,7 +100,7 @@ export default function Page() {
           Next.js
         </Badge>
         {' and '}
-        <Badge href="https://nextjs.org">
+        <Badge href="https://turbo.build">
           <Image
             alt="Next.js logomark"
             src="/turbo-repo.svg"
@@ -143,7 +143,7 @@ export default function Page() {
         </p>
       </div>
 
-      <div className="grid grid-rows-auto w-full md:grid-cols-12 sm:grid-cols-8 grid-cols-5 gap-6">
+      <div className="grid grid-rows-auto w-full sm:grid-cols-10 grid-cols-5 gap-6">
         <LangCard comp={<FaReact />} />
         <LangCard comp={<GrGraphQl />} />
         <LangCard comp={<SiNextdotjs />} />
