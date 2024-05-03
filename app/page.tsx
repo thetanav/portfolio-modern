@@ -10,7 +10,7 @@ function ChannelLink({ img, link, name, subimg, count }) {
       <a
         href={link}
         target="_blank"
-        className="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800 hover:border-neutral-500 hover:ring-4 ring-white/15 transition"
+        className="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800 hover:border-neutral-500 hover:ring-4 active:ring-4 ring-white/15 transition"
       >
         <div className="flex items-center space-x-3">
           <div className="relative h-16">
@@ -143,7 +143,7 @@ export default function Page() {
         </p>
       </div>
 
-      <div className="grid grid-rows-auto w-full sm:grid-cols-10 grid-cols-5 gap-6">
+      <div className="grid grid-rows-auto w-full sm:grid-cols-11 grid-cols-7 gap-6">
         <LangCard comp={<FaReact />} />
         <LangCard comp={<GrGraphQl />} />
         <LangCard comp={<SiNextdotjs />} />
@@ -193,7 +193,7 @@ export default function Page() {
 
 function LangCard({ comp }) {
   return (
-    <div className="flex items-center justify-center rounded border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 w-12 h-12">
+    <div className="flex items-center justify-center rounded border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 w-12 h-12 hover:scale-105 transition-transform">
       <span className='text-3xl text-white'>{comp}</span>
     </div>
   )

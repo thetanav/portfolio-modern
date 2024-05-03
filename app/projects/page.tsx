@@ -11,7 +11,7 @@ function ProjectCard({ img, link, name, brief }) {
               <img
                 alt={name}
                 src={img}
-                className="h-48 w-fit rounded-md"/>
+                className="sm:h-48 w-fit rounded-md"/>
             <div className="flex flex-col ml-2">
               <p className="font-bold text-neutral-900 dark:text-neutral-100">
                 {name}
@@ -27,7 +27,7 @@ export default function Page() {
     return (
         <section>
             <h1 className="font-medium text-2xl mb-8 tracking-tighter">Projects 🚀🚀</h1>
-            <div className="grid grid-cols-2 grid-rows-auto gap-2">
+            <div className="grid grid-cols-1 grid-rows-auto sm:grid-cols-2 gap-2 items-center justify-center">
                 <ProjectCard img={'/images/mpeg3.png'} link={'https://mpeg3.vercel.app'} name="mpeg3" brief="A spotify clone with supabase." />
                 <ProjectCard img={'/images/notrz.png'} link={'https://notrz.vercel.app'} name="notrz" brief="Todo list app." />
                 <ProjectCard img={'/images/twiclone.png'} link={'https://github.com/tanavposwal/twiclone-api'} name="twiclone" brief="Fullstack twitter clone in MERN stack + NextJS." />
