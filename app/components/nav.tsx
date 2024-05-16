@@ -26,10 +26,10 @@ export function Navbar() {
                 <Link
                   key={path}
                   href={path}
-                  className="transition-all hover:text-neutral-800 dark:hover:text-neutral-300 flex align-middle relative py-1 px-2 group flex flex-col"
+                  className="transition-all hover:text-neutral-800 dark:hover:text-neutral-300 flex align-middle relative py-1 px-2 group flex-col items-center justify-center"
                 >
                   {name}
-                  <div className="bg-neutral-200 h-[2px] w-0 group-hover:w-full transition-all duration-500 flex"></div>
+                  <div className="bg-neutral-200 h-[1px] w-0 group-hover:w-full transition-all duration-100 flex"></div>
                 </Link>
               );
             })}

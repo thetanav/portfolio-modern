@@ -10,7 +10,7 @@ function ChannelLink({ img, link, name, subimg, count }) {
       <a
         href={link}
         target="_blank"
-        className="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800 hover:border-neutral-500 hover:ring-4 active:ring-4 ring-white/15 transition"
+        className="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-100 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-900 hover:border-neutral-500 hover:ring-4 active:ring-4 ring-white/15 transition"
       >
         <div className="flex items-center space-x-3">
           <div className="relative h-16">
@@ -35,8 +35,9 @@ function ChannelLink({ img, link, name, subimg, count }) {
             </Suspense>
           </div>
         </div>
-        <div className="transform text-neutral-700 transition-transform duration-200 group-hover:-rotate-12 dark:text-neutral-300">
+        <div className="transform text-neutral-700 transition-transform duration-200 dark:text-neutral-300 realtive">
           <ArrowIcon />
+          <div className='w-4 h-2 dark:bg-neutral-900 bg-neutral-100 absolute z-10 rotate-45 translate-x-2 -translate-y-4 group-hover:-translate-x-3 group-hover:translate-y-0 transition-transform duration-1000'></div>
         </div>
       </a>
     </div>
@@ -73,7 +74,7 @@ function Badge(props) {
 export default function Page() {
   return (
     <section>
-      <h1 className="font-medium text-2xl mb-8 tracking-tighter">hey, I'm tanav 👋</h1>
+      <h1 className="font-black text-5xl mb-8 tracking-tighter"><span className='bg-gradient-to-b from-white to-stone-500 inline-block pr-2 text-transparent bg-clip-text'>hey, I'm tanav</span> 👋</h1>
       <p className="prose prose-neutral dark:prose-invert">
         I'm a fullstack developer, optimist, and highly focused. I currently worked on <strong>50+ projects</strong>, some are deployed on {' '}
           <Badge href="https://vercel.com/home">
@@ -112,14 +113,15 @@ export default function Page() {
         </Badge>
       </p>
 
-      <div className="prose prose-neutral dark:prose-invert">
+      {/* <div className="prose prose-neutral dark:prose-invert">
         <p>
           I create educational content for developers, teaching them about web
           development, JavaScript and TypeScript, React and Next.js, and more.
           This comes in all forms: blog posts, videos, tweets, conference talks,
           and workshops. You can watch some of my favorites below.
         </p>
-      </div>
+      </div> */}
+
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
           img={"https://media.licdn.com/dms/image/D5603AQGAAqKKVIgjcg/profile-displayphoto-shrink_400_400/0/1703482763904?e=1720051200&v=beta&t=tCcLgXSWWEr5L_IavFmk1XcE3Au2B8JcOeUkIXZr_pk"}
@@ -166,7 +168,7 @@ export default function Page() {
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-white"
             rel="noopener noreferrer"
             target="_blank"
             href="mailto:tanavposwal939@gmail.com"
@@ -177,7 +179,7 @@ export default function Page() {
         </li>
         <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-white"
             rel="noopener noreferrer"
             target="_blank"
             href="https://www.linkedin.com/in/tanav-poswal/"
@@ -193,8 +195,8 @@ export default function Page() {
 
 function LangCard({ comp }) {
   return (
-    <div className="flex items-center justify-center rounded border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 w-12 h-12 hover:scale-105 transition-transform">
-      <span className='text-3xl text-white'>{comp}</span>
+    <div className="flex items-center justify-center rounded border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 w-12 h-12">
+      <span className='text-3xl opacity-50'>{comp}</span>
     </div>
   )
 }
