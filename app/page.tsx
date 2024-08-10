@@ -10,7 +10,7 @@ function ChannelLink({ img, link, name, subimg, count }) {
       <a
         href={link}
         target="_blank"
-        className="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-100 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-900 hover:border-neutral-500 hover:ring-4 active:ring-4 ring-white/15 transition"
+        className="flex w-full items-center justify-between rounded border  px-3 py-4 border-neutral-700 bg-neutral-900 hover:border-neutral-500 hover:ring-4 active:ring-4 ring-white/15 transition"
       >
         <div className="flex items-center space-x-3">
           <div className="relative h-16">
@@ -20,14 +20,14 @@ function ChannelLink({ img, link, name, subimg, count }) {
               height={64}
               width={64}
               sizes="33vw"
-              className="h-16 w-16 rounded-full border border-neutral-200 dark:border-neutral-700"
+              className="h-16 w-16 rounded-full border border-neutral-700"
             />
-            <div className="relative -right-10 -top-6 inline-flex h-6 w-6 items-center rounded-full border border-neutral-200 bg-white dark:border-neutral-700">
+            <div className="relative -right-10 -top-6 inline-flex h-6 w-6 items-center rounded-full border border-neutral-700">
               <img src={subimg} />
             </div>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium text-neutral-900 dark:text-neutral-100">
+            <p className="font-medium text-neutral-400">
               {name}
             </p>
             <Suspense fallback={<p className="h-6" />}>
@@ -35,9 +35,9 @@ function ChannelLink({ img, link, name, subimg, count }) {
             </Suspense>
           </div>
         </div>
-        <div className="transform text-neutral-700 transition-transform duration-200 dark:text-neutral-300 realtive">
+        <div className="transform transition-transform duration-200 text-neutral-300 realtive">
           <ArrowIcon />
-          <div className='w-4 h-2 dark:bg-neutral-900 bg-neutral-100 absolute z-10 rotate-45 translate-x-2 -translate-y-4 group-hover:-translate-x-3 group-hover:translate-y-0 transition-transform duration-1000'></div>
+          <div className='w-3 h-2 bg-neutral-900 absolute z-10 rotate-45 group-hover:translate-x-2 group-hover:-translate-y-5 -translate-x-3 translate-y-0 transition-transform duration-500 ease-in'></div>
         </div>
       </a>
     </div>
@@ -66,7 +66,7 @@ function Badge(props) {
     <a
       {...props}
       target="_blank"
-      className="inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+      className="inline-flex items-center rounded border p-1 text-sm leading-4  no-underline border-neutral-700 bg-neutral-800 text-neutral-100"
     />
   );
 }
@@ -74,8 +74,8 @@ function Badge(props) {
 export default function Page() {
   return (
     <section>
-      <h1 className="font-black text-5xl mb-8 tracking-tighter"><span className='bg-gradient-to-b from-white to-stone-500 inline-block pr-2 text-transparent bg-clip-text'>hey, I'm tanav</span> 👋</h1>
-      <p className="prose prose-neutral dark:prose-invert">
+      <h1 className="font-black text-5xl h-fit mb-8 tracking-tighter flex items-center"><span className='bg-gradient-to-b from-white to-stone-300 pr-2 text-transparent bg-clip-text h-fit pb-3'>hey, I'm Tanav</span> <Image width={50} height={50} src="/images/wave.png" alt="wave hand"/></h1>
+      <p className="prose prose-invert">
         I'm a fullstack developer, optimist, and highly focused. I currently worked on <strong>50+ projects</strong>, some are deployed on {' '}
           <Badge href="https://vercel.com/home">
             <svg
@@ -124,22 +124,22 @@ export default function Page() {
 
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
-          img={"https://media.licdn.com/dms/image/D5603AQGAAqKKVIgjcg/profile-displayphoto-shrink_400_400/0/1703482763904?e=1720051200&v=beta&t=tCcLgXSWWEr5L_IavFmk1XcE3Au2B8JcOeUkIXZr_pk"}
-          name="@tanav-poswal"
+          img={"https://media.licdn.com/dms/image/v2/D5603AQGTvzm8eun0Dw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720274660444?e=1728518400&v=beta&t=t2tGsSzY46oV1j21uSHCN599yRGbp_F7tC4ZMEil1wo"}
+          name="tanav-poswal"
           link="https://www.linkedin.com/in/tanav-poswal/"
           subimg={"https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"}
-          count={"70+"}
+          count={"160+"}
         />
         <ChannelLink
-          img={"https://pbs.twimg.com/profile_images/1760952410661326848/BL-Hm4SI_400x400.jpg"}
-          name="@TanavPoswal"
-          link="https://twitter.com/TanavPoswal"
+          img={"https://media.licdn.com/dms/image/v2/D5603AQGTvzm8eun0Dw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720274660444?e=1728518400&v=beta&t=t2tGsSzY46oV1j21uSHCN599yRGbp_F7tC4ZMEil1wo"}
+          name="tanavindev"
+          link="https://x.com/tanavindev"
           subimg={"https://freelogopng.com/images/all_img/1690643640twitter-x-icon-png.png"}
-          count={"40+"}
+          count={"60+"}
         />
       </div>
 
-      <div className="prose prose-neutral dark:prose-invert">
+      <div className="prose prose-invert">
         <p>
           technologies I have been using since 2023,
         </p>
@@ -160,15 +160,15 @@ export default function Page() {
         <LangCard comp={<SiFlutter />} />
         <LangCard comp={<SiFramer />} />
       </div>
-      <div className="prose prose-neutral dark:prose-invert">
+      <div className="prose prose-invert">
         <p>
           I've worked with some opensource projects, on <a href="https://github.com/tanavposwal">github here</a>
         </p>
       </div>
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
+      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2  md:flex-row md:space-x-4 md:space-y-0 text-neutral-300">
         <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-white"
+            className="flex items-center transition-all hover:text-white"
             rel="noopener noreferrer"
             target="_blank"
             href="mailto:tanavposwal939@gmail.com"
@@ -179,7 +179,7 @@ export default function Page() {
         </li>
         <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-white"
+            className="flex items-center transition-all hover:text-white"
             rel="noopener noreferrer"
             target="_blank"
             href="https://www.linkedin.com/in/tanav-poswal/"
@@ -195,7 +195,7 @@ export default function Page() {
 
 function LangCard({ comp }) {
   return (
-    <div className="flex items-center justify-center rounded border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 w-12 h-12">
+    <div className="flex items-center justify-center rounded border border-neutral-700 bg-neutral-800 w-12 h-12">
       <span className='text-3xl opacity-50'>{comp}</span>
     </div>
   )

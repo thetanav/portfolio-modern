@@ -14,7 +14,7 @@ const navItems = {
 
 export function Navbar() {
   return (
-    <aside className="-ml-[8px] mb-16 tracking-tight">
+    <aside className="-ml-[8px] mt-10 mb-4 tracking-tight">
       <div className="lg:sticky lg:top-20">
         <nav
           className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
@@ -26,10 +26,10 @@ export function Navbar() {
                 <Link
                   key={path}
                   href={path}
-                  className="transition-all hover:text-neutral-800 dark:hover:text-neutral-300 flex align-middle relative py-1 px-2 group flex-col items-center justify-center"
+                  className="transition-all hover:text-neutral-300 flex align-middle relative py-1 px-2 group flex-col items-center justify-center"
                 >
                   {name}
-                  <div className="bg-neutral-200 h-[1px] w-0 group-hover:w-full transition-all duration-100 flex"></div>
+                  <div className="bg-neutral-200 h-[1.5px] mt-1 w-0 group-hover:w-full transition-all duration-100 ease-in-out flex rounded-xl"></div>
                 </Link>
               );
             })}

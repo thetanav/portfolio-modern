@@ -36,7 +36,6 @@ export const CSS = `:root {
   --main-bg-color: #f3f4f6;
   --title-color: #262626;
   --text-color: #525252;
-  --font-family: "Arial", sans-serif;
 }
 
 body {
