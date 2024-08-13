@@ -1,14 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "setup": "node ./setup.mjs"
+    "start": "next start"
   },
   "dependencies": {
-    "@codesandbox/sandpack-react": "2.12.0",
-    "@googleapis/youtube": "^13.1.0",
     "@radix-ui/react-icons": "^1.3.0",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "20.11.17",
@@ -19,10 +16,8 @@
     "autoprefixer": "^10.4.17",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "dotenv": "^16.4.2",
     "geist": "1.2.2",
-    "next": "^14.3.0-canary.36",
-    "next-mdx-remote": "^4.4.1",
+    "next": "^14.3.0",
     "postcss": "^8.4.35",
     "react": "18.2.0",
     "react-dom": "18.2.0",
