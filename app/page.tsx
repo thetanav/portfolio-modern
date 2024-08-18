@@ -21,11 +21,11 @@ const poppins = Poppins({ subsets: ["latin"], weight: '800' })
 
 function ChannelLink({ img, link, name, subimg, count }) {
   return (
-    <div className="group flex w-full">
+    <div className="group/arrow flex w-full">
       <a
         href={link}
         target="_blank"
-        className="flex w-full items-center justify-between rounded border  px-3 py-4 border-neutral-700 bg-neutral-900 hover:border-neutral-500 hover:ring-4 active:ring-4 ring-white/15 transition"
+        className="flex w-full items-center justify-between rounded border  px-3 py-4 border-neutral-700 bg-neutral-900 hover:border-white hover:ring-4 active:ring-4 ring-white/15 transition"
       >
         <div className="flex items-center space-x-3">
           <div className="relative h-16">
@@ -46,9 +46,9 @@ function ChannelLink({ img, link, name, subimg, count }) {
             <Suspense fallback={<p className="h-6" />}>{count}</Suspense>
           </div>
         </div>
-        <div className="transform transition-transform duration-200 text-neutral-300 realtive">
-          <ArrowIcon />
-          <div className="w-3 h-2 bg-neutral-900 absolute z-10 rotate-45 group-hover:translate-x-2 group-hover:-translate-y-5 -translate-x-3 translate-y-0 transition-transform duration-500 ease-in"></div>
+        <div className="group w-fit rounded-full grid overflow-hidden inset-4">
+          <span className="[grid-area:1/1] flex items-center justify-center h-8 w-8 transition ease-in-out group-hover:delay-300 translate-y-10 -translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0"><ArrowIcon /></span>
+          <span className="[grid-area:1/1] flex items-center justify-center h-8 w-8 transition ease-in-out delay-300 group-hover:delay-[0s] duration-300 group-hover:-translate-y-10 group-hover:translate-x-10"><ArrowIcon /></span>
         </div>
       </a>
     </div>
