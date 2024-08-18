@@ -1,8 +1,23 @@
+import { Poppins } from 'next/font/google';
 import Image from 'next/image';
 import { Suspense } from 'react';
-import { FaReact } from "react-icons/fa";
-import { GrGraphQl } from "react-icons/gr";
-import { SiNextdotjs, SiTailwindcss, SiTurborepo, SiPostman, SiFlask, SiPython, SiRust, SiTypescript, SiShadcnui, SiFlutter, SiFramer } from "react-icons/si";
+import { FaReact } from 'react-icons/fa';
+import { GrGraphQl } from 'react-icons/gr';
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTurborepo,
+  SiPostman,
+  SiFlask,
+  SiPython,
+  SiRust,
+  SiTypescript,
+  SiShadcnui,
+  SiFlutter,
+  SiFramer,
+} from 'react-icons/si';
+
+const poppins = Poppins({ subsets: ["latin"], weight: '800' })
 
 function ChannelLink({ img, link, name, subimg, count }) {
   return (
@@ -27,17 +42,13 @@ function ChannelLink({ img, link, name, subimg, count }) {
             </div>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium text-neutral-400">
-              {name}
-            </p>
-            <Suspense fallback={<p className="h-6" />}>
-              {count}
-            </Suspense>
+            <p className="font-medium text-neutral-400">{name}</p>
+            <Suspense fallback={<p className="h-6" />}>{count}</Suspense>
           </div>
         </div>
         <div className="transform transition-transform duration-200 text-neutral-300 realtive">
           <ArrowIcon />
-          <div className='w-3 h-2 bg-neutral-900 absolute z-10 rotate-45 group-hover:translate-x-2 group-hover:-translate-y-5 -translate-x-3 translate-y-0 transition-transform duration-500 ease-in'></div>
+          <div className="w-3 h-2 bg-neutral-900 absolute z-10 rotate-45 group-hover:translate-x-2 group-hover:-translate-y-5 -translate-x-3 translate-y-0 transition-transform duration-500 ease-in"></div>
         </div>
       </a>
     </div>
@@ -74,23 +85,27 @@ function Badge(props) {
 export default function Page() {
   return (
     <section>
-      <h1 className="font-black text-5xl h-fit mb-8 tracking-tighter flex items-center"><span className='bg-gradient-to-b from-white to-stone-300 pr-2 text-transparent bg-clip-text h-fit pb-3'>hey, I'm Tanav</span> <Image width={50} height={50} src="/images/wave.png" alt="wave hand"/></h1>
+      <h1 className="font-black text-6xl h-fit mb-8 tracking-tighter flex items-center gap-2">
+        <span className={'h-fit ' + poppins.className}>hey, I'm Tanav</span>
+        <Image width={65} height={65} src="/images/wave.png" alt="wave hand" />
+      </h1>
       <p className="prose prose-invert">
-        I'm a fullstack developer, optimist, and highly focused. I currently worked on <strong>50+ projects</strong>, some are deployed on {' '}
-          <Badge href="https://vercel.com/home">
-            <svg
-              width="13"
-              height="11"
-              role="img"
-              aria-label="Vercel logo"
-              className="mr-1 inline-flex"
-            >
-              <use href="/sprite.svg#vercel" />
-            </svg>
-            Vercel
-          </Badge>
-          {' , where I build fullstack app with '}
-          <Badge href="https://nextjs.org">
+        I'm a fullstack developer, optimist, and highly focused. I currently
+        worked on <strong>50+ projects</strong>, some are deployed on{' '}
+        <Badge href="https://vercel.com/home">
+          <svg
+            width="13"
+            height="11"
+            role="img"
+            aria-label="Vercel logo"
+            className="mr-1 inline-flex"
+          >
+            <use href="/sprite.svg#vercel" />
+          </svg>
+          Vercel
+        </Badge>
+        {' , where I build fullstack app with '}
+        <Badge href="https://nextjs.org">
           <Image
             alt="Next.js logomark"
             src="/next-logo.svg"
@@ -124,25 +139,31 @@ export default function Page() {
 
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
-          img={"https://media.licdn.com/dms/image/v2/D5603AQGTvzm8eun0Dw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720274660444?e=1728518400&v=beta&t=t2tGsSzY46oV1j21uSHCN599yRGbp_F7tC4ZMEil1wo"}
+          img={
+            'https://media.licdn.com/dms/image/v2/D5603AQGTvzm8eun0Dw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720274660444?e=1728518400&v=beta&t=t2tGsSzY46oV1j21uSHCN599yRGbp_F7tC4ZMEil1wo'
+          }
           name="tanav-poswal"
           link="https://www.linkedin.com/in/tanav-poswal/"
-          subimg={"https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"}
-          count={"160+"}
+          subimg={
+            'https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png'
+          }
+          count={'160+'}
         />
         <ChannelLink
-          img={"https://media.licdn.com/dms/image/v2/D5603AQGTvzm8eun0Dw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720274660444?e=1728518400&v=beta&t=t2tGsSzY46oV1j21uSHCN599yRGbp_F7tC4ZMEil1wo"}
+          img={
+            'https://media.licdn.com/dms/image/v2/D5603AQGTvzm8eun0Dw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720274660444?e=1728518400&v=beta&t=t2tGsSzY46oV1j21uSHCN599yRGbp_F7tC4ZMEil1wo'
+          }
           name="tanavindev"
           link="https://x.com/tanavindev"
-          subimg={"https://freelogopng.com/images/all_img/1690643640twitter-x-icon-png.png"}
-          count={"60+"}
+          subimg={
+            'https://freelogopng.com/images/all_img/1690643640twitter-x-icon-png.png'
+          }
+          count={'60+'}
         />
       </div>
 
       <div className="prose prose-invert">
-        <p>
-          technologies I have been using since 2023,
-        </p>
+        <p>technologies I have been using since 2023,</p>
       </div>
 
       <div className="grid grid-rows-auto w-full sm:grid-cols-11 grid-cols-7 gap-6">
@@ -162,10 +183,11 @@ export default function Page() {
       </div>
       <div className="prose prose-invert">
         <p>
-          I've worked with some opensource projects, on <a href="https://github.com/tanavposwal">github here</a>
+          I've worked with some opensource projects, on{' '}
+          <a href="https://github.com/tanavposwal" className="text-neutral-400 hover:text-white">github here</a>
         </p>
       </div>
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2  md:flex-row md:space-x-4 md:space-y-0 text-neutral-300">
+      <ul className="font-sm mt-8 mb-6 flex flex-col space-x-0 space-y-2  md:flex-row md:space-x-4 md:space-y-0 text-neutral-400">
         <li>
           <a
             className="flex items-center transition-all hover:text-white"
@@ -195,8 +217,10 @@ export default function Page() {
 
 function LangCard({ comp }) {
   return (
-    <div className="flex items-center justify-center rounded border border-neutral-700 bg-neutral-800 w-12 h-12">
-      <span className='text-3xl opacity-50'>{comp}</span>
+    <div className="flex items-center justify-center rounded border border-neutral-700 bg-neutral-800 w-12 h-12 group">
+      <span className="text-3xl opacity-50 group-hover:opacity-90 transition-opacity">
+        {comp}
+      </span>
     </div>
-  )
+  );
 }

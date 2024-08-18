@@ -40,10 +40,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={
-          'min-h-screen bg-background font-sans antialiased'
+          'min-h-screen bg-background font-sans antialiased md:mx-8 sm:mx-8 mx-6 ' +
+          inter.className 
         }
       >
         <main className="flex-auto max-w-screen-md mx-auto flex flex-col px-2 md:px-0">
