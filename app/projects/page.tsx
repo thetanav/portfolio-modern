@@ -37,22 +37,22 @@ export default function Page() {
       </h1>
       <div className="grid grid-cols-1 grid-rows-auto sm:grid-cols-2 gap-4 mb-4">
         <ProjectCard
-          img={'/images/mpeg3.png'}
-          link={'https://mpeg3.vercel.app'}
-          name="mpeg3"
-          brief="A spotify clone with supabase."
+          img={'/images/ecommerce.png'}
+          link={'https://github.com/tanavposwal/ecommerce-store'}
+          name="ecommerce store"
+          brief="ecommerce store w/ NextJS + Prisma + Google Auth + stripe payment wall."
         />
         <ProjectCard
-          img={'/images/notrz.png'}
-          link={'https://notrz.vercel.app'}
-          name="notrz"
-          brief="Todo list app."
+          img={'/images/anime.png'}
+          link={'https://animes-eta.vercel.app/'}
+          name="anime vault"
+          brief="anime netflix via open api. Next JS infinite scroll"
         />
         <ProjectCard
-          img={'/images/twiclone.png'}
+          img={'/images/x-clone.png'}
           link={'https://github.com/tanavposwal/twiclone-api'}
-          name="twiclone"
-          brief="Fullstack twitter clone in MERN stack + NextJS."
+          name="X Clone"
+          brief="Fullstack twitter clone in Prisma + NextJS."
         />
         <ProjectCard
           img={'/images/myspace.png'}
@@ -61,10 +61,10 @@ export default function Page() {
           brief="Myspace clone with NextJS + Prisma."
         />
         <ProjectCard
-          img={'/images/chat.png'}
-          link={'https://github.com/tanavposwal/react-ws-chat'}
-          name="react-chat"
-          brief="Chat app with ReactJs + WebSockets."
+          img={'/images/chess-app.png'}
+          link={'https://github.com/tanavposwal/chess'}
+          name="Multiplayer Chess"
+          brief="Chess game with WS and google auth, game saving"
         />
         <ProjectCard
           img={'/images/twiclone.png'}
