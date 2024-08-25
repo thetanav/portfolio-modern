@@ -85,9 +85,9 @@ function Badge(props) {
 export default function Page() {
   return (
     <section>
-      <h1 className="font-black text-6xl h-fit mb-8 tracking-tighter flex items-center gap-2">
+      <h1 className="font-black md:text-6xl sm:text-5xl text-3xl h-fit mb-8 tracking-tighter flex items-center gap-2">
         <span className={'h-fit ' + poppins.className}>hey, I'm Tanav</span>
-        <Image width={65} height={65} src="/images/wave.png" alt="wave hand" />
+        <Image className="sm:scale-100 scale-75" width={65} height={65} src="/images/wave.png" alt="wave hand" />
       </h1>
       <p className="prose prose-invert">
         I'm a fullstack developer, optimist, and highly focused. I currently
