@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Navbar } from './components/nav';
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import Image from 'next/image';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -50,8 +50,10 @@ export default function RootLayout({
         <main className="flex-auto max-w-screen-md mx-auto flex flex-col px-2 md:px-0">
           <Navbar />
           {children}
+          <div className="w-full flex items-center justify-center">
+              <Image src="/images/initial.png" className="opacity-50 select-none" draggable={false} width={200} height={200} alt="signature" />
+          </div>
           <Analytics />
-          <SpeedInsights />
         </main>
       </body>
     </html>

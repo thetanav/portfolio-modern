@@ -10,7 +10,9 @@ function ProjectCard({ img, link, name, brief }) {
         className="flex w-full border p-3 border-neutral-700 hover:border-white hover:ring-4 ring-white/15 transition"
       >
         <div className="flex flex-col gap-3">
-          <img alt={name} src={img} className=" w-full rounded-xl border border-neutral-800" />
+          <div className="w-full h-52 flex items-center border border-neutral-800 justify-center rounded-xl overflow-hidden bg-black">
+            <img alt={name} src={img} className="w-full group-hover:scale-110 transition-transform" />
+          </div>
           <div className="flex flex-col ml-2">
             <p className="font-semibold text-neutral-100">
               {name}
@@ -50,15 +52,9 @@ export default function Page() {
         />
         <ProjectCard
           img={'/images/x-clone.png'}
-          link={'https://github.com/tanavposwal/twiclone-api'}
+          link={'https://myspace-pi-six.vercel.app/'}
           name="X Clone"
-          brief="Fullstack twitter clone in Prisma + NextJS."
-        />
-        <ProjectCard
-          img={'/images/myspace.png'}
-          link={'https://github.com/tanavposwal/my-next-space'}
-          name="myspace"
-          brief="Myspace clone with NextJS + Prisma."
+          brief="Fullstack twitter clone in Prisma + NextJS + ShadCN."
         />
         <ProjectCard
           img={'/images/chess-app.png'}
@@ -67,10 +63,16 @@ export default function Page() {
           brief="Chess game with WS and google auth, game saving"
         />
         <ProjectCard
-          img={'/images/twiclone.png'}
-          link={'https://github.com/tanavposwal/expenses-tracker'}
-          name="xpenze"
-          brief="Fullstack expense tracker app with MERN stack."
+          img={'/images/promptopia.png'}
+          link={'https://promptopia-snowy.vercel.app/'}
+          name="Promptopia"
+          brief="Open source community for prompt sharing"
+        />
+        <ProjectCard
+          img={'/images/groove.png'}
+          link={'https://groove-next.vercel.app/'}
+          name="groove nest"
+          brief="music social for colaborated music listening"
         />
       </div>
       <div className="mb-8">

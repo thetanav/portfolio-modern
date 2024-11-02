@@ -15,6 +15,13 @@ import {
   SiShadcnui,
   SiFlutter,
   SiFramer,
+  SiDocker, 
+  SiTensorflow,
+  SiNvidia,
+  SiScikitlearn,
+  SiPandas,
+  SiPlotly,
+  SiPytorch
 } from 'react-icons/si';
 
 const poppins = Poppins({ subsets: ["latin"], weight: '800' })
@@ -85,13 +92,13 @@ function Badge(props) {
 export default function Page() {
   return (
     <section>
-      <h1 className="font-black md:text-6xl sm:text-5xl text-3xl h-fit mb-8 tracking-tighter flex items-center gap-2">
+      <h1 className="font-black md:text-6xl sm:text-5xl text-3xl h-fit mb-8 tracking-tighter flex items-center gap-2 mt-10">
         <span className={'h-fit ' + poppins.className}>hey, I'm Tanav</span>
         <Image className="sm:scale-100 scale-75" width={65} height={65} src="/images/wave.png" alt="wave hand" />
       </h1>
       <p className="prose prose-invert">
-        I'm a fullstack developer, optimist, and highly focused. I currently
-        worked on <strong>50+ projects</strong>, some are deployed on{' '}
+        I'm a fullstack developer and Machine Learning enthusiast, optimist, and highly focused. I currently
+        worked on <strong>60+ projects</strong> both personal and client, some are deployed on{' '}
         <Badge href="https://vercel.com/home">
           <svg
             width="13"
@@ -140,18 +147,18 @@ export default function Page() {
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
           img={
-            'https://media.licdn.com/dms/image/v2/D5603AQGTvzm8eun0Dw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720274660444?e=1728518400&v=beta&t=t2tGsSzY46oV1j21uSHCN599yRGbp_F7tC4ZMEil1wo'
+            'https://media.licdn.com/dms/image/v2/D5603AQHYGCAUOytRXA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726923901866?e=1735776000&v=beta&t=AsrH6ZiaZ8pmovfRddSXh2Mu-1I7dv5hLWak1y2Ckw8'
           }
           name="tanav-poswal"
           link="https://www.linkedin.com/in/tanav-poswal/"
           subimg={
             'https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png'
           }
-          count={'160+'}
+          count={'300+'}
         />
         <ChannelLink
           img={
-            'https://media.licdn.com/dms/image/v2/D5603AQGTvzm8eun0Dw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720274660444?e=1728518400&v=beta&t=t2tGsSzY46oV1j21uSHCN599yRGbp_F7tC4ZMEil1wo'
+            'https://pbs.twimg.com/profile_images/1809588565375954945/I8yb5ipp_400x400.jpg'
           }
           name="tanavindev"
           link="https://x.com/tanavindev"
@@ -166,7 +173,7 @@ export default function Page() {
         <p>technologies I have been using since 2023,</p>
       </div>
 
-      <div className="grid grid-rows-auto w-full sm:grid-cols-11 grid-cols-7 gap-6">
+      <div className="grid grid-rows-auto w-full lg:grid-cols-15 md:grid-cols-12 sm:grid-cols-7 grid-cols-7 gap-6">
         <LangCard comp={<FaReact />} />
         <LangCard comp={<GrGraphQl />} />
         <LangCard comp={<SiNextdotjs />} />
@@ -179,7 +186,16 @@ export default function Page() {
         <LangCard comp={<SiTypescript />} />
         <LangCard comp={<SiShadcnui />} />
         <LangCard comp={<SiFlutter />} />
+        <LangCard comp={<SiDocker />} />
         <LangCard comp={<SiFramer />} />
+        <LangCard comp={<SiPython />} />
+        <LangCard comp={<SiTensorflow />} />
+        <LangCard comp={<SiNvidia />} />
+        <LangCard comp={<SiScikitlearn />} />
+        <LangCard comp={<SiPandas />} />
+        <LangCard comp={<SiPlotly />} />
+        <LangCard comp={<SiPytorch />} />
+
       </div>
       <div className="prose prose-invert">
         <p>
