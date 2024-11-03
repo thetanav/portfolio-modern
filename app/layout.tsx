@@ -5,7 +5,7 @@ import { Navbar } from './components/nav';
 import { Analytics } from '@vercel/analytics/react';
 import Image from 'next/image';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
@@ -44,17 +44,29 @@ export default function RootLayout({
       <body
         className={
           'min-h-screen bg-background font-sans antialiased md:mx-8 sm:mx-8 mx-6 ' +
-          inter.className 
+          inter.className
         }
       >
         <main className="flex-auto max-w-screen-md mx-auto flex flex-col px-2 md:px-0">
           <Navbar />
           {children}
           <div className="w-full flex items-center justify-center">
-              <Image src="/images/initial.png" className="opacity-50 select-none" draggable={false} width={200} height={200} alt="signature" />
+            <Image
+              src="/images/initial.png"
+              className="opacity-50 select-none"
+              draggable={false}
+              width={200}
+              height={200}
+              alt="signature"
+            />
           </div>
           <Analytics />
         </main>
+        <script
+          async
+          defer
+          src="https://scripts.simpleanalyticscdn.com/latest.js"
+        ></script>
       </body>
     </html>
   );
