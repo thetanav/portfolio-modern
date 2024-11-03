@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import { Navbar } from './components/nav';
 import { Analytics } from '@vercel/analytics/react';
 import Image from 'next/image';
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -62,12 +63,8 @@ export default function RootLayout({
           </div>
           <Analytics />
         </main>
-        <script
-          async
-          defer
-          src="https://scripts.simpleanalyticscdn.com/latest.js"
-        ></script>
       </body>
+      <Script src="https://scripts.simpleanalyticscdn.com/latest.js"  />
     </html>
   );
 }
