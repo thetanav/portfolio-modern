@@ -158,7 +158,7 @@ export default function Page() {
         />
         <ChannelLink
           img={
-            'https://pbs.twimg.com/profile_images/1809588565375954945/I8yb5ipp_400x400.jpg'
+            'https://pbs.twimg.com/profile_images/1855947807859068928/qANE9UZm_400x400.jpg'
           }
           name="tanavindev"
           link="https://x.com/tanavindev"
