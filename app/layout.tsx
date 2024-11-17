@@ -2,7 +2,6 @@ import './global.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Navbar } from './components/nav';
-import { Analytics } from '@vercel/analytics/react';
 import Image from 'next/image';
 import Script from 'next/script'
 
@@ -48,6 +47,19 @@ export default function RootLayout({
           inter.className
         }
       >
+        {/* Google analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-5ML2Q6XWZH`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5ML2Q6XWZH');
+          `}
+        </Script>
         <main className="flex-auto max-w-screen-md mx-auto flex flex-col px-2 md:px-0">
           <Navbar />
           {children}
@@ -61,10 +73,8 @@ export default function RootLayout({
               alt="signature"
             />
           </div>
-          <Analytics />
         </main>
       </body>
-      <Script src="https://scripts.simpleanalyticscdn.com/latest.js"  />
     </html>
   );
 }

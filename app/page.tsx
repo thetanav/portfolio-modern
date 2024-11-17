@@ -54,8 +54,8 @@ function ChannelLink({ img, link, name, subimg, count }) {
           </div>
         </div>
         <div className="group w-fit rounded-full grid overflow-hidden inset-4">
-          <span className="[grid-area:1/1] flex items-center justify-center h-8 w-8 transition ease-in-out group-hover:delay-300 translate-y-10 -translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0"><ArrowIcon /></span>
-          <span className="[grid-area:1/1] flex items-center justify-center h-8 w-8 transition ease-in-out delay-300 group-hover:delay-[0s] duration-300 group-hover:-translate-y-10 group-hover:translate-x-10"><ArrowIcon /></span>
+          <span className="[grid-area:1/1] flex items-center justify-center h-8 w-8 transition ease-in-out  translate-y-10 -translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0"><ArrowIcon /></span>
+          <span className="[grid-area:1/1] flex items-center justify-center h-8 w-8 transition ease-in-out delay-300 duration-300 group-hover:-translate-y-10 group-hover:translate-x-10"><ArrowIcon /></span>
         </div>
       </a>
     </div>
