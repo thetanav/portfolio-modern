@@ -1,3 +1,4 @@
+import AdSenseAd from 'app/components/ad';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,9 +10,7 @@ export const metadata: Metadata = {
 export default function UsesPage() {
   return (
     <section>
-      <h1 className="text-2xl font-bold mb-8">
-        here's my setup 🔥
-      </h1>
+      <h1 className="text-2xl font-bold mb-8">here's my setup 🔥</h1>
       <div className="prose prose-neutral dark:prose-invert">
         <h3 id="computer-office">Computer / Office</h3>
         <ul className="text-neutral-300">
@@ -21,9 +20,7 @@ export default function UsesPage() {
       <div className="prose prose-neutral dark:prose-invert">
         <h3 id="coding">Coding</h3>
         <ul className="text-neutral-300">
-          <li>
-            Editor: VSCode 
-          </li>
+          <li>Editor: VSCode</li>
           <li>Theme: One Dark Pro</li>
           <li>Terminal: bash / zsh</li>
         </ul>
@@ -41,6 +38,7 @@ export default function UsesPage() {
           <li>Android Studio</li>
         </ul>
       </div>
+      <AdSenseAd />
       <div className="prose prose-neutral dark:prose-invert">
         <h3 id="other-tech">Other Tech</h3>
         <ul className="text-neutral-300">

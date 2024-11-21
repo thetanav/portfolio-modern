@@ -41,7 +41,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <meta name="google-adsense-account" content="ca-pub-6337477291799437"></meta>
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+          id="adsbygoogle-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-6337477291799437",
+                enable_page_level_ads: true
+              });
+            `,
+          }}
+        />
+      </head>
       <body
         className={
           'min-h-screen bg-background font-sans antialiased md:mx-8 sm:mx-8 mx-6 ' +
