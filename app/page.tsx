@@ -15,20 +15,20 @@ import {
   SiShadcnui,
   SiFlutter,
   SiFramer,
-  SiDocker, 
+  SiDocker,
   SiTensorflow,
   SiNvidia,
   SiScikitlearn,
   SiPandas,
   SiPlotly,
-  SiPytorch
+  SiPytorch,
 } from 'react-icons/si';
 
-const poppins = Poppins({ subsets: ["latin"], weight: '800' })
+const poppins = Poppins({ subsets: ['latin'], weight: '800' });
 
 function ChannelLink({ img, link, name, subimg, count }) {
   return (
-    <div className="group/arrow flex w-full">
+    <div className="group flex w-full">
       <a
         href={link}
         target="_blank"
@@ -53,9 +53,13 @@ function ChannelLink({ img, link, name, subimg, count }) {
             <Suspense fallback={<p className="h-6" />}>{count}</Suspense>
           </div>
         </div>
-        <div className="group w-fit rounded-full grid overflow-hidden inset-4">
-          <span className="[grid-area:1/1] flex items-center justify-center h-8 w-8 transition ease-in-out  translate-y-10 -translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0"><ArrowIcon /></span>
-          <span className="[grid-area:1/1] flex items-center justify-center h-8 w-8 transition ease-in-out delay-300 duration-300 group-hover:-translate-y-10 group-hover:translate-x-10"><ArrowIcon /></span>
+        <div className="w-fit rounded-full grid overflow-hidden inset-4">
+          <span className="[grid-area:1/1] flex items-center justify-center h-8 w-8 transition ease-in-out delay-300  translate-y-10 -translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0">
+            <ArrowIcon />
+          </span>
+          <span className="[grid-area:1/1] flex items-center justify-center h-8 w-8 transition ease-in-out duration-300 group-hover:-translate-y-10 group-hover:translate-x-10">
+            <ArrowIcon />
+          </span>
         </div>
       </a>
     </div>
@@ -94,11 +98,18 @@ export default function Page() {
     <section>
       <h1 className="font-black md:text-6xl sm:text-5xl text-3xl h-fit mb-8 tracking-tighter flex items-center gap-2 mt-10">
         <span className={'h-fit ' + poppins.className}>hey, I'm Tanav</span>
-        <Image className="sm:scale-100 scale-75" width={65} height={65} src="/images/wave.png" alt="wave hand" />
+        <Image
+          className="sm:scale-100 scale-75"
+          width={65}
+          height={65}
+          src="/images/wave.png"
+          alt="wave hand"
+        />
       </h1>
       <p className="prose prose-invert">
-        I'm a fullstack developer and Machine Learning enthusiast, optimist, and highly focused. I currently
-        worked on <strong>60+ projects</strong> both personal and client, some are deployed on{' '}
+        I'm a fullstack developer and Machine Learning enthusiast, optimist, and
+        highly focused. I currently worked on <strong>60+ projects</strong> both
+        personal and client, some are deployed on{' '}
         <Badge href="https://vercel.com/home">
           <svg
             width="13"
@@ -158,7 +169,7 @@ export default function Page() {
         />
         <ChannelLink
           img={
-            'https://pbs.twimg.com/profile_images/1855947807859068928/qANE9UZm_400x400.jpg'
+            'https://pbs.twimg.com/profile_images/1863427870573690880/U3S8Tv5W_400x400.jpg'
           }
           name="tanavindev"
           link="https://x.com/tanavindev"
@@ -173,7 +184,7 @@ export default function Page() {
         <p>technologies I have been using since 2023,</p>
       </div>
 
-      <div className="grid grid-rows-auto w-full lg:grid-cols-15 md:grid-cols-12 sm:grid-cols-7 grid-cols-7 gap-6">
+      <div className="w-full flex flex-wrap gap-2">
         <LangCard comp={<FaReact />} />
         <LangCard comp={<GrGraphQl />} />
         <LangCard comp={<SiNextdotjs />} />
@@ -195,12 +206,16 @@ export default function Page() {
         <LangCard comp={<SiPandas />} />
         <LangCard comp={<SiPlotly />} />
         <LangCard comp={<SiPytorch />} />
-
       </div>
       <div className="prose prose-invert">
         <p>
           I've worked with some opensource projects, on{' '}
-          <a href="https://github.com/tanavposwal" className="text-neutral-400 hover:text-white">github here</a>
+          <a
+            href="https://github.com/tanavposwal"
+            className="text-neutral-400 hover:text-white"
+          >
+            github here
+          </a>
         </p>
       </div>
       <ul className="font-sm mt-8 mb-6 flex flex-col space-x-0 space-y-2  md:flex-row md:space-x-4 md:space-y-0 text-neutral-400">
@@ -226,6 +241,11 @@ export default function Page() {
             <p className="ml-2 h-7">get in touch</p>
           </a>
         </li>
+        <li>
+          <a href="https://visitcount.itsvg.in">
+            <img src="https://visitcount.itsvg.in/api?id=tanavindev&label=Analytics&color=12&pretty=true" />
+          </a>
+        </li>
       </ul>
     </section>
   );
@@ -234,7 +254,7 @@ export default function Page() {
 function LangCard({ comp }) {
   return (
     <div className="flex items-center justify-center rounded border border-neutral-700 bg-neutral-800 w-12 h-12 group">
-      <span className="text-3xl opacity-50 group-hover:opacity-90 transition-opacity">
+      <span className="text-2xl opacity-50 group-hover:opacity-90 transition-opacity">
         {comp}
       </span>
     </div>
