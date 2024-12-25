@@ -35,7 +35,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="font-bold text-2xl mb-8 tracking-tighter">
-        Projects 🚀🚀
+        Projects 🚀🚀 (not updated go on github) 
       </h1>
       <div className="grid grid-cols-1 grid-rows-auto sm:grid-cols-2 gap-4 mb-4">
         <ProjectCard

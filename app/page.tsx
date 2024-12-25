@@ -32,16 +32,15 @@ function ChannelLink({ img, link, name, subimg, count }) {
       <a
         href={link}
         target="_blank"
-        className="flex w-full items-center justify-between rounded border  px-3 py-4 border-neutral-700 bg-neutral-900 hover:border-white hover:ring-4 active:ring-4 ring-white/15 transition"
+        className="flex w-full items-center justify-between rounded border px-3 py-3 border-neutral-700 bg-neutral-900 hover:border-white hover:ring-4 active:ring-4 ring-white/15 transition"
       >
         <div className="flex items-center space-x-3">
           <div className="relative h-16">
             <img
               alt={name}
               src={img}
-              height={64}
-              width={64}
-              sizes="33vw"
+              height={50}
+              width={50}
               className="h-16 w-16 rounded-full border border-neutral-700"
             />
             <div className="relative -right-10 -top-6 inline-flex h-6 w-6 items-center rounded-full border border-neutral-700">
@@ -53,11 +52,9 @@ function ChannelLink({ img, link, name, subimg, count }) {
             <Suspense fallback={<p className="h-6" />}>{count}</Suspense>
           </div>
         </div>
-        <div className="w-fit rounded-full grid overflow-hidden inset-4">
-          <span className="[grid-area:1/1] flex items-center justify-center h-8 w-8 transition ease-in-out delay-300  translate-y-10 -translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0">
-            <ArrowIcon />
-          </span>
-          <span className="[grid-area:1/1] flex items-center justify-center h-8 w-8 transition ease-in-out duration-300 group-hover:-translate-y-10 group-hover:translate-x-10">
+        <div className="w-fit rounded-full relative">
+          <span className="flex items-center justify-center h-8 w-8 transition-transform transform ease-in-out scale-100 translate-y-0 translate-x-0  group-hover:-translate-y-2 group-hover:translate-x-2
+          group-hover:scale-90">
             <ArrowIcon />
           </span>
         </div>
@@ -88,7 +85,7 @@ function Badge(props) {
     <a
       {...props}
       target="_blank"
-      className="inline-flex items-center rounded border p-1 text-sm leading-4  no-underline border-neutral-700 bg-neutral-800 text-neutral-100"
+      className="inline-flex items-center justify-center rounded border py-1 px-2 text-xs leading-4  no-underline border-neutral-700 bg-neutral-800 text-neutral-300"
     />
   );
 }
@@ -96,7 +93,7 @@ function Badge(props) {
 export default function Page() {
   return (
     <section>
-      <h1 className="font-black md:text-6xl sm:text-5xl text-3xl h-fit mb-8 tracking-tighter flex items-center gap-2 mt-10">
+      <h1 className="font-black md:text-6xl sm:text-5xl text-3xl h-fit mb-8 tracking-tighter flex items-center gap-2 mt-8">
         <span className={'h-fit ' + poppins.className}>hey, I'm Tanav</span>
         <Image
           className="sm:scale-100 scale-75"
@@ -108,8 +105,8 @@ export default function Page() {
       </h1>
       <p className="prose prose-invert">
         I'm a fullstack developer and Machine Learning enthusiast, optimist, and
-        highly focused. I currently worked on <strong>60+ projects</strong> both
-        personal and client, some are deployed on{' '}
+        highly focused. I currently worked on <strong>100+ projects</strong>{' '}
+        both personal and client, some are deployed on{' '}
         <Badge href="https://vercel.com/home">
           <svg
             width="13"
@@ -155,6 +152,13 @@ export default function Page() {
         </p>
       </div> */}
 
+      <div className="border border-neutral-700  rounded bg-white/10 p-3 mt-8">
+        <img
+          src="https://ghchart.rshah.org/216e39/tanavposwal"
+          alt="tanavposwal's Github chart"
+        />
+      </div>
+
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
           img={
@@ -165,7 +169,7 @@ export default function Page() {
           subimg={
             'https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png'
           }
-          count={'300+'}
+          count={'500+'}
         />
         <ChannelLink
           img={
@@ -176,7 +180,7 @@ export default function Page() {
           subimg={
             'https://freelogopng.com/images/all_img/1690643640twitter-x-icon-png.png'
           }
-          count={'60+'}
+          count={'100+'}
         />
       </div>
 
@@ -184,7 +188,7 @@ export default function Page() {
         <p>technologies I have been using since 2023,</p>
       </div>
 
-      <div className="w-full flex flex-wrap gap-2">
+      <div className="w-full flex flex-wrap gap-2 my-5">
         <LangCard comp={<FaReact />} />
         <LangCard comp={<GrGraphQl />} />
         <LangCard comp={<SiNextdotjs />} />

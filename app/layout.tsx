@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Navbar } from './components/nav';
 import Image from 'next/image';
-import Script from 'next/script'
+import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -41,44 +41,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          strategy="beforeInteractive"
-        />
-        <Script
-          id="adsbygoogle-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "ca-pub-6337477291799437",
-                enable_page_level_ads: true
-              });
-            `,
-          }}
-        />
-      </head>
       <body
         className={
-          'min-h-screen bg-background font-sans antialiased md:mx-8 sm:mx-8 mx-6 ' +
+          'min-h-screen bg-black text-white font-sans antialiased md:mx-8 sm:mx-8 mx-6 dark ' +
           inter.className
         }
-      >
-        {/* Google analytics */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-5ML2Q6XWZH`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-5ML2Q6XWZH');
-          `}
-        </Script>
+      > 
+        <NextTopLoader showSpinner={false} color="#fff" />
         <main className="flex-auto max-w-screen-md mx-auto flex flex-col px-2 md:px-0">
           <Navbar />
           {children}
