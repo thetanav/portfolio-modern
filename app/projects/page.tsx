@@ -7,7 +7,7 @@ function ProjectCard({ img, link, name, brief }) {
       <a
         href={link}
         target="_blank"
-        className="flex w-full border p-3 border-neutral-700 hover:border-white hover:ring-4 ring-white/15 transition"
+        className="flex w-full border p-3 border-neutral-700 hover:ring-4 hover:bg-white/10 ring-white/15 transition"
       >
         <div className="flex flex-col gap-3">
           <div className="w-full h-52 flex items-center border border-neutral-800 justify-center rounded-xl overflow-hidden bg-black">

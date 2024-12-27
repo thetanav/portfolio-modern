@@ -46,22 +46,22 @@ export default function RootLayout({
           'min-h-screen bg-black text-white font-sans antialiased md:mx-8 sm:mx-8 mx-6 dark ' +
           inter.className
         }
-      > 
+      >
         <NextTopLoader showSpinner={false} color="#fff" />
-        <main className="flex-auto max-w-screen-md mx-auto flex flex-col px-2 md:px-0">
+        <main className="flex-auto max-w-screen-md mx-auto flex flex-col px-2 md:px-0 min-h-[80vh]">
           <Navbar />
           {children}
-          <div className="w-full flex items-center justify-center">
-            <Image
-              src="/images/initial.png"
-              className="opacity-50 select-none"
-              draggable={false}
-              width={200}
-              height={200}
-              alt="signature"
-            />
-          </div>
         </main>
+        <footer className="w-full flex items-center justify-center">
+          <Image
+            src="/images/initial.png"
+            className="opacity-50 select-none"
+            draggable={false}
+            width={200}
+            height={200}
+            alt="signature"
+          />
+        </footer>
       </body>
     </html>
   );

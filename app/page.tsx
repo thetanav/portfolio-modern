@@ -93,7 +93,7 @@ function Badge(props) {
 export default function Page() {
   return (
     <section>
-      <h1 className="font-black md:text-6xl sm:text-5xl text-3xl h-fit mb-8 tracking-tighter flex items-center gap-2 mt-8">
+      <h1 className="font-black sm:text-4xl text-3xl h-fit mb-8 tracking-tighter flex items-center gap-2 mt-6">
         <span className={'h-fit ' + poppins.className}>hey, I'm Tanav</span>
         <Image
           className="sm:scale-100 scale-75"
@@ -246,9 +246,9 @@ export default function Page() {
           </a>
         </li>
         <li>
-          <a href="https://visitcount.itsvg.in">
+          {/* <a href="https://visitcount.itsvg.in">
             <img src="https://visitcount.itsvg.in/api?id=tanavindev&label=Analytics&color=12&pretty=true" />
-          </a>
+          </a> */}
         </li>
       </ul>
     </section>
