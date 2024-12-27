@@ -1,11 +1,9 @@
 import './global.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { GeistSans } from 'geist/font/sans';
 import { Navbar } from './components/nav';
 import Image from 'next/image';
 import NextTopLoader from 'nextjs-toploader';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
@@ -43,8 +41,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={
-          'min-h-screen bg-black text-white font-sans antialiased md:mx-8 sm:mx-8 mx-6 dark ' +
-          inter.className
+          'min-h-screen antialiased md:mx-8 sm:mx-8 mx-6 dark ' +
+          GeistSans.className
         }
       >
         <NextTopLoader showSpinner={false} color="#fff" />

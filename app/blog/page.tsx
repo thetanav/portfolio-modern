@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Blogs',
-  description: 'Blogs Tanav Poswal written',
+  description: 'Blogs by Tanav Poswal',
 };
 
 export default async function Page() {

@@ -19,15 +19,16 @@ export const generateStaticParams = async () => {
   return posts.map((post) => ({ slug: post.slug }));
 };
 
-export async function generateMetadata({ params, searchParams }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   const id = params?.slug ? params?.slug : '';
   return {
     title: id.replaceAll('_', ' '),
   };
 }
 
-export default function Page(props) {
-  const slug = props.params.slug;
+export default async function Page(props) {
+  const slug = (await props.params).slug;
   const post = getPostContent(slug);
 
   const CodeBlock = ({ children, className }) => {
@@ -49,7 +50,7 @@ export default function Page(props) {
         <p className="text-xs text-neutral-400 my-2">~ tanav @ {post.data.date}</p>
       </header>
       <main>
-        <article className="prose lg:prose-xl mx-auto">
+        <article className="prose prose-headings:text-white lg:prose-xl mx-auto text-white">
           <Markdown
             options={{
               overrides: {

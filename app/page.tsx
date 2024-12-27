@@ -32,17 +32,17 @@ function ChannelLink({ img, link, name, subimg, count }) {
       <a
         href={link}
         target="_blank"
-        className="flex w-full items-center justify-between rounded border px-3 py-3 border-neutral-700 bg-neutral-900 hover:border-white hover:ring-4 active:ring-4 ring-white/15 transition"
+        className="flex w-full items-center justify-between rounded border px-3 py-3 border-neutral-700 bg-neutral-900 hover:border-neutral-400 hover:ring-4 active:ring-4 ring-white/15 transition"
       >
         <div className="flex items-center space-x-3">
           <div className="relative h-16">
+            <div className="w-16 h-16 bg-neutral-700 rounded-full overflow-hidden">
             <img
               alt={name}
               src={img}
-              height={50}
-              width={50}
-              className="h-16 w-16 rounded-full border border-neutral-700"
+              className="w-full h-full"
             />
+            </div>
             <div className="relative -right-10 -top-6 inline-flex h-6 w-6 items-center rounded-full border border-neutral-700">
               <img src={subimg} />
             </div>
@@ -52,11 +52,8 @@ function ChannelLink({ img, link, name, subimg, count }) {
             <Suspense fallback={<p className="h-6" />}>{count}</Suspense>
           </div>
         </div>
-        <div className="w-fit rounded-full relative">
-          <span className="flex items-center justify-center h-8 w-8 transition-transform transform ease-in-out scale-100 translate-y-0 translate-x-0  group-hover:-translate-y-2 group-hover:translate-x-2
-          group-hover:scale-90">
-            <ArrowIcon />
-          </span>
+        <div className="w-fit rounded-full relative right-3">
+          <ArrowIcon />
         </div>
       </a>
     </div>
@@ -85,7 +82,7 @@ function Badge(props) {
     <a
       {...props}
       target="_blank"
-      className="inline-flex items-center justify-center rounded border py-1 px-2 text-xs leading-4  no-underline border-neutral-700 bg-neutral-800 text-neutral-300"
+      className="inline-flex items-center justify-center rounded border py-0 px-2 text-xs border-neutral-700 bg-neutral-800 text-neutral-300 no-underline"
     />
   );
 }
@@ -152,7 +149,7 @@ export default function Page() {
         </p>
       </div> */}
 
-      <div className="border border-neutral-700  rounded bg-white/10 p-3 mt-8">
+      <div className="border border-neutral-700  rounded bg-white/10 p-3 mt-8 flex items-center justify-center">
         <img
           src="https://ghchart.rshah.org/216e39/tanavposwal"
           alt="tanavposwal's Github chart"
@@ -216,7 +213,7 @@ export default function Page() {
           I've worked with some opensource projects, on{' '}
           <a
             href="https://github.com/tanavposwal"
-            className="text-neutral-400 hover:text-white"
+            className="text-neutral-400 hover:text-white no-underline"
           >
             github here
           </a>
