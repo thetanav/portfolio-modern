@@ -82,7 +82,7 @@ function Badge(props) {
     <a
       {...props}
       target="_blank"
-      className="inline-flex items-center justify-center rounded border py-0 px-2 text-xs border-neutral-700 bg-neutral-800 text-neutral-300 no-underline"
+      className="inline-flex items-center justify-center py-0 px-2 text-xs h-8 text-neutral-300 no-underline"
     />
   );
 }
@@ -121,9 +121,9 @@ export default function Page() {
           <Image
             alt="Next.js logomark"
             src="/next-logo.svg"
-            className="!mr-1"
-            width="14"
-            height="14"
+            className="mr-1 inline-flex"
+            width="13"
+            height="13"
           />
           Next.js
         </Badge>
@@ -132,7 +132,7 @@ export default function Page() {
           <Image
             alt="Next.js logomark"
             src="/turbo-repo.svg"
-            className="!mr-1"
+            className="mr-1 inline-flex"
             width="13"
             height="13"
           />
@@ -243,9 +243,9 @@ export default function Page() {
           </a>
         </li>
         <li>
-          {/* <a href="https://visitcount.itsvg.in">
+          <a href="https://visitcount.itsvg.in">
             <img src="https://visitcount.itsvg.in/api?id=tanavindev&label=Analytics&color=12&pretty=true" />
-          </a> */}
+          </a>
         </li>
       </ul>
     </section>
