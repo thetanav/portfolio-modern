@@ -20,7 +20,7 @@ export const generateStaticParams = async () => {
 };
 
 export async function generateMetadata({ params, searchParams }) {
-  const id = params?.slug ? ' ⋅ ' + params?.slug : '';
+  const id = params?.slug ? params?.slug : '';
   return {
     title: id.replaceAll('_', ' '),
   };
@@ -42,10 +42,11 @@ export default function Page(props) {
   };
 
   return (
-    <div className="p-4">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold text-white">My Markdown Blog</h1>
-        <p className="text-neutral-400 mt-2">{post.data.date}</p>
+    <div className="">
+      <header className="mb-8 py-8 border-b border-neutral-600">
+        <h1 className="text-3xl sm:text-5xl font-bold text-white my-2">{post.data.title}</h1>
+        <p className="text-xl text-neutral-400 font-semibold">{post.data.discription}</p>
+        <p className="text-xs text-neutral-400 my-2">~ tanav @ {post.data.date}</p>
       </header>
       <main>
         <article className="prose lg:prose-xl mx-auto">

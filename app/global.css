@@ -5,3 +5,11 @@
 .rounded {
   border-radius: 0.8rem;
 }
+
+body {
+  @apply bg-black text-white;
+}
+
+* {
+  @apply bg-transparent;
+}
