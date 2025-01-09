@@ -7,16 +7,18 @@ function ProjectCard({ img, link, name, brief }) {
       <a
         href={link}
         target="_blank"
-        className="flex w-full border p-3 border-neutral-700 hover:ring-4 hover:bg-white/10 ring-white/15 transition"
+        className="flex w-full items-center justify-between rounded border px-3 py-3 border-neutral-700 bg-neutral-900 hover:border-neutral-400 hover:ring-4 active:ring-4 ring-white/15 transition"
       >
         <div className="flex flex-col gap-3">
           <div className="w-full h-52 flex items-center border border-neutral-800 justify-center rounded-xl overflow-hidden bg-black">
-            <img alt={name} src={img} className="w-full group-hover:scale-110 transition-transform" />
+            <img
+              alt={name}
+              src={img}
+              className="w-full group-hover:scale-110 transition-transform"
+            />
           </div>
           <div className="flex flex-col ml-2">
-            <p className="font-semibold text-neutral-100">
-              {name}
-            </p>
+            <p className="font-semibold text-neutral-100">{name}</p>
             <p className="md:text-md text-sm text-neutral-400">{brief}</p>
           </div>
         </div>
@@ -27,15 +29,14 @@ function ProjectCard({ img, link, name, brief }) {
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description:
-    "My top projects",
+  description: 'My top projects',
 };
 
 export default function Page() {
   return (
     <section>
       <h1 className="font-bold text-2xl mb-8 tracking-tighter">
-        Projects 🚀🚀 (not updated go on github) 
+        Projects 🚀🚀
       </h1>
       <div className="grid grid-cols-1 grid-rows-auto sm:grid-cols-2 gap-4 mb-4">
         <ProjectCard
@@ -76,13 +77,13 @@ export default function Page() {
         />
       </div>
       <div className="mb-8">
-      <a
-        href="https://github.com/tanavposwal"
-        target="_blank"
-        className="flex w-full border p-3 border-neutral-700 hover:border-neutral-500 hover:ring-4 ring-white/15 transition items-center justify-center gap-3"
-      >
-        <SiGithub/> more on github
-      </a>
+        <a
+          href="https://github.com/tanavposwal"
+          target="_blank"
+          className="flex w-full border p-3 border-neutral-700 text-neutral-300 hover:border-neutral-500 hover:ring-4 ring-white/15 transition items-center justify-center gap-3 rounded"
+        >
+          <SiGithub /> more on github
+        </a>
       </div>
     </section>
   );

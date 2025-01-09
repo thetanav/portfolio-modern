@@ -1,9 +1,15 @@
 import './global.css';
 import type { Metadata } from 'next';
-import { GeistSans } from 'geist/font/sans';
+import { Sora } from 'next/font/google';
 import { Navbar } from './components/nav';
 import Image from 'next/image';
 import NextTopLoader from 'nextjs-toploader';
+
+const sora = Sora({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-sora',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -41,8 +47,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={
-          'min-h-screen antialiased md:mx-8 sm:mx-8 mx-6 dark ' +
-          GeistSans.className
+          'min-h-screen antialiased md:mx-8 sm:mx-8 mx-6 dark ' + sora.className
         }
       >
         <NextTopLoader showSpinner={false} color="#fff" />
@@ -50,15 +55,16 @@ export default function RootLayout({
           <Navbar />
           {children}
         </main>
-        <footer className="w-full flex items-center justify-center">
+        <footer className="w-full flex items-center justify-center divide-x-2 divide-neutral-700">
           <Image
             src="/images/initial.png"
             className="opacity-50 select-none"
             draggable={false}
-            width={200}
-            height={200}
+            width={150}
+            height={150}
             alt="signature"
           />
+          <p className="text-xs text-neutral-500 pl-2">made with ❤️ by tanav</p>
         </footer>
       </body>
     </html>

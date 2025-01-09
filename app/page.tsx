@@ -1,4 +1,3 @@
-import { Poppins } from 'next/font/google';
 import Image from 'next/image';
 import { Suspense } from 'react';
 import { FaReact } from 'react-icons/fa';
@@ -24,8 +23,6 @@ import {
   SiPytorch,
 } from 'react-icons/si';
 
-const poppins = Poppins({ subsets: ['latin'], weight: '800' });
-
 function ChannelLink({ img, link, name, subimg, count }) {
   return (
     <div className="group flex w-full">
@@ -37,11 +34,7 @@ function ChannelLink({ img, link, name, subimg, count }) {
         <div className="flex items-center space-x-3">
           <div className="relative h-16">
             <div className="w-16 h-16 bg-neutral-700 rounded-full overflow-hidden">
-            <img
-              alt={name}
-              src={img}
-              className="w-full h-full"
-            />
+              <img alt={name} src={img} className="w-full h-full" />
             </div>
             <div className="relative -right-10 -top-6 inline-flex h-6 w-6 items-center rounded-full border border-neutral-700">
               <img src={subimg} />
@@ -49,7 +42,7 @@ function ChannelLink({ img, link, name, subimg, count }) {
           </div>
           <div className="flex flex-col">
             <p className="font-medium text-neutral-400">{name}</p>
-            <Suspense fallback={<p className="h-6" />}>{count}</Suspense>
+            <p className="text-sm font-medium text-neutral-500">{count}</p>
           </div>
         </div>
         <div className="w-fit rounded-full relative right-3">
@@ -82,7 +75,7 @@ function Badge(props) {
     <a
       {...props}
       target="_blank"
-      className="inline-flex items-center justify-center py-0 px-2 text-xs h-8 text-neutral-300 no-underline"
+      className="inline-flex items-center justify-center py-0 px-2 text-xs h-8 text-neutral-300 no-underline bg-neutral-800 rounded"
     />
   );
 }
@@ -90,12 +83,14 @@ function Badge(props) {
 export default function Page() {
   return (
     <section>
-      <h1 className="font-black sm:text-4xl text-3xl h-fit mb-8 tracking-tighter flex items-center gap-2 mt-6">
-        <span className={'h-fit ' + poppins.className}>hey, I'm Tanav</span>
+      <h1 className="sm:text-4xl text-3xl h-fit mb-8 tracking-tighter flex gap-2 mt-6">
+        <span className={'h-fit'}>
+          hey, I'm <span className="font-black">Tanav</span>
+        </span>
         <Image
-          className="sm:scale-100 scale-75"
-          width={65}
-          height={65}
+          className="sm:scale-100 scale-75 ml-2"
+          width={37}
+          height={37}
           src="/images/wave.png"
           alt="wave hand"
         />
@@ -149,7 +144,8 @@ export default function Page() {
         </p>
       </div> */}
 
-      <div className="border border-neutral-700  rounded bg-white/10 p-3 mt-8 flex items-center justify-center">
+      <div className="mt-8 justify-center">
+        <h2 className="text-1xl font-semibold mb-3">My GitHub Activity</h2>
         <img
           src="https://ghchart.rshah.org/216e39/tanavposwal"
           alt="tanavposwal's Github chart"
@@ -159,9 +155,9 @@ export default function Page() {
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
           img={
-            'https://media.licdn.com/dms/image/v2/D5603AQHYGCAUOytRXA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726923901866?e=1735776000&v=beta&t=AsrH6ZiaZ8pmovfRddSXh2Mu-1I7dv5hLWak1y2Ckw8'
+            'https://media.licdn.com/dms/image/v2/D5603AQHYGCAUOytRXA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726923901882?e=1741824000&v=beta&t=hDqkhKr6DbCQ-aHcXuAPLuDKRMXD8ZXsrl7jxzsKq7U'
           }
-          name="tanav-poswal"
+          name="Get In Touch !"
           link="https://www.linkedin.com/in/tanav-poswal/"
           subimg={
             'https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png'
@@ -172,7 +168,7 @@ export default function Page() {
           img={
             'https://pbs.twimg.com/profile_images/1863427870573690880/U3S8Tv5W_400x400.jpg'
           }
-          name="tanavindev"
+          name="Twitter"
           link="https://x.com/tanavindev"
           subimg={
             'https://freelogopng.com/images/all_img/1690643640twitter-x-icon-png.png'

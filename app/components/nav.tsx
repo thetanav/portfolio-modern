@@ -26,18 +26,18 @@ export function Navbar() {
                 <Link
                   key={path}
                   href={path}
-                  className="transition-colors text-neutral-400 hover:text-white flex align-middle relative py-1 px-2 group flex-col items-center justify-center font-semibold"
+                  className="transition-colors text-neutral-500 hover:text-white flex align-middle relative py-1 px-2 group flex-col items-center justify-center"
                 >
                   {name}
                 </Link>
               );
             })}
-            <a
+            {/* <a
               href="http://docs.google.com/document/d/1rOTy341rTIquz2SzYpTs7ouaR88VzCi886iT0IEGOKk/export?format=pdf"
-              className="transition-colors text-neutral-400 hover:text-white flex align-middle relative py-1 px-2 group flex-col items-center justify-center font-semibold"
+              className="transition-colors text-neutral-500 hover:text-white flex align-middle relative py-1 px-2 group flex-col items-center justify-center"
             >
               resume
-            </a>
+            </a> */}
           </div>
         </nav>
       </div>
