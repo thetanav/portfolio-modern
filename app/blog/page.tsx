@@ -11,7 +11,7 @@ export default async function Page() {
   const posts = await getPostMetadata('posts');
 
   return (
-    <main>
+    <section className="animate-entry">
       <h1 className="font-bold text-2xl mb-8 tracking-tighter">Blogs 💬</h1>
       <div className="w-full h-full flex flex-col">
         {posts.map((post) => (
@@ -20,14 +20,14 @@ export default async function Page() {
             href={`/blog/${post.slug}`}
             key={post.slug}
           >
-            <h3 className="text-3xl font-bold capitalize text-neutral-300 hover:text-white transition-colors">
+            <h3 className="text-2xl font-bold capitalize text-neutral-400 group-hover:text-white transition-colors">
               {post.title}
             </h3>
-            <p className="text-md text-neutral-400 my-2 font-semibold">{post.discription}</p>
-            <p className="text-xs text-neutral-400">{post.date}</p>
+            <p className="text-md text-neutral-400 mb-1">{post.discription}</p>
+            <p className="text-xs text-neutral-500">{post.date}</p>
           </Link>
         ))}
       </div>
-    </main>
+    </section>
   );
 }

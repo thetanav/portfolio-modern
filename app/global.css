@@ -11,10 +11,20 @@
 }
 
 body {
-  @apply bg-black/90 text-white;
+  @apply bg-black text-white;
   font-family: var(--font-sora);
 }
 
 * {
   @apply bg-transparent;
+}
+
+.animate-entry {
+  @apply animate-in slide-in-from-bottom-3 fade-in-5 duration-300;
+}
+
+pre,
+code {
+  padding: 0;
+  margin: 0;
 }

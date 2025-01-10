@@ -55,16 +55,16 @@ export default function RootLayout({
           <Navbar />
           {children}
         </main>
-        <footer className="w-full flex items-center justify-center divide-x-2 divide-neutral-700">
+        <footer className="w-full flex items-center justify-center divide-x-2 divide-neutral-700 select-none">
           <Image
             src="/images/initial.png"
-            className="opacity-50 select-none"
+            className="opacity-30 select-none"
             draggable={false}
             width={150}
             height={150}
             alt="signature"
           />
-          <p className="text-xs text-neutral-500 pl-2">made with ❤️ by tanav</p>
+          <p className="text-xs text-neutral-500 pl-3">made with ❤️ by tanav</p>
         </footer>
       </body>
     </html>

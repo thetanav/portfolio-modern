@@ -21,5 +21,17 @@ As a developer, I have been working on various projects, ranging from web develo
 Throughout my journey, I have been constantly learning and growing as a developer. I have explored various programming languages, frameworks, and tools, and have been exposed to diverse domains and applications. I have also been involved in various open-source projects, contributing to the development of cutting-edge technologies.
 
 ## Not only 😁
+
 This portfolio isn’t just about showcasing my work; it’s a space where I document my journey, share insights, and inspire others to embrace technology fearlessly. Whether you're here to explore my projects, read my blogs, or connect over shared interests, I hope you find something valuable.
 
+## Some code 😭
+
+```python
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+print(fibonacci(10))
+```

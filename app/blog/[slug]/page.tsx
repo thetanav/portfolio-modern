@@ -2,8 +2,7 @@ import Markdown from 'markdown-to-jsx';
 import fs from 'fs';
 import matter from 'gray-matter';
 import getPostMetadata from 'lib/posts';
-import Prism from 'prismjs';
-import "prismjs/themes/prism-tomorrow.css";
+import CodeBlock from 'app/components/codeblock';
 
 function getPostContent(slug) {
   const folder = 'posts/';
@@ -31,26 +30,19 @@ export default async function Page(props) {
   const slug = (await props.params).slug;
   const post = getPostContent(slug);
 
-  const CodeBlock = ({ children, className }) => {
-    const language = className?.replace('lang-', '');
-    const html = Prism.highlight(children, Prism.languages[language], language);
-
-    return (
-      <pre className={`language-${language}`}>
-        <code dangerouslySetInnerHTML={{ __html: html }} />
-      </pre>
-    );
-  };
-
   return (
-    <div className="">
+    <section className="animate-entry">
       <header className="mb-8 py-8 border-b border-neutral-600">
-        <h1 className="text-3xl sm:text-5xl font-bold text-white my-2">{post.data.title}</h1>
-        <p className="text-xl text-neutral-400 font-semibold">{post.data.discription}</p>
-        <p className="text-xs text-neutral-400 my-2">~ tanav @ {post.data.date}</p>
+        <h1 className="text-2xl sm:text-3xl font-bold text-white my-1">
+          {post.data.title}
+        </h1>
+        <p className="text-xl text-neutral-500">{post.data.discription}</p>
+        <p className="text-xs text-neutral-400 my-1">
+          ~ tanav @ {post.data.date}
+        </p>
       </header>
       <main>
-        <article className="prose prose-headings:text-white lg:prose-xl mx-auto text-white">
+        <article className="prose text-sm prose-headings:text-white lg:prose-lg mx-auto text-white">
           <Markdown
             options={{
               overrides: {
@@ -64,6 +56,6 @@ export default async function Page(props) {
           </Markdown>
         </article>
       </main>
-    </div>
+    </section>
   );
 }

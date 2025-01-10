@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { Suspense } from 'react';
 import { FaReact } from 'react-icons/fa';
 import { GrGraphQl } from 'react-icons/gr';
 import {
@@ -82,7 +81,7 @@ function Badge(props) {
 
 export default function Page() {
   return (
-    <section>
+    <section className="animate-entry">
       <h1 className="sm:text-4xl text-3xl h-fit mb-8 tracking-tighter flex gap-2 mt-6">
         <span className={'h-fit'}>
           hey, I'm <span className="font-black">Tanav</span>
@@ -98,7 +97,7 @@ export default function Page() {
       <p className="prose prose-invert">
         I'm a fullstack developer and Machine Learning enthusiast, optimist, and
         highly focused. I currently worked on <strong>100+ projects</strong>{' '}
-        both personal and client, some are deployed on{' '}
+        both personal and opensource, some are deployed on{' '}
         <Badge href="https://vercel.com/home">
           <svg
             width="13"
@@ -145,7 +144,7 @@ export default function Page() {
       </div> */}
 
       <div className="mt-8 justify-center">
-        <h2 className="text-1xl font-semibold mb-3">My GitHub Activity</h2>
+        <h2 className="font-semibold mb-3">My GitHub Activity 📊</h2>
         <img
           src="https://ghchart.rshah.org/216e39/tanavposwal"
           alt="tanavposwal's Github chart"
@@ -181,41 +180,50 @@ export default function Page() {
         <p>technologies I have been using since 2023,</p>
       </div>
 
-      <div className="w-full flex flex-wrap gap-2 my-5">
-        <LangCard comp={<FaReact />} />
-        <LangCard comp={<GrGraphQl />} />
-        <LangCard comp={<SiNextdotjs />} />
-        <LangCard comp={<SiTailwindcss />} />
-        <LangCard comp={<SiTurborepo />} />
-        <LangCard comp={<SiPostman />} />
-        <LangCard comp={<SiFlask />} />
-        <LangCard comp={<SiPython />} />
-        <LangCard comp={<SiRust />} />
-        <LangCard comp={<SiTypescript />} />
-        <LangCard comp={<SiShadcnui />} />
-        <LangCard comp={<SiFlutter />} />
-        <LangCard comp={<SiDocker />} />
-        <LangCard comp={<SiFramer />} />
-        <LangCard comp={<SiPython />} />
-        <LangCard comp={<SiTensorflow />} />
-        <LangCard comp={<SiNvidia />} />
-        <LangCard comp={<SiScikitlearn />} />
-        <LangCard comp={<SiPandas />} />
-        <LangCard comp={<SiPlotly />} />
-        <LangCard comp={<SiPytorch />} />
+      <div className="w-full gap-2 my-5">
+        <h2 className="font-bold">FullStack</h2>
+        <div className="flex flex-wrap gap-2 mt-3 mb-5">
+          <LangCard comp={<FaReact />} />
+          <LangCard comp={<GrGraphQl />} />
+          <LangCard comp={<SiNextdotjs />} />
+          <LangCard comp={<SiTailwindcss />} />
+          <LangCard comp={<SiTurborepo />} />
+          <LangCard comp={<SiPostman />} />
+          <LangCard comp={<SiTypescript />} />
+          <LangCard comp={<SiShadcnui />} />
+          <LangCard comp={<SiFramer />} />
+        </div>
+        <h2 className="font-bold">Machine Learning</h2>
+        <div className="flex flex-wrap gap-2 mt-3 mb-5">
+          <LangCard comp={<SiFlask />} />
+          <LangCard comp={<SiPython />} />
+          <LangCard comp={<SiPython />} />
+          <LangCard comp={<SiTensorflow />} />
+          <LangCard comp={<SiNvidia />} />
+          <LangCard comp={<SiScikitlearn />} />
+          <LangCard comp={<SiPandas />} />
+          <LangCard comp={<SiPlotly />} />
+          <LangCard comp={<SiPytorch />} />
+        </div>
+        <h2 className="font-bold">Cloud</h2>
+        <div className="flex flex-wrap gap-2 mt-2 mb-5">
+          <LangCard comp={<SiRust />} />
+          <LangCard comp={<SiFlutter />} />
+          <LangCard comp={<SiDocker />} />
+        </div>
       </div>
       <div className="prose prose-invert">
         <p>
           I've worked with some opensource projects, on{' '}
           <a
             href="https://github.com/tanavposwal"
-            className="text-neutral-400 hover:text-white no-underline"
+            className="text-neutral-500 hover:text-white transition no-underline"
           >
             github here
           </a>
         </p>
       </div>
-      <ul className="font-sm mt-8 mb-6 flex flex-col space-x-0 space-y-2  md:flex-row md:space-x-4 md:space-y-0 text-neutral-400">
+      <ul className="font-sm mt-8 mb-6 flex flex-col space-x-0 space-y-2  md:flex-row md:space-x-4 md:space-y-0 text-neutral-500">
         <li>
           <a
             className="flex items-center transition-all hover:text-white"
@@ -238,11 +246,6 @@ export default function Page() {
             <p className="ml-2 h-7">get in touch</p>
           </a>
         </li>
-        <li>
-          <a href="https://visitcount.itsvg.in">
-            <img src="https://visitcount.itsvg.in/api?id=tanavindev&label=Analytics&color=12&pretty=true" />
-          </a>
-        </li>
       </ul>
     </section>
   );
@@ -250,8 +253,8 @@ export default function Page() {
 
 function LangCard({ comp }) {
   return (
-    <div className="flex items-center justify-center rounded border border-neutral-700 bg-neutral-800 w-12 h-12 group">
-      <span className="text-2xl opacity-50 group-hover:opacity-90 transition-opacity">
+    <div className="flex items-center justify-center rounded border border-neutral-700 bg-neutral-800 w-10 h-10 group">
+      <span className="text-xl opacity-50 group-hover:opacity-90 transition-opacity">
         {comp}
       </span>
     </div>
