@@ -1,5 +1,5 @@
-import type { Metadata } from 'next';
-import { SiGithub } from 'react-icons/si';
+import type { Metadata } from "next";
+import { SiGithub } from "react-icons/si";
 
 function ProjectCard({ img, link, name, brief }) {
   return (
@@ -7,17 +7,16 @@ function ProjectCard({ img, link, name, brief }) {
       <a
         href={link}
         target="_blank"
-        className="flex w-full items-center justify-between rounded border px-3 py-3 border-neutral-700 bg-neutral-900 hover:border-neutral-400 hover:ring-4 active:ring-4 ring-white/15 transition"
-      >
+        className="flex w-full items-center justify-between rounded border  border-neutral-700 bg-neutral-900 hover:border-neutral-400 hover:ring-4 active:ring-4 ring-white/15 transition overflow-hidden">
         <div className="flex flex-col gap-3">
-          <div className="w-full h-52 flex items-center border border-neutral-800 justify-center rounded-xl overflow-hidden bg-black">
+          <div className="w-full h-52 flex items-center justify-center overflow-hidden">
             <img
               alt={name}
               src={img}
-              className="w-full group-hover:scale-110 transition-transform"
+              className="group-hover:scale-110 transition-transform object-cover w-full h-full"
             />
           </div>
-          <div className="flex flex-col ml-2">
+          <div className="flex flex-col m-2 ml-3">
             <p className="font-semibold text-neutral-100">{name}</p>
             <p className="md:text-md text-sm text-neutral-400">{brief}</p>
           </div>
@@ -28,8 +27,8 @@ function ProjectCard({ img, link, name, brief }) {
 }
 
 export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'My top projects',
+  title: "Projects",
+  description: "My top projects",
 };
 
 export default function Page() {
@@ -40,38 +39,38 @@ export default function Page() {
       </h1>
       <div className="grid grid-cols-1 grid-rows-auto sm:grid-cols-2 gap-4 mb-4">
         <ProjectCard
-          img={'/images/ecommerce.png'}
-          link={'https://github.com/tanavposwal/ecommerce-store'}
+          img={"/images/ecommerce.png"}
+          link={"https://github.com/tanavposwal/ecommerce-store"}
           name="ecommerce store"
           brief="ecommerce store w/ NextJS + Prisma + Google Auth + stripe payment wall."
         />
         <ProjectCard
-          img={'/images/anime.png'}
-          link={'https://animes-eta.vercel.app/'}
+          img={"/images/anime.png"}
+          link={"https://animes-eta.vercel.app/"}
           name="anime vault"
           brief="anime netflix via open api. Next JS infinite scroll"
         />
         <ProjectCard
-          img={'/images/x-clone.png'}
-          link={'https://myspace-pi-six.vercel.app/'}
+          img={"/images/x-clone.png"}
+          link={"https://myspace-pi-six.vercel.app/"}
           name="X Clone"
           brief="Fullstack twitter clone in Prisma + NextJS + ShadCN."
         />
         <ProjectCard
-          img={'/images/chess-app.png'}
-          link={'https://github.com/tanavposwal/chess'}
+          img={"/images/chess-app.png"}
+          link={"https://github.com/tanavposwal/chess"}
           name="Multiplayer Chess"
           brief="Chess game with WS and google auth, game saving"
         />
         <ProjectCard
-          img={'/images/promptopia.png'}
-          link={'https://promptopia-snowy.vercel.app/'}
+          img={"/images/promptopia.png"}
+          link={"https://promptopia-snowy.vercel.app/"}
           name="Promptopia"
           brief="Open source community for prompt sharing"
         />
         <ProjectCard
-          img={'/images/groove.png'}
-          link={'https://groove-next.vercel.app/'}
+          img={"/images/groove.png"}
+          link={"https://groove-next.vercel.app/"}
           name="groove nest"
           brief="music social for colaborated music listening"
         />
@@ -80,8 +79,7 @@ export default function Page() {
         <a
           href="https://github.com/tanavposwal"
           target="_blank"
-          className="flex w-full border p-3 border-neutral-700 text-neutral-300 hover:border-neutral-500 hover:ring-4 ring-white/15 transition items-center justify-center gap-3 rounded"
-        >
+          className="flex w-full border p-3 border-neutral-700 text-neutral-300 hover:border-neutral-500 hover:ring-4 ring-white/15 transition items-center justify-center gap-3 rounded">
           <SiGithub /> more on github
         </a>
       </div>

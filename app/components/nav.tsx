@@ -1,46 +1,41 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 const navItems = {
-  '/': {
-    name: 'me',
+  "/": {
+    name: "me",
   },
-  '/blog': {
-    name: 'blogs',
+  "/blog": {
+    name: "blogs",
   },
-  '/projects': {
-    name: 'projects',
+  "/projects": {
+    name: "projects",
   },
 };
 
 export function Navbar() {
   return (
-    <aside className="-ml-[8px] mt-6 mb-6 tracking-tight">
-      <div className="lg:sticky lg:top-20">
-        <nav
-          className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
-          id="nav"
-        >
-          <div className="flex flex-row space-x-0 pr-10">
-            {Object.entries(navItems).map(([path, { name }]) => {
-              return (
-                <Link
-                  key={path}
-                  href={path}
-                  className="transition-colors text-neutral-500 hover:text-white flex align-middle relative py-1 px-2 group flex-col items-center justify-center"
-                >
-                  {name}
-                </Link>
-              );
-            })}
-            {/* <a
+    <div className="fixed top-0 z-10 w-full h-16 bg-black/70 backdrop-blur-md">
+      <nav
+        className="flex animate-in h-full fade-in-5 md:overflow-auto scroll-pr-6 md:relative flex-auto max-w-screen-md mx-auto md:px-0">
+        <div className="flex items-center justify-start w-full h-full">
+          {Object.entries(navItems).map(([path, { name }]) => {
+            return (
+              <Link
+                key={path}
+                href={path}
+                className="transition-colors text-neutral-500 hover:text-white flex align-middle relative py-1 px-2 group flex-col items-center justify-center">
+                {name}
+              </Link>
+            );
+          })}
+          {/* <a
               href="http://docs.google.com/document/d/1rOTy341rTIquz2SzYpTs7ouaR88VzCi886iT0IEGOKk/export?format=pdf"
               className="transition-colors text-neutral-500 hover:text-white flex align-middle relative py-1 px-2 group flex-col items-center justify-center"
             >
               resume
             </a> */}
-          </div>
-        </nav>
-      </div>
-    </aside>
+        </div>
+      </nav>
+    </div>
   );
 }

@@ -1,7 +1,6 @@
 ---
-title: 'my first post'
-date: '2024-12-27'
-discription: 'tanav`s first on this website.'
+title: "my first post"
+date: "2024-12-27"
 ---
 
 # Hi there! 👋
