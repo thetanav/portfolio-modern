@@ -7,7 +7,7 @@ function ProjectCard({ img, link, name, brief }) {
       <a
         href={link}
         target="_blank"
-        className="flex w-full items-center justify-between rounded border  border-neutral-700 bg-neutral-900 hover:border-neutral-400 hover:ring-4 active:ring-4 ring-white/15 transition overflow-hidden">
+        className="flex w-full items-center justify-between rounded-lg border-2 border-text hover:border-dark hover:scale-105 hover:shadow-xl hover:shadow-primary transition overflow-hidden bg-background">
         <div className="flex flex-col gap-3">
           <div className="w-full h-52 flex items-center justify-center overflow-hidden">
             <img
@@ -17,8 +17,8 @@ function ProjectCard({ img, link, name, brief }) {
             />
           </div>
           <div className="flex flex-col m-2 ml-3">
-            <p className="font-semibold text-neutral-100">{name}</p>
-            <p className="md:text-md text-sm text-neutral-400">{brief}</p>
+            <p className="font-semibold text-dark">{name}</p>
+            <p className="md:text-md text-sm text-text">{brief}</p>
           </div>
         </div>
       </a>
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <section className="animate-entry">
-      <h1 className="font-bold text-2xl mb-8 tracking-tighter">
+      <h1 className="font-bold text-2xl mb-5 mt-4 tracking-tighter text-dark">
         Projects 🚀🚀
       </h1>
       <div className="grid grid-cols-1 grid-rows-auto sm:grid-cols-2 gap-4 mb-4">
@@ -85,7 +85,7 @@ export default function Page() {
         <a
           href="https://github.com/tanavposwal"
           target="_blank"
-          className="flex w-full border p-3 border-neutral-700 text-neutral-300 hover:border-neutral-500 hover:ring-4 ring-white/15 transition items-center justify-center gap-3 rounded">
+          className="flex w-full p-3 text-text hover:border-dark transition items-center justify-center gap-3 rounded-lg">
           <SiGithub /> more on github
         </a>
       </div>

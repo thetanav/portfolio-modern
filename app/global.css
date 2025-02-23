@@ -1,18 +1,37 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin '@tailwindcss/typography';
+@plugin 'tailwindcss-animate';
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@theme {
+  --color-accent: #cfdbd5ff;
+  --color-background: #e8eddfff;
+  --color-primary: #f5cb5cff;
+  --color-dark: #242423ff;
+  --color-text: #333533ff;
+}
 
 .rounded {
   border-radius: 0.8rem;
 }
 
 ::selection {
-  @apply bg-white/20;
+  @apply bg-yellow-300/40;
 }
 
 body {
-  @apply bg-black text-white;
-  font-family: var(--font-sora);
+  @apply bg-background text-text;
+  font-family: var(--font-custom);
 }
 
 * {

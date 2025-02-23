@@ -14,14 +14,17 @@ const navItems = {
 
 export function Navbar() {
   return (
-    <nav className="fixed top-0 z-10 w-full h-12 bg-black/70 backdrop-blur-md animate-in fade-in-5 flex items-center justify-center">
-      <div className="flex w-full h-full">
+    <nav className="animate-in fade-in-5 flex items-center justify-between border-b border-black/30 px-4 py-4">
+      <Link href={"/"}>
+        <div className="w-4 h-4 bg-gradient-to-br hover:rotate-45 from-primary to-accent rounded-full transition-tranform" />
+      </Link>
+      <div className="flex gap-3">
         {Object.entries(navItems).map(([path, { name }]) => {
           return (
             <Link
               key={path}
               href={path}
-              className="transition-colors text-neutral-500 hover:text-white flex align-middle relative py-1 px-2 group flex-col text-sm items-center justify-center">
+              className="transition-colors hover:text-dark flex align-middle relative group flex-col text-sm items-center justify-center font-semibold">
               {name}
             </Link>
           );

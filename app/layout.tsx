@@ -1,14 +1,14 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { Sora } from "next/font/google";
+import { Atkinson_Hyperlegible } from "next/font/google";
 import { Navbar } from "./components/nav";
 import Image from "next/image";
 import NextTopLoader from "nextjs-toploader";
 
-const sora = Sora({
+const font = Atkinson_Hyperlegible({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--font-sora",
+  variable: "--font-custom",
 });
 
 export const metadata: Metadata = {
@@ -47,17 +47,17 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={
-          "min-h-screen antialiased md:mx-8 sm:mx-8 mx-6 dark " + sora.className
+          "min-h-screen antialiased max-w-xl mx-auto " + font.className
         }>
-        <NextTopLoader showSpinner={false} color="#fff" />
+        <NextTopLoader showSpinner={false} color="#242423" />
         <Navbar />
-        <main className="flex-auto max-w-screen-md mx-auto flex flex-col px-2 md:px-0 min-h-[80vh] mt-16">
+        <main className="flex-auto flex flex-col px-4 min-h-[80vh]">
           {children}
         </main>
         <footer className="w-full flex items-center justify-center divide-x-2 divide-neutral-700 select-none">
           <Image
             src="/images/initial.png"
-            className="opacity-30 select-none"
+            className="opacity-50 select-none invert brightness-100"
             draggable={false}
             width={150}
             height={150}

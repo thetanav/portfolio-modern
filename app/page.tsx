@@ -30,17 +30,17 @@ function ChannelLink({ img, link, name, subimg, count }) {
         target="_blank"
         className="flex w-full items-center justify-between">
         <div className="flex items-center space-x-3">
-          <div className="relative h-16">
-            <div className="w-16 h-16 bg-neutral-700 rounded-full overflow-hidden">
+          <div className="relative h-12">
+            <div className="w-12 h-12 rounded-xl overflow-hidden">
               <img alt={name} src={img} className="w-full h-full" />
             </div>
-            <div className="relative -right-9 -top-7 inline-flex h-8 w-8 items-center rounded-full border-2 border-black">
+            <div className="relative -right-7 -top-5 inline-flex h-5 w-5 items-center rounded-full">
               <img src={subimg} />
             </div>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium text-neutral-300">{name}</p>
-            <p className="text-sm font-medium text-neutral-500">{count}</p>
+            <p className="font-semibold text-dark">{name}</p>
+            <p className="text-sm font-medium text-text">{count}</p>
           </div>
         </div>
         <div className="w-fit rounded-full relative right-3 -translate-x-1 translate-y-1 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
@@ -58,6 +58,10 @@ function ArrowIcon() {
       height="12"
       viewBox="0 0 12 12"
       fill="none"
+      stroke="currentColor"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
@@ -67,22 +71,23 @@ function ArrowIcon() {
   );
 }
 
+function LangCard({ comp }) {
+  return (
+    <div className="flex items-center justify-center rounded-lg border border-text w-10 h-10 group">
+      <span className="text-xl opacity-70 transition-opacity">{comp}</span>
+    </div>
+  );
+}
+
 export default function Page() {
   return (
     <section className="animate-entry">
-      <h1 className="sm:text-4xl text-3xl h-fit mb-8 tracking-tighter flex gap-2 mt-6">
-        <span className={"h-fit"}>
-          hey, I'm <span className="font-black">Tanav</span>
+      <h1 className="sm:text-4xl text-3xl h-fit mb-4 tracking flex gap-2 mt-5">
+        <span className="h-fit font-black text-dark drop-shadow-[3px_3px_0px_theme(colors.primary)] tracking-tight select-none">
+          Tanav Poswal
         </span>
-        <Image
-          className="sm:scale-100 scale-75 ml-2"
-          width={37}
-          height={37}
-          src="/images/wave.png"
-          alt="wave hand"
-        />
       </h1>
-      <p className="prose prose-invert">
+      <p className="text-text">
         I'm a full-stack developer and machine learning enthusiast, an optimist,
         and highly focused. Passionate about building scalable web applications,
         solving complex problems, and constantly pushing my limits in coding and
@@ -126,7 +131,7 @@ export default function Page() {
         />
       </div>
 
-      <div className="prose prose-invert">
+      <div className="text-text">
         <p>technologies I have been using since 2023,</p>
       </div>
 
@@ -162,12 +167,12 @@ export default function Page() {
           <LangCard comp={<SiDocker />} />
         </div>
       </div>
-      <div className="prose prose-invert">
+      <div className="text-text">
         <p>
           I've worked with some opensource projects, on{" "}
           <a
             href="https://github.com/tanavposwal"
-            className="text-neutral-500 hover:text-white transition no-underline">
+            className="hover:text-dark transition font-semibold no-underline">
             github here
           </a>
         </p>
@@ -175,7 +180,7 @@ export default function Page() {
       <ul className="font-sm mt-8 mb-6 flex flex-col space-x-0 space-y-2  md:flex-row md:space-x-4 md:space-y-0 text-neutral-500">
         <li>
           <a
-            className="flex items-center transition-all hover:text-white"
+            className="flex font-semibold items-center transition-all w-fit hover:text-dark"
             rel="noopener noreferrer"
             target="_blank"
             href="mailto:tanavposwal939@gmail.com">
@@ -185,7 +190,7 @@ export default function Page() {
         </li>
         <li>
           <a
-            className="flex items-center transition-all hover:text-white"
+            className="flex font-semibold items-center transition-all w-fit hover:text-dark"
             rel="noopener noreferrer"
             target="_blank"
             href="https://www.linkedin.com/in/tanav-poswal/">
@@ -195,15 +200,5 @@ export default function Page() {
         </li>
       </ul>
     </section>
-  );
-}
-
-function LangCard({ comp }) {
-  return (
-    <div className="flex items-center justify-center rounded border border-neutral-700 bg-neutral-800 w-10 h-10 group">
-      <span className="text-xl opacity-50 group-hover:opacity-90 transition-opacity">
-        {comp}
-      </span>
-    </div>
   );
 }
