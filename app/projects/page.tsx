@@ -39,16 +39,22 @@ export default function Page() {
       </h1>
       <div className="grid grid-cols-1 grid-rows-auto sm:grid-cols-2 gap-4 mb-4">
         <ProjectCard
-          img={"/images/ecommerce.png"}
-          link={"https://github.com/tanavposwal/ecommerce-store"}
-          name="ecommerce store"
-          brief="ecommerce store w/ NextJS + Prisma + Google Auth + stripe payment wall."
+          img={"/images/neura.png"}
+          link={"https://neura-chat.vercel.app/"}
+          name="neura ai chat"
+          brief="fastest ai chat app with gemini-2-flash."
         />
         <ProjectCard
           img={"/images/anime.png"}
           link={"https://animes-eta.vercel.app/"}
           name="anime vault"
           brief="anime netflix via open api. Next JS infinite scroll"
+        />
+        <ProjectCard
+          img={"/images/ecommerce.png"}
+          link={"https://github.com/tanavposwal/ecommerce-store"}
+          name="ecommerce store"
+          brief="ecommerce store w/ NextJS + Prisma + Google Auth + stripe payment wall."
         />
         <ProjectCard
           img={"/images/x-clone.png"}

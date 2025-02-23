@@ -63,7 +63,6 @@ export default function RootLayout({
             height={150}
             alt="signature"
           />
-          <p className="text-xs text-neutral-500 pl-3">made with ❤️ by tanav</p>
         </footer>
       </body>
     </html>
