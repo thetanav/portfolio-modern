@@ -8,7 +8,7 @@ import { GeistSans } from "geist/font/sans";
 export const metadata: Metadata = {
   title: {
     default: "Tanav Poswal",
-    template: "%s | Tanav Poswal",
+    template: "Tanav Poswal • %s",
   },
   description: "Developer, problem solver and creator.",
   robots: {
