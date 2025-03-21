@@ -14,11 +14,11 @@
 }
 
 @theme {
-  --color-accent: #cfdbd5ff;
-  --color-background: #e8eddfff;
-  --color-primary: #f5cb5cff;
-  --color-dark: #242423ff;
-  --color-text: #333533ff;
+  --color-100: #caf0f8;
+  --color-200: #90e0ef;
+  --color-300: #00b4d8;
+  --color-400: #0077b6;
+  --color-500: #03045e;
 }
 
 .rounded {
@@ -26,16 +26,12 @@
 }
 
 ::selection {
-  @apply bg-yellow-300/40;
+  @apply bg-400/30 text-500;
 }
 
 body {
-  @apply bg-background text-text;
+  @apply bg-100/30 text-black;
   font-family: var(--font-custom);
-}
-
-* {
-  @apply bg-transparent;
 }
 
 .animate-entry {

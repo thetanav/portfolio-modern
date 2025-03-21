@@ -1,15 +1,9 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { Atkinson_Hyperlegible } from "next/font/google";
 import { Navbar } from "./components/nav";
 import Image from "next/image";
 import NextTopLoader from "nextjs-toploader";
-
-const font = Atkinson_Hyperlegible({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-custom",
-});
+import { GeistSans } from "geist/font/sans";
 
 export const metadata: Metadata = {
   title: {
@@ -47,7 +41,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={
-          "min-h-screen antialiased max-w-xl mx-auto " + font.className
+          "min-h-screen antialiased max-w-xl mx-auto " + GeistSans.className
         }>
         <NextTopLoader showSpinner={false} color="#242423" />
         <Navbar />

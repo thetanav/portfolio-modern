@@ -1,9 +1,6 @@
 import Link from "next/link";
 
 const navItems = {
-  "/": {
-    name: "me",
-  },
   "/blog": {
     name: "blogs",
   },
@@ -14,9 +11,9 @@ const navItems = {
 
 export function Navbar() {
   return (
-    <nav className="animate-in fade-in-5 flex items-center justify-between border-b border-black/30 px-4 py-4">
+    <nav className="animate-in fade-in-5 flex items-center justify-between px-4 py-4">
       <Link href={"/"}>
-        <div className="w-4 h-4 bg-gradient-to-br hover:rotate-45 from-primary to-accent rounded-full transition-tranform" />
+        <div className="w-4 h-4 bg-gradient-to-br hover:rotate-45 from-500 to-200 rounded-full transition-tranform" />
       </Link>
       <div className="flex gap-3">
         {Object.entries(navItems).map(([path, { name }]) => {
@@ -24,7 +21,7 @@ export function Navbar() {
             <Link
               key={path}
               href={path}
-              className="transition-colors hover:text-dark flex align-middle relative group flex-col text-sm items-center justify-center font-semibold">
+              className="transition-colors hover:text-black text-black/60 flex align-middle relative group flex-col text-sm items-center justify-center">
               {name}
             </Link>
           );

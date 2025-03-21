@@ -12,26 +12,22 @@ export default async function Page() {
 
   return (
     <section className="animate-entry">
-      <h1 className="font-bold text-2xl mb-5 mt-4 tracking-tighter">
+      <h1 className="font-bold text-500 text-2xl mb-5 mt-4 tracking-tighter">
         Blogs 💬
       </h1>
-      <ol className="w-full h-full">
+      <div className="w-full h-full select-none flex flex-col gap-2">
         {posts.map((post) => (
-          <li className="list-decimal ml-3 pl-1 text-text text-sm w-full">
-            <Link
-              className="group flex gap-2 items-center justify-start"
-              href={`/blog/${post.slug}`}
-              key={post.slug}>
-              <h3 className="text-lg font-bold capitalize text-text group-hover:text-dark transition-colors">
-                {post.title}
-              </h3>
-              <p className="text-xs text-text group-hover:text-dark transition-colors">
-                {post.date.toDateString().slice(4)}
-              </p>
-            </Link>
-          </li>
+          <Link
+            className="text-black/60 w-full h-full flex flex-col p-2 hover:bg-200/60 hover:scale-105 transition-all rounded-xl group"
+            href={`/blog/${post.slug}`}
+            key={post.slug}>
+            <h3 className="text-lg -mt-1 font-semibold capitalize group-hover:text-500 transition-colors">
+              {post.title}
+            </h3>
+            <p className="text-xs">{post.date.toDateString().slice(4)}</p>
+          </Link>
         ))}
-      </ol>
+      </div>
     </section>
   );
 }
