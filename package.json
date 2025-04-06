@@ -18,6 +18,8 @@
     "next": "^14.2.5",
     "nextjs-toploader": "^3.7.15",
     "postcss": "^8.4.35",
+    "posthog-js": "^1.234.9",
+    "posthog-node": "^4.11.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^5.2.0",
