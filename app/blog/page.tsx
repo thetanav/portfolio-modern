@@ -1,6 +1,9 @@
 import getPostMetadata from "lib/posts";
 import { Metadata } from "next";
+import { Instrument_Serif } from "next/font/google";
 import Link from "next/link";
+
+const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Blogs",
@@ -12,7 +15,8 @@ export default async function Page() {
 
   return (
     <section className="animate-entry">
-      <h1 className="font-bold text-500 text-2xl mb-5 mt-4 tracking-tighter">
+      <h1
+        className={"font-black text-500 text-4xl mb-5 mt-4 " + serif.className}>
         Blogs 💬
       </h1>
       <div className="w-full h-full select-none flex flex-col gap-2">

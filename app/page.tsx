@@ -34,15 +34,17 @@ function ChannelLink({ img, link, name, subimg, count }) {
         target="_blank"
         className="flex w-full items-center justify-between">
         <div className="flex items-center space-x-3">
-          <div className="relative h-12">
-            <div className="w-12 h-12 rounded-xl overflow-hidden">
-              <img
+          <div className="relative h-16">
+            <div className="w-16 h-16 rounded-xl overflow-hidden">
+              <Image
                 alt={name}
                 src={img}
+                width={100}
+                height={100}
                 className="w-full h-full saturate-0 group-hover:saturate-100 transition-all"
               />
             </div>
-            <div className="relative -right-7 -top-5 inline-flex h-5 w-5 items-center rounded-full">
+            <div className="absolute right-0 bottom-0 inline-flex h-6 w-6 items-center rounded-full">
               <img
                 src={subimg}
                 className="saturate-0 group-hover:saturate-100 transition-all"
@@ -75,7 +77,7 @@ function LangCard({ comp }) {
 export default function Page() {
   return (
     <section className="animate-entry">
-      <h1 className="sm:text-4xl text-3xl h-fit mb-4 tracking flex gap-2 mt-5">
+      <h1 className="sm:text-5xl text-4xl h-fit mb-4 tracking flex gap-2 mt-5">
         <span className={`h-fit font-black text-500 ${serif.className}`}>
           Tanav Poswal
         </span>
@@ -90,9 +92,7 @@ export default function Page() {
 
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
-          img={
-            "https://media.licdn.com/dms/image/v2/D5603AQGTDRaajIqDUA/profile-displayphoto-shrink_400_400/B56ZSCw9qWGsAk-/0/1737360663346?e=1746057600&v=beta&t=nPRRb7l4tjQOTGixLPUWTfnaoJ9-nj4nKnGvTiFmh7k"
-          }
+          img={"/images/linkedin.jpg"}
           name="Get In Touch !"
           link="https://www.linkedin.com/in/tanav-poswal/"
           subimg={
@@ -101,9 +101,7 @@ export default function Page() {
           count={"500+"}
         />
         <ChannelLink
-          img={
-            "https://pbs.twimg.com/profile_images/1863427870573690880/U3S8Tv5W_400x400.jpg"
-          }
+          img={"/images/x.jpg"}
           name="Twitter"
           link="https://x.com/tanavindev"
           subimg={

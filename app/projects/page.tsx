@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import { Instrument_Serif } from "next/font/google";
 import { SiGithub } from "react-icons/si";
+
+const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
 function ProjectCard({ img, link, name, brief }) {
   return (
@@ -32,10 +35,17 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <section className="animate-entry">
-      <h1 className="font-bold text-2xl mb-5 mt-4 tracking-tighter text-500">
+      <h1
+        className={"font-black text-4xl mb-5 mt-4 text-500 " + serif.className}>
         Web Projects 🚀🚀
       </h1>
       <div className="flex flex-col gap-3 mb-4">
+        <ProjectCard
+          img={"/images/chess-app.png"}
+          link={"https://github.com/tanavposwal/chess"}
+          name="multiplayer chess"
+          brief="mulitplayer chess game with websockets."
+        />
         <ProjectCard
           img={"/images/exp.png"}
           link={"https://exp-zeta.vercel.app/"}

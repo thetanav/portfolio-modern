@@ -3,6 +3,9 @@ import fs from "fs";
 import matter from "gray-matter";
 import getPostMetadata from "lib/posts";
 import CodeBlock from "app/components/codeblock";
+import { Instrument_Serif } from "next/font/google";
+
+const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
 function getPostContent(slug) {
   const folder = "posts/";
@@ -33,7 +36,11 @@ export default async function Page(props) {
   return (
     <section className="animate-entry">
       <header className="mb-6 py-6 border-b border-text">
-        <h1 className="text-2xl sm:text-3xl font-bold text-dark my-1 capitalize">
+        <h1
+          className={
+            "text-4xl sm:text-5xl font-bold text-dark my-1 capitalize " +
+            serif.className
+          }>
           {post.data.title}
         </h1>
         <p className="text-sm text-black/60 my-1">~ tanav @ {post.data.date}</p>

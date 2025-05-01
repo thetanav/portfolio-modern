@@ -30,7 +30,7 @@
 }
 
 body {
-  @apply bg-100/30 text-black;
+  @apply bg-white text-black;
   font-family: var(--font-custom);
 }
 
