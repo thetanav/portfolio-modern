@@ -46,7 +46,7 @@ export default async function Page(props) {
         <p className="text-sm text-black/60 my-1">on {post.data.date}</p>
       </header>
       <main>
-        <article className="prose text-sm text-black/60 prose-headings:text-black lg:prose-lg mx-auto text-text">
+        <article className="prose text-sm text-black/60 prose-headings:text-black lg:prose-lg mx-auto text-text blog-content">
           <Markdown
             options={{
               overrides: {

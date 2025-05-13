@@ -27,7 +27,7 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
 const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
-function ChannelLink({ img, link, name, subimg, count }) {
+function ChannelLink({ img, link, name, count }) {
   return (
     <div className="group flex w-full">
       <a
@@ -76,37 +76,29 @@ function LangCard({ comp }) {
 export default function Page() {
   return (
     <section className="animate-entry">
-      <h1 className="sm:text-5xl text-4xl h-fit mb-4 tracking flex gap-2 mt-5">
+      <h1 className="sm:text-4xl text-3xl h-fit mb-4 tracking flex gap-2 mt-5">
         <span className={`h-fit font-black text-500 ${serif.className}`}>
           Tanav Poswal
         </span>
       </h1>
       <p className="text-black/60">
-        I'm a full-stack developer and machine learning enthusiast driven by a
-        passion for innovation. From building scalable web applications to
-        exploring the cutting edge of AI and ML, I thrive on solving complex
-        problems and pushing the boundaries of what's possible. Let's build
-        something amazing together!
+        I'm a full-stack developer and ML enthusiast passionate about building
+        scalable web apps and solving real-world problems with AI. I love
+        pushing technical boundaries and collaborating on meaningful projects.
       </p>
 
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
           img={"/images/linkedin.jpg"}
-          name="Get In Touch !"
-          link="https://www.linkedin.com/in/tanav-poswal/"
-          subimg={
-            "https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"
-          }
-          count={"500+"}
+          name="Get In Touch"
+          link="https://cal.com/tanavposwal"
+          count={"schedule a call"}
         />
         <ChannelLink
           img={"/images/x.jpg"}
           name="Twitter"
           link="https://x.com/tanavindev"
-          subimg={
-            "https://freelogopng.com/images/all_img/1690643640twitter-x-icon-png.png"
-          }
-          count={"100+"}
+          count={"150+"}
         />
       </div>
 
@@ -156,14 +148,19 @@ export default function Page() {
           </a>
         </p>
       </div>
+
+      <div className="prose text-black/60 text-sm mt-8 mb-6">
+        #Let’s Build Together #BuildInPublic #Opensource
+      </div>
+
       <div className="font-sm mt-8 mb-6 flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-4 md:space-y-0 text-black/60">
+        <ExternalLink
+          text={"linkedin"}
+          href={"https://linkedin.com/in/tanav-poswal"}
+        />
         <ExternalLink
           text={"mail me"}
           href={"mailto:tanavposwal939@gmail.com"}
-        />
-        <ExternalLink
-          text={"get in touch"}
-          href={"https://www.linkedin.com/in/tanav-poswal/"}
         />
       </div>
     </section>

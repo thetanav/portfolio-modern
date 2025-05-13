@@ -33,7 +33,7 @@ export default async function Page() {
               {post.date.toDateString().slice(4)}
             </p>
             <div className="absolute right-0 top-0 bottom-0 flex items-center justify-center w-16">
-              <ArrowRightIcon className="w-5 h-5 group-hover:text-black -translate-x-2 group-hover:translate-x-0 transition-transform delay-100 ease-in-out" />
+              <ArrowRightIcon className="w-5 h-5 group-hover:text-black -translate-x-2 group-hover:translate-x-0 transition-transform delay-100" />
             </div>
           </Link>
         ))}

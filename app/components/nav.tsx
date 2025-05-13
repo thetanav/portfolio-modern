@@ -1,7 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const navItems = {
+  "/": {
+    name: "home",
+  },
   "/blog": {
     name: "blogs",
   },
@@ -13,24 +15,14 @@ const navItems = {
 export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/40 backdrop-blur-lg">
-      <nav className="max-w-xl mx-auto flex items-center justify-between px-4 py-4 h-14 overflow-hidden">
-        <Link href={"/"}>
-          <Image
-            src="/images/initial.png"
-            className="opacity-50 hover:opacity-100 transition-opacity select-none invert brightness-100 content-center"
-            draggable={false}
-            width={120}
-            height={120}
-            alt="signature"
-          />
-        </Link>
+      <nav className="max-w-xl mx-auto flex items-center justify-end px-4 py-4 h-14 overflow-hidden">
         <div className="flex gap-3">
           {Object.entries(navItems).map(([path, { name }]) => {
             return (
               <Link
                 key={path}
                 href={path}
-                className="transition-colors hover:text-black text-black/60 flex align-middle relative group flex-col text-sm items-center justify-center">
+                className="transition-colors hover:text-black text-black/60 flex align-middle relative group flex-col text-sm items-center justify-center ">
                 {name}
               </Link>
             );

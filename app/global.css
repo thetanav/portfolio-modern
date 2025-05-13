@@ -36,3 +36,7 @@ code {
   padding: 0;
   margin: 0;
 }
+
+.blog-content img {
+  @apply hover:scale-110 transition-all rounded shadow-md;
+}
