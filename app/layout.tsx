@@ -40,23 +40,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={"min-h-screen antialiased max-w-xl mx-auto " + GeistSans.className}>
+      <body
+        className={
+          "min-screen antialiased max-w-xl mx-auto " + GeistSans.className
+        }>
         <PostHogProvider>
           <NextTopLoader showSpinner={false} color="#242423" />
           <Navbar />
-          <main className="flex-auto flex flex-col px-4 min-h-[80vh]">
+          <main className="flex-1 flex flex-col px-4 mt-14 mb-14">
             {children}
           </main>
-          <footer className="w-full flex items-center justify-center divide-x-2 divide-neutral-700 select-none">
-            <Image
-              src="/images/initial.png"
-              className="opacity-50 select-none invert brightness-100"
-              draggable={false}
-              width={150}
-              height={150}
-              alt="signature"
-            />
-          </footer>
         </PostHogProvider>
       </body>
     </html>

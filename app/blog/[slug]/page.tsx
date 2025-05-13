@@ -35,7 +35,7 @@ export default async function Page(props) {
 
   return (
     <section className="animate-entry">
-      <header className="mb-6 py-6 border-b border-text">
+      <header className="mb-6 py-6 border-b border-black/20">
         <h1
           className={
             "text-4xl sm:text-5xl font-bold text-dark my-1 capitalize " +
@@ -43,7 +43,7 @@ export default async function Page(props) {
           }>
           {post.data.title}
         </h1>
-        <p className="text-sm text-black/60 my-1">~ tanav @ {post.data.date}</p>
+        <p className="text-sm text-black/60 my-1">on {post.data.date}</p>
       </header>
       <main>
         <article className="prose text-sm text-black/60 prose-headings:text-black lg:prose-lg mx-auto text-text">

@@ -1,17 +1,6 @@
 @import "tailwindcss";
-
 @plugin '@tailwindcss/typography';
 @plugin 'tailwindcss-animate';
-
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-}
 
 @theme {
   --color-100: #caf0f8;
@@ -26,7 +15,11 @@
 }
 
 ::selection {
-  @apply bg-400/30 text-500;
+  @apply bg-400/20 text-500;
+}
+
+a {
+  @apply font-medium;
 }
 
 body {

@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 import type { Metadata } from "next";
 import { Instrument_Serif } from "next/font/google";
 import { SiGithub } from "react-icons/si";
@@ -10,7 +11,7 @@ function ProjectCard({ img, link, name, brief }) {
       <a
         href={link}
         target="_blank"
-        className="text-black/60 w-full h-full flex p-2 hover:bg-200/60 hover:scale-105 transition-all rounded-xl group">
+        className="text-black/60 w-full h-full flex p-2 hover:bg-400/20 hover:scale-105 transition-all rounded-xl group relative">
         <img
           alt={name}
           src={img}
@@ -21,6 +22,9 @@ function ProjectCard({ img, link, name, brief }) {
             {name}
           </p>
           <p className="md:text-md text-xs text-text">{brief}</p>
+        </div>
+        <div className="absolute right-0 top-0 bottom-0 flex items-center justify-center w-16">
+          <ArrowRightIcon className="w-5 h-5 group-hover:text-black -translate-x-2 group-hover:translate-x-0 transition-transform delay-100" />
         </div>
       </a>
     </div>

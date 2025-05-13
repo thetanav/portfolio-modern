@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 import getPostMetadata from "lib/posts";
 import { Metadata } from "next";
 import { Instrument_Serif } from "next/font/google";
@@ -22,13 +23,18 @@ export default async function Page() {
       <div className="w-full h-full select-none flex flex-col gap-2">
         {posts.map((post) => (
           <Link
-            className="text-black/60 w-full h-full flex flex-col p-2 hover:bg-200/60 hover:scale-105 transition-all rounded-xl group"
+            className="text-black/60 w-full h-full flex flex-col p-4 hover:bg-400/20 hover:scale-105 transition-all rounded-xl group relative"
             href={`/blog/${post.slug}`}
             key={post.slug}>
-            <h3 className="text-lg -mt-1 font-semibold capitalize group-hover:text-500 transition-colors">
+            <h3 className="text-md -mt-1 capitalize group-hover:text-500 transition-colors">
               {post.title}
             </h3>
-            <p className="text-xs">{post.date.toDateString().slice(4)}</p>
+            <p className="md:text-md text-xs text-text">
+              {post.date.toDateString().slice(4)}
+            </p>
+            <div className="absolute right-0 top-0 bottom-0 flex items-center justify-center w-16">
+              <ArrowRightIcon className="w-5 h-5 group-hover:text-black -translate-x-2 group-hover:translate-x-0 transition-transform delay-100 ease-in-out" />
+            </div>
           </Link>
         ))}
       </div>

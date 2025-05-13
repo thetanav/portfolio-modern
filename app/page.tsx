@@ -21,6 +21,7 @@ import {
   SiPlotly,
   SiPytorch,
   SiKubernetes,
+  SiAwslambda,
 } from "react-icons/si";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
@@ -33,33 +34,31 @@ function ChannelLink({ img, link, name, subimg, count }) {
         href={link}
         target="_blank"
         className="flex w-full items-center justify-between">
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-5">
           <div className="relative h-16">
-            <div className="w-16 h-16 rounded-xl overflow-hidden">
+            <div className="w-16 h-16 relative">
               <Image
                 alt={name}
                 src={img}
                 width={100}
                 height={100}
-                className="w-full h-full saturate-0 group-hover:saturate-100 transition-all"
+                className="w-full h-full rounded-2xl z-50"
               />
-            </div>
-            <div className="absolute right-0 bottom-0 inline-flex h-6 w-6 items-center rounded-full">
-              <img
-                src={subimg}
-                className="saturate-0 group-hover:saturate-100 transition-all"
+              <Image
+                alt={name}
+                src={img}
+                width={100}
+                height={100}
+                className="w-full h-full absolute top-0 bottom-0 blur-lg scale-105 rounded-2xl -z-10 opacity-0 group-hover:opacity-80 transition-opacity ease-in"
               />
             </div>
           </div>
           <div className="flex flex-col">
-            <p className="font-semibold group-hover:text-500 transition-colors">
+            <p className="font-semibold group-hover:text-500 group-hover:font-bold transition-all">
               {name}
             </p>
             <p className="text-sm font-medium text-black/60">{count}</p>
           </div>
-        </div>
-        <div className="w-fit rounded-full">
-          <ArrowTopRightIcon />
         </div>
       </a>
     </div>
@@ -144,6 +143,7 @@ export default function Page() {
           <LangCard comp={<SiRust />} />
           <LangCard comp={<SiKubernetes />} />
           <LangCard comp={<SiDocker />} />
+          <LangCard comp={<SiAwslambda />} />
         </div>
       </div>
       <div className="text-black/60">
@@ -151,33 +151,34 @@ export default function Page() {
           I've worked with some opensource projects, on{" "}
           <a
             href="https://github.com/tanavposwal"
-            className="hover:text-500 text-black transition no-underline">
+            className="hover:text-500 text-black transition-all">
             github here
           </a>
         </p>
       </div>
-      <ul className="font-sm mt-8 mb-6 flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-4 md:space-y-0 text-black/60">
-        <li>
-          <a
-            className="flex items-center transition-all w-fit hover:text-500"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="mailto:tanavposwal939@gmail.com">
-            <ArrowTopRightIcon />
-            <p className="ml-2 h-7">mail me</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all w-fit hover:text-500"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://www.linkedin.com/in/tanav-poswal/">
-            <ArrowTopRightIcon />
-            <p className="ml-2 h-7">get in touch</p>
-          </a>
-        </li>
-      </ul>
+      <div className="font-sm mt-8 mb-6 flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-4 md:space-y-0 text-black/60">
+        <ExternalLink
+          text={"mail me"}
+          href={"mailto:tanavposwal939@gmail.com"}
+        />
+        <ExternalLink
+          text={"get in touch"}
+          href={"https://www.linkedin.com/in/tanav-poswal/"}
+        />
+      </div>
     </section>
   );
 }
+
+const ExternalLink = ({ text, href }: { text: string; href: string }) => {
+  return (
+    <a
+      className="flex items-center transition-all w-fit hover:text-500"
+      rel="noopener noreferrer"
+      target="_blank"
+      href={href}>
+      <ArrowTopRightIcon className="w-5- h-5" />
+      <p className="ml-2 h-7">{text}</p>
+    </a>
+  );
+};
