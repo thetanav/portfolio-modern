@@ -24,8 +24,10 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Tanav Poswal",
     card: "summary_large_image",
+    site: "@tanavindev", // Replace with your Twitter handle
+    creator: "@tanavindev", // Replace with your Twitter handle
+    images: "https://tanavindev.tech/twitter-image.png", // Absolute URL to your OG image
   },
   verification: {
     google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
