@@ -3,15 +3,15 @@ title: "Me Learning Kafka"
 date: "2025-06-07"
 ---
 
-# How I learnt Kafka
-
 !["Kafka"](https://github.com/user-attachments/assets/08fdc39c-8635-4997-bb44-9ade5e9c1dc2)
 
 ## What is Kafka
+
 Apache Kafka is an open-source distributed event streaming platform thousands of companies use for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
 Kafka is used by every company working on a large scale, for high-volume event streaming.
 
 ## Why Kafka
+
 - Scale
 - Persistence
 - Ability to replay events
@@ -35,6 +35,3 @@ Uber uses Kafka for these advantages
 ## High-level architecture of Kafka
 
 !["Kafka High Level Architecture"](https://github.com/user-attachments/assets/523318f7-e914-4d8d-b5d4-d4998b93df8b)
-
-
-

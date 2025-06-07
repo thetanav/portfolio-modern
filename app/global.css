@@ -37,6 +37,6 @@ code {
   margin: 0;
 }
 
-.blog-content img {
-  @apply hover:scale-110 transition-all rounded shadow-md;
+.blog-content li {
+  @apply marker:text-400;
 }

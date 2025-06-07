@@ -21,7 +21,7 @@ export default async function Page() {
         Blogs 💬
       </h1>
       <div className="w-full h-full select-none flex flex-col gap-2">
-        {posts.map((post) => (
+        {posts.reverse().map((post) => (
           <Link
             className="text-black/60 w-full h-full flex flex-col p-4 hover:bg-400/20 hover:scale-105 transition-all rounded-xl group relative"
             href={`/blog/${post.slug}`}

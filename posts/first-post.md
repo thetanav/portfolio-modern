@@ -3,8 +3,6 @@ title: "my first post"
 date: "2024-12-27"
 ---
 
-# Hi there! 👋
-
 I'm Tanav, a tech enthusiast deeply passionate about coding, solving complex problems, and building innovative solutions. As a BTech student specializing in Artificial Intelligence and Machine Learning, I strive to explore the depths of technology, from crafting intuitive user experiences to creating impactful AI-driven applications.
 
 ![programming on laptop](https://images.unsplash.com/photo-1662116137244-b7c6fdc1ac35?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2dyYW1tZXJ8ZW58MHx8MHx8fDA%3D)

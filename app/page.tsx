@@ -22,6 +22,8 @@ import {
   SiPytorch,
   SiKubernetes,
   SiAwslambda,
+  SiApachekafka,
+  SiRedis,
 } from "react-icons/si";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
@@ -42,19 +44,19 @@ function ChannelLink({ img, link, name, count }) {
                 src={img}
                 width={100}
                 height={100}
-                className="w-full h-full rounded-2xl z-50"
+                className="w-full h-full rounded-xl z-50 group-hover:-rotate-6 transition-transform"
               />
               <Image
                 alt={name}
                 src={img}
                 width={100}
                 height={100}
-                className="w-full h-full absolute top-0 bottom-0 blur-lg scale-105 rounded-2xl -z-10 opacity-0 group-hover:opacity-80 transition-opacity ease-in"
+                className="w-full h-full absolute top-0 bottom-0 blur-lg scale-105 rounded-xl -z-10 opacity-0 group-hover:opacity-80 transition-opacity duration-300"
               />
             </div>
           </div>
           <div className="flex flex-col">
-            <p className="font-semibold group-hover:text-500 group-hover:font-bold transition-all">
+            <p className="font-semibold group-hover:text-500 transition-all">
               {name}
             </p>
             <p className="text-sm font-medium text-black/60">{count}</p>
@@ -134,6 +136,8 @@ export default function Page() {
         <div className="flex flex-wrap gap-2 mt-2 mb-5">
           <LangCard comp={<SiRust />} />
           <LangCard comp={<SiKubernetes />} />
+          <LangCard comp={<SiRedis />} />
+          <LangCard comp={<SiApachekafka />} />
           <LangCard comp={<SiDocker />} />
           <LangCard comp={<SiAwslambda />} />
         </div>

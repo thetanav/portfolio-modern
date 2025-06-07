@@ -58,9 +58,9 @@ export default function Page() {
         />
         <ProjectCard
           img={"/images/neura.png"}
-          link={"https://neura-chat.vercel.app/"}
-          name="neura ai chat"
-          brief="fastest ai chat app with gemini-2-flash."
+          link={"https://flowcode-tnv.vercel.app/"}
+          name="ai enabled Code editor ai"
+          brief="a simple code editor on the web with ai."
         />
         <ProjectCard
           img={"/images/anime.png"}
