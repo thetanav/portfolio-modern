@@ -45,6 +45,12 @@ export default function Page() {
       </h1>
       <div className="flex flex-col gap-3 mb-4">
         <ProjectCard
+          img={"/images/tradex.png"}
+          link={"https://trading-system-theta.vercel.app/"}
+          name="trade exchange"
+          brief="real-time trading app with live order book."
+        />
+        <ProjectCard
           img={"/images/chess-app.png"}
           link={"https://github.com/tanavposwal/chess"}
           name="multiplayer chess"
@@ -66,7 +72,7 @@ export default function Page() {
           img={"/images/anime.png"}
           link={"https://animes-eta.vercel.app/"}
           name="anime vault"
-          brief="anime netflix via open api. Next JS infinite scroll"
+          brief="anime netflix via open api. Next JS infinite scroll."
         />
         <ProjectCard
           img={"/images/x-clone.png"}
@@ -75,16 +81,10 @@ export default function Page() {
           brief="Fullstack twitter clone in Prisma + NextJS + ShadCN."
         />
         <ProjectCard
-          img={"/images/promptopia.png"}
-          link={"https://promptopia-snowy.vercel.app/"}
-          name="Promptopia"
-          brief="Open source community for prompt sharing"
-        />
-        <ProjectCard
           img={"/images/groove.png"}
           link={"https://groove-next.vercel.app/"}
           name="groove nest"
-          brief="music social for colaborated music listening"
+          brief="music social for colaborated music listening."
         />
 
         <div className="group flex w-full text-black/60">

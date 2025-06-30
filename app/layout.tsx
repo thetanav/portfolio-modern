@@ -1,10 +1,11 @@
 import "./global.css";
 import type { Metadata } from "next";
 import { Navbar } from "./components/nav";
-import Image from "next/image";
 import NextTopLoader from "nextjs-toploader";
-import { GeistSans } from "geist/font/sans";
+import { Manrope } from "next/font/google";
 import { PostHogProvider } from "./components/PostHogProvider";
+
+const sans = Manrope({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -43,9 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={
-          "min-screen antialiased max-w-xl mx-auto " + GeistSans.className
-        }>
+        className={"min-screen antialiased max-w-xl mx-auto " + sans.className}>
         <PostHogProvider>
           <NextTopLoader showSpinner={false} color="#242423" />
           <Navbar />
