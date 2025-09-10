@@ -11,7 +11,7 @@ export default function BGVideo() {
         src={src}
         playsInline
         preload="none"
-        className="w-full h-full object-cover brightness-[0.80]"
+        className="w-full h-full object-cover brightness-[0.70]"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,transparent_55%,rgba(0,0,0,0.55)_100%)]" />

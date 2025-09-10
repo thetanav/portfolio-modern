@@ -51,7 +51,7 @@ export default function RootLayout({
           <BGVideo />
           <Navbar />
           <main className="flex-1 flex flex-col px-4 mt-14 mb-12">
-            <div className="rounded bg-black/10 border border-white/10 backdrop-blur-sm p-5 md:p-6 inset-shadow-sm inset-shadow-white/30">
+            <div className="rounded bg-black/30 border border-white/10 backdrop-blur-sm p-5 md:p-6 inset-shadow-sm inset-shadow-white/30">
               {children}
             </div>
           </main>
