@@ -44,22 +44,13 @@ function ChannelLink({ img, link, name, count }) {
                 src={img}
                 width={100}
                 height={100}
-                className="w-full h-full rounded-xl z-50 group-hover:-rotate-6 transition-transform"
-              />
-              <Image
-                alt={name}
-                src={img}
-                width={100}
-                height={100}
-                className="w-full h-full absolute top-0 bottom-0 blur-lg scale-105 rounded-xl -z-10 opacity-0 group-hover:opacity-80 transition-opacity duration-300"
+                className="w-full h-full rounded-xl z-50 group-hover:-rotate-6 contrast-125 transition-transform shadow-xl"
               />
             </div>
           </div>
           <div className="flex flex-col">
-            <p className="font-semibold group-hover:text-500 transition-all">
-              {name}
-            </p>
-            <p className="text-sm font-medium text-black/60">{count}</p>
+            <p className="group-hover:text-white transition-all">{name}</p>
+            <p className="text-sm font-medium text-200/60">{count}</p>
           </div>
         </div>
       </a>
@@ -69,7 +60,7 @@ function ChannelLink({ img, link, name, count }) {
 
 function LangCard({ comp }) {
   return (
-    <div className="flex items-center justify-center rounded-lg border border-black/20 shadow w-10 h-10 group bg-white">
+    <div className="flex items-center justify-center rounded-lg w-10 h-10 group bg-transparent text-200">
       <span className="text-xl opacity-60 transition-opacity">{comp}</span>
     </div>
   );
@@ -79,11 +70,11 @@ export default function Page() {
   return (
     <section className="animate-entry">
       <h1 className="sm:text-4xl text-3xl h-fit mb-4 tracking flex gap-2 mt-5">
-        <span className={`h-fit font-black text-500 ${serif.className}`}>
+        <span className={`h-fit font-black text-100 ${serif.className}`}>
           Tanav Poswal
         </span>
       </h1>
-      <p className="text-black/60">
+      <p className="text-200/60">
         I'm a full-stack developer and ML enthusiast passionate about building
         scalable web apps and solving real-world problems with AI. I love
         pushing technical boundaries and collaborating on meaningful projects.
@@ -99,18 +90,18 @@ export default function Page() {
         <ChannelLink
           img={"/images/x.jpg"}
           name="Twitter"
-          link="https://x.com/tanavindev"
+          link="https://x.com/tanavtwt"
           count={"150+"}
         />
       </div>
 
-      <div className="text-black/60">
+      <div className="text-200/60">
         <p>technologies I have been using since 2023,</p>
       </div>
 
       <div className="w-full gap-2 my-5">
-        <h2 className="font-semibold">Web Development</h2>
-        <div className="flex flex-wrap gap-2 mt-3 mb-5">
+        <h2>Web Development</h2>
+        <div className="flex flex-wrap mt-3 mb-5">
           <LangCard comp={<FaReact />} />
           <LangCard comp={<GrGraphQl />} />
           <LangCard comp={<SiNextdotjs />} />
@@ -121,8 +112,8 @@ export default function Page() {
           <LangCard comp={<SiShadcnui />} />
           <LangCard comp={<SiFramer />} />
         </div>
-        <h2 className="font-semibold">Machine Learning</h2>
-        <div className="flex flex-wrap gap-2 mt-3 mb-5">
+        <h2>Machine Learning</h2>
+        <div className="flex flex-wrap mt-3 mb-5">
           <LangCard comp={<SiFlask />} />
           <LangCard comp={<SiPython />} />
           <LangCard comp={<SiTensorflow />} />
@@ -132,8 +123,8 @@ export default function Page() {
           <LangCard comp={<SiPlotly />} />
           <LangCard comp={<SiPytorch />} />
         </div>
-        <h2 className="font-semibold">Cloud</h2>
-        <div className="flex flex-wrap gap-2 mt-2 mb-5">
+        <h2>Cloud</h2>
+        <div className="flex flex-wrap mt-2 mb-5">
           <LangCard comp={<SiRust />} />
           <LangCard comp={<SiKubernetes />} />
           <LangCard comp={<SiRedis />} />
@@ -142,22 +133,22 @@ export default function Page() {
           <LangCard comp={<SiAwslambda />} />
         </div>
       </div>
-      <div className="text-black/60">
+      <div className="text-200/60">
         <p>
-          I've worked with some opensource projects, on{" "}
+          I've worked with some opensource projects, on
           <a
-            href="https://github.com/tanavposwal"
-            className="hover:text-500 text-black transition-all">
+            href="https://github.com/thetanav"
+            className="hover:text-500 text-black transition-all ml-1">
             github here
           </a>
         </p>
       </div>
 
-      <div className="prose text-black/60 text-sm mt-8 mb-6">
+      <div className="prose text-200/60 text-sm mt-8 mb-6">
         #Let’s Build Together #BuildInPublic #Opensource
       </div>
 
-      <div className="font-sm mt-8 mb-6 flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-4 md:space-y-0 text-black/60">
+      <div className="font-sm mt-8 flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-4 md:space-y-0 text-black/60">
         <ExternalLink
           text={"linkedin"}
           href={"https://linkedin.com/in/tanav-poswal"}

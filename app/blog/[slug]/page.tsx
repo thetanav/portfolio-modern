@@ -36,13 +36,13 @@ export default async function Page(props) {
 
   return (
     <section className="animate-entry">
-      <header className="mb-6 py-6 border-b border-black/5">
+      <header className="mb-6 py-6 border-b border-100/5">
         <h1 className={"text-4xl text-dark my-1 capitalize " + serif.className}>
           {post.data.title}
         </h1>
-        <p className="text-xs text-black/60 my-1">on {post.data.date}</p>
+        <p className="text-xs text-200/60 my-1">on {post.data.date}</p>
       </header>
-      <article className="prose text-xs text-black/60 prose-headings:text-black lg:prose-lg text-text blog-content">
+      <article className="prose text-xs text-200/60 prose-headings:text-100 prose-headings:font-normal lg:prose-lg text-text blog-content prose-blockquote:text-100">
         <Markdown
           options={{
             overrides: {

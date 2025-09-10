@@ -2,10 +2,11 @@ import "./global.css";
 import type { Metadata } from "next";
 import { Navbar } from "./components/nav";
 import NextTopLoader from "nextjs-toploader";
-import { Manrope } from "next/font/google";
+import { Inclusive_Sans } from "next/font/google";
 import { PostHogProvider } from "./components/PostHogProvider";
+import BGVideo from "./components/bgvideo";
 
-const sans = Manrope({ weight: "400", subsets: ["latin"] });
+const sans = Inclusive_Sans({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -47,9 +48,12 @@ export default function RootLayout({
         className={"min-screen antialiased max-w-xl mx-auto " + sans.className}>
         <PostHogProvider>
           <NextTopLoader showSpinner={false} color="#242423" />
+          <BGVideo />
           <Navbar />
-          <main className="flex-1 flex flex-col px-4 mt-14 mb-14">
-            {children}
+          <main className="flex-1 flex flex-col px-4 mt-14 mb-12">
+            <div className="rounded bg-black/10 border border-white/10 backdrop-blur-sm p-5 md:p-6 inset-shadow-sm inset-shadow-white/30">
+              {children}
+            </div>
           </main>
         </PostHogProvider>
       </body>

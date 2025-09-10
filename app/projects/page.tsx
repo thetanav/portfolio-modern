@@ -11,20 +11,20 @@ function ProjectCard({ img, link, name, brief }) {
       <a
         href={link}
         target="_blank"
-        className="text-black/60 w-full h-full flex p-2 hover:bg-400/20 hover:scale-105 transition-all rounded-xl group relative">
+        className="text-black/60 w-full h-full flex p-2 hover:bg-400/40 transition-all rounded-xl group relative">
         <img
           alt={name}
           src={img}
-          className="w-16 h-auto aspect-video rounded-xl transition-transform object-cover border group-hover:border-500"
+          className="w-16 h-auto aspect-video rounded-xl transition-transform object-cover group-hover:border-500"
         />
         <div className="flex flex-col m-2 ml-3">
-          <p className="text-md -mt-1 capitalize group-hover:text-500 transition-colors">
+          <p className="text-md -mt-1 capitalize group-hover:text-white transition-colors">
             {name}
           </p>
           <p className="md:text-md text-xs text-text">{brief}</p>
         </div>
         <div className="absolute right-0 top-0 bottom-0 flex items-center justify-center w-16">
-          <ArrowRightIcon className="w-5 h-5 group-hover:text-black -translate-x-2 group-hover:translate-x-0 transition-transform delay-100" />
+          <ArrowRightIcon className="w-5 h-5 group-hover:text-white" />
         </div>
       </a>
     </div>
@@ -40,10 +40,10 @@ export default function Page() {
   return (
     <section className="animate-entry">
       <h1
-        className={"font-black text-4xl mb-5 mt-4 text-500 " + serif.className}>
-        Projects 🚀
+        className={"font-black text-4xl mb-5 mt-4 text-100 " + serif.className}>
+        Projects
       </h1>
-      <div className="flex flex-col gap-3 mb-4">
+      <div className="flex flex-col gap-3">
         <ProjectCard
           img={"/images/tradex.png"}
           link={"https://trading-system-theta.vercel.app/"}
@@ -52,15 +52,15 @@ export default function Page() {
         />
         <ProjectCard
           img={"/images/chess-app.png"}
-          link={"https://github.com/tanavposwal/chess"}
+          link={"https://github.com/thetanav/chess"}
           name="multiplayer chess"
           brief="mulitplayer chess game with websockets."
         />
         <ProjectCard
           img={"/images/exp.png"}
-          link={"https://exp-zeta.vercel.app/"}
-          name="expenses tracker"
-          brief="cleanest expense tracker."
+          link={"https://linkmash.netlify.app/"}
+          name="linkmash"
+          brief="compare you linkedin profile with others."
         />
         <ProjectCard
           img={"/images/neura.png"}
@@ -89,14 +89,14 @@ export default function Page() {
 
         <div className="group flex w-full text-black/60">
           <a
-            href={"https://github.com/tanavposwal/repositories"}
+            href={"https://github.com/thetanav/repositories"}
             target="_blank"
-            className="text-black/60 w-full h-full flex p-2 hover:bg-400/20 hover:scale-105 transition-all rounded-xl group relative">
-            <div className="w-16 h-auto aspect-video rounded-xl transition-transform object-cover border group-hover:border-500 flex items-center justify-center">
+            className="text-black/60 w-full h-full flex p-2 hover:bg-400/20 transition-all rounded-xl group relative">
+            <div className="w-16 h-auto aspect-video rounded-xl transition-transform object-cover flex items-center justify-center">
               <SiGithub className="w-5 h-5" />
             </div>
             <div className="flex flex-col m-2 ml-3">
-              <p className="text-md -mt-1 capitalize group-hover:text-500 transition-colors">
+              <p className="text-md -mt-1 capitalize group-hover:text-white">
                 My github repositories
               </p>
               <p className="md:text-md text-xs text-text">
@@ -104,7 +104,7 @@ export default function Page() {
               </p>
             </div>
             <div className="absolute right-0 top-0 bottom-0 flex items-center justify-center w-16">
-              <ArrowRightIcon className="w-5 h-5 group-hover:text-black -translate-x-2 group-hover:translate-x-0 transition-transform delay-100" />
+              <ArrowRightIcon className="w-5 h-5 group-hover:text-white" />
             </div>
           </a>
         </div>

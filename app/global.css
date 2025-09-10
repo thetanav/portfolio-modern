@@ -3,11 +3,11 @@
 @plugin 'tailwindcss-animate';
 
 @theme {
-  --color-100: #caf0f8;
-  --color-200: #90e0ef;
-  --color-300: #00b4d8;
-  --color-400: #0077b6;
-  --color-500: #03045e;
+  --color-100: #cde8ff;
+  --color-200: #ffffff;
+  --color-300: #5aa8ff;
+  --color-400: #2a7dff;
+  --color-500: #1a47ff;
 }
 
 .rounded {
@@ -15,15 +15,15 @@
 }
 
 ::selection {
-  @apply bg-400/20 text-500;
+  @apply bg-400/20;
 }
 
 a {
-  @apply font-medium;
+  @apply font-medium text-200 hover:text-100 transition-colors;
 }
 
 body {
-  @apply bg-white text-black;
+  @apply bg-black text-100;
   font-family: var(--font-custom);
 }
 
@@ -38,5 +38,5 @@ code {
 }
 
 .blog-content li {
-  @apply marker:text-400;
+  @apply marker:text-500;
 }
