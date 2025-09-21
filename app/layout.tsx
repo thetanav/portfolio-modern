@@ -5,6 +5,9 @@ import NextTopLoader from "nextjs-toploader";
 import { Inclusive_Sans } from "next/font/google";
 import { PostHogProvider } from "./components/PostHogProvider";
 import BGVideo from "./components/bgvideo";
+import Head from "next/head";
+import Script from "next/script";
+import Oneko from "./components/oneko";
 
 const sans = Inclusive_Sans({ weight: "400", subsets: ["latin"] });
 
@@ -44,10 +47,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <Oneko />
       <body
         className={"min-screen antialiased max-w-xl mx-auto " + sans.className}>
         <PostHogProvider>
-          <NextTopLoader showSpinner={false} color="#242423" />
+          <NextTopLoader showSpinner={false} color="#5aa8ff" />
           <BGVideo />
           <Navbar />
           <main className="flex-1 flex flex-col px-4 mt-14 mb-12">
