@@ -17,23 +17,27 @@ export default async function Page() {
   return (
     <section className="animate-entry">
       <h1
-        className={"font-black text-100 text-4xl mb-5 mt-4 " + serif.className}>
+        className={"font-black text-100 text-4xl mb-5 mt-4 " + serif.className}
+      >
         Blogs
       </h1>
-      <div className="w-full h-full select-none flex flex-col gap-2">
-        {posts.reverse().map((post) => (
+      <div className="w-full select-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {posts.map((post) => (
           <Link
-            className="text-black/60 w-full h-full flex flex-col p-4 hover:bg-400/40 transition-all rounded-xl group relative"
+            className="text-black/60 flex flex-col p-4 hover:bg-400/40 transition-all rounded-xl group relative border border-white/10 hover:border-400/50 min-h-32"
             href={`/blog/${post.slug}`}
-            key={post.slug}>
-            <h3 className="text-md -mt-1 capitalize group-hover:text-white transition-colors">
+            key={post.slug}
+          >
+            <h3 className="text-lg font-semibold -mt-1 capitalize group-hover:text-white transition-colors mb-2">
               {post.title}
             </h3>
-            <p className="md:text-md text-xs text-text">
+            <p className="text-sm text-text mb-4">
               {post.date.toDateString().slice(4)}
             </p>
-            <div className="absolute right-0 top-0 bottom-0 flex items-center justify-center w-16">
-              <ArrowRightIcon className="w-5 h-5 group-hover:text-white" />
+            <div className="mt-auto">
+              <span className="text-xs text-200/60 group-hover:text-white transition-colors">
+                Read more →
+              </span>
             </div>
           </Link>
         ))}

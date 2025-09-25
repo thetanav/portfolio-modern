@@ -3,13 +3,21 @@ import fs from "fs";
 import matter from "gray-matter";
 import getPostMetadata from "lib/posts";
 import CodeBlock from "app/components/codeblock";
-import { Instrument_Serif } from "next/font/google";
+import { Instrument_Serif, Crimson_Text } from "next/font/google";
 import ImgBlock from "app/components/imgblock";
 import { Share1Icon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { Share } from "app/components/share";
 
+function getReadingTime(content: string): string {
+  const wordsPerMinute = 200;
+  const words = content.split(/\s+/).length;
+  const minutes = Math.ceil(words / wordsPerMinute);
+  return `${minutes} min read`;
+}
+
 const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
+const bodySerif = Crimson_Text({ weight: "400", subsets: ["latin"] });
 
 function getPostContent(slug) {
   const folder = "posts/";
@@ -36,23 +44,29 @@ export async function generateMetadata(props) {
 export default async function Page(props) {
   const slug = (await props.params).slug;
   const post = getPostContent(slug);
+  const readingTime = getReadingTime(post.content);
 
   return (
     <section className="animate-entry">
       <header className="mb-6 py-6 border-b border-100/5 justify-between items-center flex">
         <div>
-          <h1
-            className={"text-4xl text-dark my-1 capitalize " + serif.className}
-          >
+          <h1 className={"text-4xl text-dark my-1 " + serif.className}>
             {post.data.title}
           </h1>
-          <p className="text-sm text-200/60 my-1">on {post.data.date}</p>
+          <p className="text-sm text-200/60 my-1">
+            on {post.data.date} • {readingTime}
+          </p>
         </div>
         <div>
           <Share />
         </div>
       </header>
-      <article className="prose text-xs text-200/60 prose-headings:text-100 prose-a:text-sm prose-a:text-wrap prose-a:box-content prose-a:max-w-36 prose-headings:font-normal lg:prose-sm text-text blog-content prose-blockquote:text-100">
+      <article
+        className={
+          "prose text-base text-200/60 prose-headings:text-100 prose-a:text-base prose-a:text-wrap prose-a:box-content prose-a:max-w-36 prose-headings:font-normal text-text blog-content prose-blockquote:text-100 " +
+          bodySerif.className
+        }
+      >
         <Markdown
           options={{
             overrides: {

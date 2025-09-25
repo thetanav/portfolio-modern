@@ -16,5 +16,6 @@ export default function getPostMetadata(basePath) {
       slug: filename.replace(".md", ""),
     };
   });
+  posts.sort((a, b) => b.date.getTime() - a.date.getTime());
   return posts;
 }

@@ -3,40 +3,40 @@
 @plugin 'tailwindcss-animate';
 
 @theme {
-  --color-100: #cde8ff;
-  --color-200: #ffffff;
-  --color-300: #5aa8ff;
-  --color-400: #2a7dff;
-  --color-500: #1a47ff;
+    --color-100: #cde8ff;
+    --color-200: #ffffff;
+    --color-300: #5aa8ff;
+    --color-400: #2a7dff;
+    --color-500: #1a47ff;
 }
 
 .rounded {
-  border-radius: 0.8rem;
+    border-radius: 0.8rem;
 }
 
 ::selection {
-  @apply bg-400/20;
+    @apply bg-400/20;
 }
 
 a {
-  @apply font-medium text-200 hover:text-100 transition-colors;
+    @apply font-medium text-200 hover:text-100 transition-colors;
 }
 
 body {
-  @apply bg-black text-100;
-  font-family: var(--font-custom);
+    @apply bg-black text-100;
+    font-family: var(--font-custom);
 }
 
 .animate-entry {
-  @apply animate-in slide-in-from-bottom-3 fade-in-5 duration-300;
+    @apply animate-in slide-in-from-bottom-3 fade-in-5 duration-300;
 }
 
 pre,
 code {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .blog-content li {
-  @apply marker:text-500;
+    @apply marker:text-500;
 }
