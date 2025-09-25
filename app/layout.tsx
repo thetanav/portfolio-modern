@@ -2,14 +2,11 @@ import "./global.css";
 import type { Metadata } from "next";
 import { Navbar } from "./components/nav";
 import NextTopLoader from "nextjs-toploader";
-import { Inclusive_Sans } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 import { PostHogProvider } from "./components/PostHogProvider";
 import BGVideo from "./components/bgvideo";
-import Head from "next/head";
-import Script from "next/script";
-import Oneko from "./components/oneko";
 
-const sans = Inclusive_Sans({ weight: "400", subsets: ["latin"] });
+const sans = Bricolage_Grotesque({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -47,15 +44,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Oneko />
       <body
-        className={"min-screen antialiased max-w-xl mx-auto " + sans.className}>
+        className={"min-screen antialiased max-w-xl mx-auto " + sans.className}
+      >
         <PostHogProvider>
           <NextTopLoader showSpinner={false} color="#5aa8ff" />
           <BGVideo />
           <Navbar />
           <main className="flex-1 flex flex-col px-4 mt-14 mb-12">
-            <div className="rounded bg-black/30 border border-white/10 backdrop-blur-sm p-5 md:p-6 inset-shadow-sm inset-shadow-white/30">
+            <div className="rounded bg-black/50 border border-white/10 backdrop-blur-xl p-5 md:p-6 inset-shadow-sm inset-shadow-white/10">
               {children}
             </div>
           </main>

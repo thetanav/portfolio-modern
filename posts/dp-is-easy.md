@@ -3,8 +3,6 @@ title: "DP is easy"
 date: "2025-09-25"
 ---
 
-## DP is easy
-
 Yes am not saying that but it is, you just need to get things for the basics
 
 ## Two methods

@@ -5,6 +5,9 @@ import getPostMetadata from "lib/posts";
 import CodeBlock from "app/components/codeblock";
 import { Instrument_Serif } from "next/font/google";
 import ImgBlock from "app/components/imgblock";
+import { Share1Icon } from "@radix-ui/react-icons";
+import Link from "next/link";
+import { Share } from "app/components/share";
 
 const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
@@ -36,13 +39,20 @@ export default async function Page(props) {
 
   return (
     <section className="animate-entry">
-      <header className="mb-6 py-6 border-b border-100/5">
-        <h1 className={"text-4xl text-dark my-1 capitalize " + serif.className}>
-          {post.data.title}
-        </h1>
-        <p className="text-xs text-200/60 my-1">on {post.data.date}</p>
+      <header className="mb-6 py-6 border-b border-100/5 justify-between items-center flex">
+        <div>
+          <h1
+            className={"text-4xl text-dark my-1 capitalize " + serif.className}
+          >
+            {post.data.title}
+          </h1>
+          <p className="text-sm text-200/60 my-1">on {post.data.date}</p>
+        </div>
+        <div>
+          <Share />
+        </div>
       </header>
-      <article className="prose text-xs text-200/60 prose-headings:text-100 prose-headings:font-normal lg:prose-lg text-text blog-content prose-blockquote:text-100">
+      <article className="prose text-xs text-200/60 prose-headings:text-100 prose-a:text-sm prose-a:text-wrap prose-a:box-content prose-a:max-w-36 prose-headings:font-normal lg:prose-sm text-text blog-content prose-blockquote:text-100">
         <Markdown
           options={{
             overrides: {
@@ -53,7 +63,8 @@ export default async function Page(props) {
                 component: ImgBlock,
               },
             },
-          }}>
+          }}
+        >
           {post.content}
         </Markdown>
       </article>
