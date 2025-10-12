@@ -50,10 +50,10 @@ export default async function Page(props) {
     <section className="animate-entry w-full">
       <header className="mb-3 py-6 justify-between items-center flex">
         <div>
-          <h1 className={"text-4xl text-dark my-1 " + serif.className}>
+          <h1 className={"text-4xl text-black my-1 " + serif.className}>
             {post.data.title}
           </h1>
-          <p className="text-sm text-black my-1">
+          <p className="text-sm text-gray-600 my-1">
             on {post.data.date} • {readingTime}
           </p>
         </div>

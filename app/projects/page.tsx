@@ -7,24 +7,28 @@ const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
 function ProjectCard({ img, link, name, brief }) {
   return (
-    <div className="group flex w-full text-black">
+    <div className="group flex w-full">
       <a
         href={link}
         target="_blank"
-        className="text-black w-full h-full flex p-2 transition-all  group relative">
-        <img
-          alt={name}
-          src={img}
-          className="w-16 h-auto aspect-video  transition-transform object-cover group-hover:border-400"
-        />
-        <div className="flex flex-col m-2 ml-3">
-          <p className="text-md -mt-1 capitalize group-hover:text-black transition-colors">
-            {name}
-          </p>
-          <p className="md:text-md text-xs text-text">{brief}</p>
+        className="flex w-full items-center justify-between p-4 rounded-lg hover:bg-gray-50 transition-colors group relative">
+        <div className="flex items-center space-x-4">
+          <div className="relative w-16 h-16 flex-shrink-0">
+            <img
+              alt={name}
+              src={img}
+              className="w-full h-full object-cover rounded-md"
+            />
+          </div>
+          <div className="flex flex-col">
+            <p className="text-lg font-normal text-black group-hover:text-gray-600 transition-colors capitalize">
+              {name}
+            </p>
+            <p className="text-sm text-gray-600">{brief}</p>
+          </div>
         </div>
-        <div className="absolute right-0 top-0 bottom-0 flex items-center justify-center w-16">
-          <ArrowRightIcon className="w-5 h-5 group-hover:text-black" />
+        <div className="flex items-center">
+          <ArrowRightIcon className="w-5 h-5 text-gray-400 group-hover:text-black transition-colors" />
         </div>
       </a>
     </div>
@@ -39,11 +43,15 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <section className="animate-entry">
-      <h1
-        className={"font-black text-4xl mb-5 mt-4 text-100 " + serif.className}>
-        Projects
+      <h1 className="sm:text-4xl text-3xl h-fit mb-4 tracking-tight flex gap-2 mt-5">
+        <span className={`h-fit font-black text-black ${serif.className}`}>
+          Projects
+        </span>
       </h1>
-      <div className="flex flex-col gap-3">
+      <p className="text-black mb-8">
+        A showcase of my recent work and experiments.
+      </p>
+      <div className="flex flex-col gap-4">
         <ProjectCard
           img={"/images/tradex.png"}
           link={"https://trading-system-theta.vercel.app/"}
@@ -87,24 +95,26 @@ export default function Page() {
           brief="music social for colaborated music listening."
         />
 
-        <div className="group flex w-full text-black">
+        <div className="group flex w-full">
           <a
-            href={"https://github.com/thetanav/repositories"}
+            href={"https://github.com/thetanav"}
             target="_blank"
-            className="text-black w-full h-full flex p-2 transition-all  group relative">
-            <div className="w-16 h-auto aspect-video  transition-transform object-cover flex items-center justify-center">
-              <SiGithub className="w-5 h-5" />
+            className="flex w-full items-center justify-between p-4 rounded-lg hover:bg-gray-50 transition-colors group relative">
+            <div className="flex items-center space-x-4">
+              <div className="relative w-16 h-16 flex-shrink-0 bg-gray-100 rounded-md flex items-center justify-center">
+                <SiGithub className="w-6 h-6 text-gray-600" />
+              </div>
+              <div className="flex flex-col">
+                <p className="text-lg font-normal text-black group-hover:text-gray-600 transition-colors capitalize">
+                  GitHub Profile
+                </p>
+                <p className="text-sm text-gray-600">
+                  All my open source projects
+                </p>
+              </div>
             </div>
-            <div className="flex flex-col m-2 ml-3">
-              <p className="text-md -mt-1 capitalize group-hover:text-black">
-                My github repositories
-              </p>
-              <p className="md:text-md text-xs text-text">
-                all the projects i've done
-              </p>
-            </div>
-            <div className="absolute right-0 top-0 bottom-0 flex items-center justify-center w-16">
-              <ArrowRightIcon className="w-5 h-5 group-hover:text-black" />
+            <div className="flex items-center">
+              <ArrowRightIcon className="w-5 h-5 text-gray-400 group-hover:text-black transition-colors" />
             </div>
           </a>
         </div>

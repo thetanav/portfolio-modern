@@ -15,7 +15,7 @@ const navItems = {
 
 export function Navbar() {
   return (
-    <nav className="max-w-xl mx-auto flex items-center justify-between py-4 h-14 overflow-hidden">
+    <nav className="max-w-3xl mx-auto flex items-center justify-between py-4 h-14 overflow-hidden">
       <ThemeToggle />
       <div className="flex gap-3">
         {Object.entries(navItems).map(([path, { name }]) => {

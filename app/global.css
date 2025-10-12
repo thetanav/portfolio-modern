@@ -21,7 +21,7 @@
 }
 
 a {
-    @apply font-medium text-black transition-colors;
+    @apply font-normal text-black transition-colors;
 }
 
 body {

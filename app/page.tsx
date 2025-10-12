@@ -50,7 +50,7 @@ function ChannelLink({ img, link, name, count }) {
           </div>
           <div className="flex flex-col">
             <p className="group-hover:text-black transition-all">{name}</p>
-            <p className="text-sm font-medium text-black">{count}</p>
+            <p className="text-sm font-normal text-gray-600">{count}</p>
           </div>
         </div>
       </a>
@@ -60,8 +60,8 @@ function ChannelLink({ img, link, name, count }) {
 
 function LangCard({ comp }) {
   return (
-    <div className="flex items-center justify-center rounded-lg w-10 h-10 group bg-transparent text-200">
-      <span className="text-xl opacity-60 transition-opacity">{comp}</span>
+    <div className="flex items-center justify-center rounded-lg w-10 h-10 group bg-transparent text-black">
+      <span className="text-xl opacity-70 transition-opacity group-hover:opacity-100">{comp}</span>
     </div>
   );
 }
@@ -69,8 +69,8 @@ function LangCard({ comp }) {
 export default function Page() {
   return (
     <section className="animate-entry">
-      <h1 className="sm:text-4xl text-3xl h-fit mb-4 tracking flex gap-2 mt-5">
-        <span className={`h-fit font-black text-100 ${serif.className}`}>
+      <h1 className="sm:text-4xl text-3xl h-fit mb-4 tracking-tight flex gap-2 mt-5">
+        <span className={`h-fit font-black text-black ${serif.className}`}>
           Tanav Poswal
         </span>
       </h1>
@@ -144,11 +144,11 @@ export default function Page() {
         </p>
       </div>
 
-      <div className="prose text-black text-sm mt-8 mb-6">
+      <div className="text-black text-sm mt-8 mb-6">
         #Let’s Build Together #BuildInPublic #Opensource
       </div>
 
-      <div className="font-sm mt-8 flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-4 md:space-y-0 text-black/60">
+      <div className="text-sm mt-8 flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-4 md:space-y-0 text-black/60">
         <ExternalLink
           text={"linkedin"}
           href={"https://linkedin.com/in/tanav-poswal"}
@@ -169,7 +169,7 @@ const ExternalLink = ({ text, href }: { text: string; href: string }) => {
       rel="noopener noreferrer"
       target="_blank"
       href={href}>
-      <ArrowTopRightIcon className="w-5- h-5" />
+      <ArrowTopRightIcon className="w-5 h-5" />
       <p className="ml-2 h-7">{text}</p>
     </a>
   );
