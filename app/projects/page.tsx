@@ -2,6 +2,7 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 import type { Metadata } from "next";
 import { Instrument_Serif } from "next/font/google";
 import { SiGithub } from "react-icons/si";
+import { projects } from "../../lib/projects";
 
 const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
@@ -11,9 +12,9 @@ function ProjectCard({ img, link, name, brief }) {
       <a
         href={link}
         target="_blank"
-        className="flex w-full items-center justify-between p-4 rounded-lg hover:bg-gray-50 transition-colors group relative">
-        <div className="flex items-center space-x-4">
-          <div className="relative w-16 h-16 flex-shrink-0">
+        className="flex w-full items-center justify-between p-2 rounded-lg hover:bg-gray-50 transition-colors group relative">
+        <div className="flex items-center space-x-3">
+          <div className="relative w-12 h-12 flex-shrink-0">
             <img
               alt={name}
               src={img}
@@ -21,14 +22,14 @@ function ProjectCard({ img, link, name, brief }) {
             />
           </div>
           <div className="flex flex-col">
-            <p className="text-lg font-normal text-black group-hover:text-gray-600 transition-colors capitalize">
+            <p className="text-base font-normal text-black group-hover:text-gray-600 transition-colors capitalize">
               {name}
             </p>
-            <p className="text-sm text-gray-600">{brief}</p>
+            <p className="text-xs text-gray-600">{brief}</p>
           </div>
         </div>
         <div className="flex items-center">
-          <ArrowRightIcon className="w-5 h-5 text-gray-400 group-hover:text-black transition-colors" />
+          <ArrowRightIcon className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
         </div>
       </a>
     </div>
@@ -52,48 +53,15 @@ export default function Page() {
         A showcase of my recent work and experiments.
       </p>
       <div className="flex flex-col gap-4">
-        <ProjectCard
-          img={"/images/tradex.png"}
-          link={"https://trading-system-theta.vercel.app/"}
-          name="trade exchange"
-          brief="real-time trading app with live order book."
-        />
-        <ProjectCard
-          img={"/images/chess-app.png"}
-          link={"https://github.com/thetanav/chess"}
-          name="multiplayer chess"
-          brief="mulitplayer chess game with websockets."
-        />
-        <ProjectCard
-          img={"/images/exp.png"}
-          link={"https://linkmash.netlify.app/"}
-          name="linkmash"
-          brief="compare you linkedin profile with others."
-        />
-        <ProjectCard
-          img={"/images/neura.png"}
-          link={"https://flowcode-tnv.vercel.app/"}
-          name="ai enabled Code editor ai"
-          brief="a simple code editor on the web with ai."
-        />
-        <ProjectCard
-          img={"/images/anime.png"}
-          link={"https://animes-eta.vercel.app/"}
-          name="anime vault"
-          brief="anime netflix via open api. Next JS infinite scroll."
-        />
-        <ProjectCard
-          img={"/images/x-clone.png"}
-          link={"https://myspace-pi-six.vercel.app/"}
-          name="X Clone"
-          brief="Fullstack twitter clone in Prisma + NextJS + ShadCN."
-        />
-        <ProjectCard
-          img={"/images/groove.png"}
-          link={"https://groove-next.vercel.app/"}
-          name="groove nest"
-          brief="music social for colaborated music listening."
-        />
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            img={project.img}
+            link={project.link}
+            name={project.name}
+            brief={project.brief}
+          />
+        ))}
 
         <div className="group flex w-full">
           <a

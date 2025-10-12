@@ -21,7 +21,8 @@
 }
 
 a {
-    @apply font-normal text-black transition-colors;
+    @apply font-normal transition-colors;
+    color: var(--text);
 }
 
 body {
