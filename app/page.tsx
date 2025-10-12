@@ -138,7 +138,7 @@ export default function Page() {
           I've worked with some opensource projects, on
           <a
             href="https://github.com/thetanav"
-            className="hover:text-500 text-black transition-all ml-1">
+            className="hover:text-400 text-black transition-all ml-1">
             github here
           </a>
         </p>
@@ -165,7 +165,7 @@ export default function Page() {
 const ExternalLink = ({ text, href }: { text: string; href: string }) => {
   return (
     <a
-      className="flex items-center transition-all w-fit hover:text-500"
+      className="flex items-center transition-all w-fit hover:text-400"
       rel="noopener noreferrer"
       target="_blank"
       href={href}>

@@ -2,12 +2,10 @@ import "./global.css";
 import type { Metadata } from "next";
 import { Navbar } from "./components/nav";
 import NextTopLoader from "nextjs-toploader";
-import { Bricolage_Grotesque } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import { PostHogProvider } from "./components/PostHogProvider";
-import { GodRays } from '@paper-design/shaders-react';
-import { Suspense } from "react";
 
-const sans = Bricolage_Grotesque({ weight: "400", subsets: ["latin"] });
+const sans = JetBrains_Mono({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -46,27 +44,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={"min-screen antialiased max-w-xl mx-auto " + sans.className}
+        className={`h-screen antialiased max-w-2xl mx-auto overflow-y-auto bg-white font-bold ${sans.className}`}
       >
         <PostHogProvider>
-          <NextTopLoader showSpinner={false} color="#5aa8ff" />
-          <Suspense>
-            <GodRays
-              className="absolute -z-10 top-0 left-0 right-0 bottom-0"
-              colors={["#a600ff6e", "#6200fff0", "#ffffff", "#33fff5"]}
-              colorBack="#000000"
-              colorBloom="#0000ff"
-              bloom={0.4}
-              maxPixelCount={1000000}
-              intensity={0.8}
-              density={0.3}
-              spotty={0.3}
-              midSize={0.2}
-              midIntensity={0.4}
-              speed={0.75}
-              offsetY={-0.55}
-            />
-          </Suspense>
+          <NextTopLoader showSpinner={true} color="#5aa8ff" />
           <Navbar />
           <main className="flex-1 flex flex-col px-4 mt-14 mb-12">
             <div className="rounded bg-black/60 border border-white/10 backdrop-blur-xl p-5 md:p-6 inset-shadow-sm inset-shadow-white/10">

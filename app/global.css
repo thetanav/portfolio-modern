@@ -3,12 +3,12 @@
 @plugin 'tailwindcss-animate';
 
 @theme {
-    --color-100: #cde8ff;
-    --color-200: #ffffff;
-    --color-300: #5aa8ff;
-    --color-400: #2a7dff;
-    --color-500: #1a47ff;
+    --color-400: #FDCFFA;
+    --color-300: #D78FEE;
+    --color-200: #9B5DE0;
+    --color-100: #4E56C0;
 }
+
 
 .rounded {
     border-radius: 0.8rem;
@@ -19,12 +19,13 @@
 }
 
 a {
-    @apply font-medium text-200 hover:text-100 transition-colors;
+    @apply font-medium text-300 transition-colors hover:underline;
 }
 
 body {
     @apply bg-black text-100;
     font-family: var(--font-custom);
+    background-color: linear-gradient(135deg, #050012, #0b0033, #001f4d);
 }
 
 .animate-entry {
@@ -38,5 +39,5 @@ code {
 }
 
 .blog-content li {
-    @apply marker:text-500;
+    @apply marker:text-400;
 }

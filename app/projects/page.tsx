@@ -15,7 +15,7 @@ function ProjectCard({ img, link, name, brief }) {
         <img
           alt={name}
           src={img}
-          className="w-16 h-auto aspect-video rounded-xl transition-transform object-cover group-hover:border-500"
+          className="w-16 h-auto aspect-video rounded-xl transition-transform object-cover group-hover:border-400"
         />
         <div className="flex flex-col m-2 ml-3">
           <p className="text-md -mt-1 capitalize group-hover:text-white transition-colors">

@@ -47,7 +47,7 @@ export default async function Page(props) {
   const readingTime = getReadingTime(post.content);
 
   return (
-    <section className="animate-entry">
+    <section className="animate-entry w-full">
       <header className="mb-6 py-6 border-b border-100/5 justify-between items-center flex">
         <div>
           <h1 className={"text-4xl text-dark my-1 " + serif.className}>
@@ -63,7 +63,7 @@ export default async function Page(props) {
       </header>
       <article
         className={
-          "prose text-base text-200/60 prose-headings:text-100 prose-a:text-base prose-a:text-wrap prose-a:box-content prose-a:max-w-36 prose-headings:font-normal text-text blog-content prose-blockquote:text-100 " +
+          "prose text-base text-200/60 prose-headings:text-100 prose-a:text-base prose-a:text-wrap prose-a:box-content prose-a:max-w-36 min-w-full prose-headings:font-normal text-text blog-content prose-blockquote:text-100 prose-p:text-xl " +
           bodySerif.className
         }
       >
