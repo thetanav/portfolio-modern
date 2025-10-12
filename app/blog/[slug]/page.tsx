@@ -53,7 +53,7 @@ export default async function Page(props) {
           <h1 className={"text-4xl text-dark my-1 " + serif.className}>
             {post.data.title}
           </h1>
-          <p className="text-sm text-200/60 my-1">
+          <p className="text-sm text-black my-1">
             on {post.data.date} • {readingTime}
           </p>
         </div>
@@ -63,7 +63,7 @@ export default async function Page(props) {
       </header>
       <article
         className={
-          "prose text-base text-200/60 prose-headings:text-100 prose-a:text-base prose-a:text-wrap prose-a:box-content prose-a:max-w-36 min-w-full prose-headings:font-normal text-text blog-content prose-blockquote:text-100 prose-p:text-xl " +
+          "prose text-base text-black prose-headings:text-100 prose-a:text-base prose-a:text-wrap prose-a:box-content prose-a:max-w-36 min-w-full prose-headings:font-normal text-text blog-content prose-blockquote:text-100 prose-p:text-xl " +
           bodySerif.className
         }
       >

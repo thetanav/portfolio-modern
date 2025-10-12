@@ -7,24 +7,24 @@ const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
 function ProjectCard({ img, link, name, brief }) {
   return (
-    <div className="group flex w-full text-black/60">
+    <div className="group flex w-full text-black">
       <a
         href={link}
         target="_blank"
-        className="text-black/60 w-full h-full flex p-2 hover:bg-400/40 transition-all rounded-xl group relative">
+        className="text-black w-full h-full flex p-2 transition-all  group relative">
         <img
           alt={name}
           src={img}
-          className="w-16 h-auto aspect-video rounded-xl transition-transform object-cover group-hover:border-400"
+          className="w-16 h-auto aspect-video  transition-transform object-cover group-hover:border-400"
         />
         <div className="flex flex-col m-2 ml-3">
-          <p className="text-md -mt-1 capitalize group-hover:text-white transition-colors">
+          <p className="text-md -mt-1 capitalize group-hover:text-black transition-colors">
             {name}
           </p>
           <p className="md:text-md text-xs text-text">{brief}</p>
         </div>
         <div className="absolute right-0 top-0 bottom-0 flex items-center justify-center w-16">
-          <ArrowRightIcon className="w-5 h-5 group-hover:text-white" />
+          <ArrowRightIcon className="w-5 h-5 group-hover:text-black" />
         </div>
       </a>
     </div>
@@ -87,16 +87,16 @@ export default function Page() {
           brief="music social for colaborated music listening."
         />
 
-        <div className="group flex w-full text-black/60">
+        <div className="group flex w-full text-black">
           <a
             href={"https://github.com/thetanav/repositories"}
             target="_blank"
-            className="text-black/60 w-full h-full flex p-2 hover:bg-400/20 transition-all rounded-xl group relative">
-            <div className="w-16 h-auto aspect-video rounded-xl transition-transform object-cover flex items-center justify-center">
+            className="text-black w-full h-full flex p-2 transition-all  group relative">
+            <div className="w-16 h-auto aspect-video  transition-transform object-cover flex items-center justify-center">
               <SiGithub className="w-5 h-5" />
             </div>
             <div className="flex flex-col m-2 ml-3">
-              <p className="text-md -mt-1 capitalize group-hover:text-white">
+              <p className="text-md -mt-1 capitalize group-hover:text-black">
                 My github repositories
               </p>
               <p className="md:text-md text-xs text-text">
@@ -104,7 +104,7 @@ export default function Page() {
               </p>
             </div>
             <div className="absolute right-0 top-0 bottom-0 flex items-center justify-center w-16">
-              <ArrowRightIcon className="w-5 h-5 group-hover:text-white" />
+              <ArrowRightIcon className="w-5 h-5 group-hover:text-black" />
             </div>
           </a>
         </div>

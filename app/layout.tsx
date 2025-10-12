@@ -44,13 +44,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`h-screen antialiased max-w-2xl mx-auto overflow-y-auto bg-white font-bold ${sans.className}`}
+        className={`h-screen antialiased max-w-3xl mx-auto overflow-y-auto font-bold ${sans.className}`}
       >
         <PostHogProvider>
-          <NextTopLoader showSpinner={true} color="#5aa8ff" />
+          <NextTopLoader showSpinner={false} color="#000000" />
           <Navbar />
-          <main className="flex-1 flex flex-col px-4 mt-14 mb-12">
-            <div className="rounded bg-black/60 border border-white/10 backdrop-blur-xl p-5 md:p-6 inset-shadow-sm inset-shadow-white/10">
+          <main className="flex-1 flex flex-col px-4s mb-12">
+            <div className="p-5 md:p-6">
               {children}
             </div>
           </main>

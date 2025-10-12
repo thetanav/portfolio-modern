@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "./theme-toggle";
 
 const navItems = {
   "/": {
@@ -14,15 +15,18 @@ const navItems = {
 
 export function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0">
-      <nav className="max-w-xl mx-auto flex items-center justify-end px-4 py-4 h-14 overflow-hidden">
+    <nav className="">
+      <nav className="max-w-xl mx-auto flex items-center justify-between px-4 py-4 h-14 overflow-hidden">
+        <ThemeToggle />
         <div className="flex gap-3">
           {Object.entries(navItems).map(([path, { name }]) => {
             return (
               <Link
                 key={path}
                 href={path}
-                className="transition-colors text-white/70 hover:text-white flex align-middle relative group flex-col text-sm items-center justify-center ">
+                className="transition-colors flex align-middle relative group flex-col text-sm items-center justify-center"
+                style={{ color: 'var(--text)' }}
+              >
                 {name}
               </Link>
             );
@@ -31,7 +35,9 @@ export function Navbar() {
             href="http://docs.google.com/document/d/1rOTy341rTIquz2SzYpTs7ouaR88VzCi886iT0IEGOKk/export?format=pdf"
             rel="noopener noreferrer"
             target="_blank"
-            className="transition-colors text-white/70 hover:text-white flex align-middle relative group flex-col text-sm items-center justify-center">
+            className="transition-colors flex align-middle relative group flex-col text-sm items-center justify-center"
+            style={{ color: 'var(--text)' }}
+          >
             resume
           </a>
         </div>

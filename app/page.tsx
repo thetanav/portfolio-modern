@@ -44,13 +44,13 @@ function ChannelLink({ img, link, name, count }) {
                 src={img}
                 width={100}
                 height={100}
-                className="w-full h-full rounded-xl z-50 group-hover:-rotate-6 contrast-125 transition-transform shadow-xl"
+                className="w-full h-full  z-50 group-hover:-rotate-6 contrast-125 transition-transform shadow-xl"
               />
             </div>
           </div>
           <div className="flex flex-col">
-            <p className="group-hover:text-white transition-all">{name}</p>
-            <p className="text-sm font-medium text-200/60">{count}</p>
+            <p className="group-hover:text-black transition-all">{name}</p>
+            <p className="text-sm font-medium text-black">{count}</p>
           </div>
         </div>
       </a>
@@ -74,7 +74,7 @@ export default function Page() {
           Tanav Poswal
         </span>
       </h1>
-      <p className="text-200/60">
+      <p className="text-black">
         I'm a full-stack developer and ML enthusiast passionate about building
         scalable web apps and solving real-world problems with AI. I love
         pushing technical boundaries and collaborating on meaningful projects.
@@ -95,7 +95,7 @@ export default function Page() {
         />
       </div>
 
-      <div className="text-200/60">
+      <div className="text-black">
         <p>technologies I have been using since 2023,</p>
       </div>
 
@@ -133,7 +133,7 @@ export default function Page() {
           <LangCard comp={<SiAwslambda />} />
         </div>
       </div>
-      <div className="text-200/60">
+      <div className="text-black">
         <p>
           I've worked with some opensource projects, on
           <a
@@ -144,7 +144,7 @@ export default function Page() {
         </p>
       </div>
 
-      <div className="prose text-200/60 text-sm mt-8 mb-6">
+      <div className="prose text-black text-sm mt-8 mb-6">
         #Let’s Build Together #BuildInPublic #Opensource
       </div>
 
