@@ -1,7 +1,3 @@
-"use client";
-
-import Image from "next/image";
-
 const ImgBlock = ({ src, alt, className }: any) => {
   return (
     <div className="w-full">

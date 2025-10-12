@@ -5,38 +5,23 @@
 :root {
   --bg: #ffffff;
   --text: #000000;
-  --color-400: #e0e0e0;
-  --color-300: #b0b0b0;
-  --color-200: #808080;
-  --color-100: #000000;
 }
 
 [data-theme="dark"] {
   --bg: #000000;
   --text: #ffffff;
-  --color-400: #404040;
-  --color-300: #606060;
-  --color-200: #a0a0a0;
-  --color-100: #ffffff;
 }
 
 @theme {
-    --color-400: var(--color-400);
-    --color-300: var(--color-300);
-    --color-200: var(--color-200);
-    --color-100: var(--color-100);
+    --color-text: var(--text);
 }
 
 .rounded {
-    border-radius: 0.8rem;
-}
-
-::selection {
-    @apply bg-400/20;
+    border-radius: 0;
 }
 
 a {
-    @apply font-medium text-black transition-colors hover:underline;
+    @apply font-medium text-black transition-colors;
 }
 
 body {
@@ -53,8 +38,4 @@ pre,
 code {
     padding: 0;
     margin: 0;
-}
-
-.blog-content li {
-    @apply marker:text-400;
 }

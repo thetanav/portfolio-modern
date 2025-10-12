@@ -3,7 +3,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import getPostMetadata from "lib/posts";
 import CodeBlock from "app/components/codeblock";
-import { Instrument_Serif, Crimson_Text } from "next/font/google";
+import { Instrument_Serif, Inter } from "next/font/google";
 import ImgBlock from "app/components/imgblock";
 import { Share1Icon } from "@radix-ui/react-icons";
 import Link from "next/link";
@@ -17,7 +17,7 @@ function getReadingTime(content: string): string {
 }
 
 const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
-const bodySerif = Crimson_Text({ weight: "400", subsets: ["latin"] });
+const bodySerif = Inter({ weight: "400", subsets: ["latin"] });
 
 function getPostContent(slug) {
   const folder = "posts/";
@@ -48,7 +48,7 @@ export default async function Page(props) {
 
   return (
     <section className="animate-entry w-full">
-      <header className="mb-6 py-6 border-b border-100/5 justify-between items-center flex">
+      <header className="mb-3 py-6 justify-between items-center flex">
         <div>
           <h1 className={"text-4xl text-dark my-1 " + serif.className}>
             {post.data.title}
@@ -63,7 +63,7 @@ export default async function Page(props) {
       </header>
       <article
         className={
-          "prose text-base text-black prose-headings:text-100 prose-a:text-base prose-a:text-wrap prose-a:box-content prose-a:max-w-36 min-w-full prose-headings:font-normal text-text blog-content prose-blockquote:text-100 prose-p:text-xl " +
+          "min-w-full prose prose-headings:text-text prose-headings:font-normal prose-p:text-xl prose-p:leading-relaxed prose-a:text-text prose-a:underline prose-blockquote:text-text prose-blockquote:border-l-4 prose-blockquote:border-400 prose-blockquote:pl-4 prose-blockquote:italic prose-li:text-xl text-text " +
           bodySerif.className
         }
       >
