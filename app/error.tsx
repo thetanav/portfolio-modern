@@ -15,15 +15,25 @@ export default function Error({
   }, [error]);
 
   return (
-    <section className="h-[70vh] w-full flex items-center justify-center">
-      <div className="flex-col">
-        <h1 className="font-bold text-2xl mb-4 tracking-tighter">
-          Oh no, something went wrong.
+    <section className="flex h-[70vh] w-full items-center justify-center">
+      <div className="flex max-w-md flex-col gap-4 rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-8 text-center text-[color:var(--text)] shadow-[0_18px_70px_-60px_rgba(15,23,42,0.85)]">
+        <h1 className="text-2xl font-semibold tracking-tight">
+          Oh no, something went sideways.
         </h1>
-        <p>
-          maybe refresh? If you expected to see something here, let me know
-          tanavposwal939@gmail.com.
+        <p className="text-sm leading-relaxed text-[color:var(--text-muted)]">
+          Try refreshing, or reach out at
+          <a
+            href="mailto:tanavposwal939@gmail.com"
+            className="ml-1 underline decoration-[rgba(var(--accent-rgb),0.4)] underline-offset-4">
+            tanavposwal939@gmail.com
+          </a>
+          .
         </p>
+        <button
+          onClick={reset}
+          className="mx-auto inline-flex h-11 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--surface-soft)] px-6 text-xs font-medium uppercase tracking-[0.3em] text-[color:var(--text-muted)] transition-all hover:border-[rgba(var(--accent-rgb),0.35)] hover:text-[rgb(var(--accent-rgb))]">
+          retry
+        </button>
       </div>
     </section>
   );

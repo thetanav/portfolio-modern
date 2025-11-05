@@ -1,38 +1,49 @@
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import type { Metadata } from "next";
 import { Instrument_Serif } from "next/font/google";
+import Image from "next/image";
+import { HiOutlineSparkles } from "react-icons/hi";
 import { SiGithub } from "react-icons/si";
 import { projects } from "../../lib/projects";
+import type { Project } from "../../lib/projects";
 
 const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
-function ProjectCard({ img, link, name, brief }) {
+function ProjectCard({ img, link, name, brief }: Project) {
   return (
-    <div className="group flex w-full">
-      <a
-        href={link}
-        target="_blank"
-        className="flex w-full items-center justify-between p-2 rounded-lg hover:bg-gray-50 transition-colors group relative">
-        <div className="flex items-center space-x-3">
-          <div className="relative w-12 h-12 flex-shrink-0">
-            <img
-              alt={name}
-              src={img}
-              className="w-full h-full object-cover rounded-md"
-            />
-          </div>
-          <div className="flex flex-col">
-            <p className="text-base font-normal text-black group-hover:text-gray-600 transition-colors capitalize">
-              {name}
-            </p>
-            <p className="text-xs text-gray-600">{brief}</p>
-          </div>
+    <a
+      href={link}
+      target="_blank"
+      className="group relative flex flex-col gap-5 overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 text-[color:var(--text)] shadow-[0_18px_80px_-60px_rgba(15,23,42,0.85)] transition-all hover:-translate-y-1 hover:shadow-[0_28px_120px_-70px_rgba(93,106,255,0.35)]">
+      <span
+        className="pointer-events-none absolute inset-0 opacity-70"
+        style={{
+          background:
+            "radial-gradient(circle at 0% 0%, rgba(var(--accent-rgb),0.18), transparent 65%)",
+        }}
+      />
+      <div className="relative z-10 flex items-center gap-4">
+        <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-soft)]">
+          <Image
+            src={img}
+            alt={name}
+            width={64}
+            height={64}
+            className="h-full w-full object-cover"
+          />
         </div>
-        <div className="flex items-center">
-          <ArrowRightIcon className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
+        <div className="flex flex-col gap-1">
+          <h3 className="text-lg font-semibold leading-tight sm:text-xl">
+            {name}
+          </h3>
+          <p className="text-sm text-[color:var(--text-muted)]">{brief}</p>
         </div>
-      </a>
-    </div>
+      </div>
+      <div className="relative z-10 flex items-center justify-end gap-2 text-xs uppercase tracking-[0.3em] text-[color:var(--text-muted)]">
+        <span>visit</span>
+        <ArrowRightIcon className="h-4 w-4" />
+      </div>
+    </a>
   );
 }
 
@@ -43,49 +54,58 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <section className="animate-entry">
-      <h1 className="sm:text-4xl text-3xl h-fit mb-4 tracking-tight flex gap-2 mt-5">
-        <span className={`h-fit font-black text-black ${serif.className}`}>
-          Projects
+    <section className="animate-entry flex flex-col gap-10">
+      <header className="flex flex-col gap-5 text-balance">
+        <span className="inline-flex w-fit items-center gap-2 self-start rounded-full border border-[color:var(--border)] bg-[color:var(--surface-soft)] px-4 py-2 text-xs font-medium uppercase tracking-[0.35em] text-[color:var(--text-muted)]">
+          <HiOutlineSparkles className="h-4 w-4" />
+          build, measure, iterate
         </span>
-      </h1>
-      <p className="text-black mb-8">
-        A showcase of my recent work and experiments.
-      </p>
-      <div className="flex flex-col gap-4">
+        <h1 className="text-4xl font-semibold tracking-tight text-[color:var(--text)] sm:text-5xl">
+          <span
+            className={`text-5xl font-black leading-[1.05] text-[color:var(--text)] sm:text-6xl ${serif.className}`}>
+            Selected projects
+          </span>
+        </h1>
+        <p className="max-w-2xl text-base leading-relaxed text-[color:var(--text-muted)] sm:text-lg">
+          A sample of product builds, experiments, and infrastructure that
+          demonstrate how I deliver minimal, resilient experiences.
+        </p>
+      </header>
+
+      <div className="grid gap-4" aria-label="Projects">
         {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            img={project.img}
-            link={project.link}
-            name={project.name}
-            brief={project.brief}
-          />
+          <ProjectCard key={index} {...project} />
         ))}
 
-        <div className="group flex w-full">
-          <a
-            href={"https://github.com/thetanav"}
-            target="_blank"
-            className="flex w-full items-center justify-between p-4 rounded-lg hover:bg-gray-50 transition-colors group relative">
-            <div className="flex items-center space-x-4">
-              <div className="relative w-16 h-16 flex-shrink-0 bg-gray-100 rounded-md flex items-center justify-center">
-                <SiGithub className="w-6 h-6 text-gray-600" />
-              </div>
-              <div className="flex flex-col">
-                <p className="text-lg font-normal text-black group-hover:text-gray-600 transition-colors capitalize">
-                  GitHub Profile
-                </p>
-                <p className="text-sm text-gray-600">
-                  All my open source projects
-                </p>
-              </div>
+        <a
+          href="https://github.com/thetanav"
+          target="_blank"
+          className="group relative flex flex-col gap-5 overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 text-[color:var(--text)] shadow-[0_18px_80px_-60px_rgba(15,23,42,0.85)] transition-all hover:-translate-y-1 hover:shadow-[0_28px_120px_-70px_rgba(93,106,255,0.35)]">
+          <span
+            className="pointer-events-none absolute inset-0 opacity-70"
+            style={{
+              background:
+                "radial-gradient(circle at 0% 0%, rgba(129,140,248,0.24), transparent 70%)",
+            }}
+          />
+          <div className="relative z-10 flex items-center gap-4">
+            <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[rgba(var(--accent-rgb),0.2)] bg-[color:var(--surface-soft)] text-[rgb(var(--accent-rgb))]">
+              <SiGithub className="h-6 w-6" />
+            </span>
+            <div className="flex flex-col gap-1">
+              <h3 className="text-lg font-semibold leading-tight sm:text-xl">
+                GitHub profile
+              </h3>
+              <p className="text-sm text-[color:var(--text-muted)]">
+                Explore all public experiments and source code.
+              </p>
             </div>
-            <div className="flex items-center">
-              <ArrowRightIcon className="w-5 h-5 text-gray-400 group-hover:text-black transition-colors" />
-            </div>
-          </a>
-        </div>
+          </div>
+          <div className="relative z-10 flex items-center justify-end gap-2 text-xs uppercase tracking-[0.3em] text-[color:var(--text-muted)]">
+            <span>open workspace</span>
+            <ArrowRightIcon className="h-4 w-4" />
+          </div>
+        </a>
       </div>
     </section>
   );

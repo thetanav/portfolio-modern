@@ -1,5 +1,6 @@
-import Image from "next/image";
 import { Instrument_Serif } from "next/font/google";
+import { FiCalendar, FiTwitter, FiGithub } from "react-icons/fi";
+import { HiOutlineSparkles } from "react-icons/hi";
 import { FaReact } from "react-icons/fa";
 import { GrGraphQl } from "react-icons/gr";
 import {
@@ -29,135 +30,200 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
 const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
-function ChannelLink({ img, link, name, count }) {
+const featuredLinks = [
+  {
+    title: "Let's collaborate",
+    href: "https://cal.com/tanavposwal",
+    meta: "Schedule a 20-minute call",
+    icon: <FiCalendar className="h-4 w-4" />,
+  },
+  {
+    title: "Follow the build",
+    href: "https://x.com/tanavtwt",
+    meta: "150+ engineers on X",
+    icon: <FiTwitter className="h-4 w-4" />,
+  },
+  {
+    title: "Open source",
+    href: "https://github.com/thetanav",
+    meta: "Recent experiments on GitHub",
+    icon: <FiGithub className="h-4 w-4" />,
+  },
+];
+
+const stacks = [
+  {
+    title: "Product engineering",
+    copy: "Delightful interfaces with resilient architecture across web and mobile surfaces.",
+    tools: [FaReact, SiNextdotjs, SiTailwindcss, GrGraphQl, SiTurborepo],
+  },
+  {
+    title: "Intelligent systems",
+    copy: "Applied machine learning workflows from research to production and MLOps.",
+    tools: [SiPython, SiPytorch, SiTensorflow, SiScikitlearn, SiPlotly],
+  },
+  {
+    title: "Cloud scale",
+    copy: "Distributed systems, data streaming, and container-first deployments.",
+    tools: [SiDocker, SiKubernetes, SiApachekafka, SiRedis, SiAwslambda],
+  },
+];
+
+const focus = [
+  {
+    heading: "Iterative product velocity",
+    description:
+      "Shipping ideas fast with a discover-build-measure loop, pairing thoughtful UX with type-safe systems.",
+    icon: <HiOutlineSparkles className="h-6 w-6" />,
+  },
+  {
+    heading: "Data-informed decisions",
+    description:
+      "Experimentation-ready foundations, analytics, and observability to guide every release.",
+    icon: <SiPostman className="h-6 w-6" />,
+  },
+];
+
+function QuickLink({
+  title,
+  href,
+  meta,
+  icon,
+}: (typeof featuredLinks)[number]) {
   return (
-    <div className="group flex w-full">
-      <a
-        href={link}
-        target="_blank"
-        className="flex w-full items-center justify-between">
-        <div className="flex items-center space-x-5">
-          <div className="relative h-16">
-            <div className="w-16 h-16 relative">
-              <Image
-                alt={name}
-                src={img}
-                width={100}
-                height={100}
-                className="w-full h-full  z-50 group-hover:-rotate-6 contrast-125 transition-transform shadow-xl"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <p className="group-hover:text-black transition-all">{name}</p>
-            <p className="text-sm font-normal text-gray-600">{count}</p>
-          </div>
-        </div>
-      </a>
+    <a
+      href={href}
+      target="_blank"
+      className="group relative flex min-w-[240px] flex-1 flex-col gap-1 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-4 text-sm text-[color:var(--text)] shadow-[0_20px_70px_-60px_rgba(15,23,42,0.85)] transition-all hover:-translate-y-1 hover:shadow-[0_28px_120px_-70px_rgba(93,106,255,0.35)]">
+      <span className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-[color:var(--text-muted)]">
+        {icon}
+        <span>{title}</span>
+      </span>
+      <span className="text-sm text-[color:var(--text)]">{meta}</span>
+      <ArrowTopRightIcon className="absolute right-5 top-5 h-4 w-4 opacity-50 transition-opacity group-hover:opacity-100" />
+    </a>
+  );
+}
+
+function FocusCard({ heading, description, icon }: (typeof focus)[number]) {
+  return (
+    <div className="relative overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-8 shadow-[0_22px_80px_-70px_rgba(15,23,42,0.9)] backdrop-blur-xl">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(var(--accent-rgb),0.16),transparent_55%)]" />
+      <div className="relative z-10 flex flex-col gap-4">
+        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-[rgba(var(--accent-rgb),0.18)] bg-[color:var(--accent-soft)] text-[rgb(var(--accent-rgb))]">
+          {icon}
+        </span>
+        <h3 className="text-lg font-semibold text-[color:var(--text)]">
+          {heading}
+        </h3>
+        <p className="text-sm leading-relaxed text-[color:var(--text-muted)]">
+          {description}
+        </p>
+      </div>
     </div>
   );
 }
 
-function LangCard({ comp }) {
+function TechIcon({
+  icon: Icon,
+  label,
+}: {
+  icon: React.ElementType;
+  label: string;
+}) {
   return (
-    <div className="flex items-center justify-center rounded-lg w-10 h-10 group bg-transparent text-black">
-      <span className="text-xl opacity-70 transition-opacity group-hover:opacity-100">{comp}</span>
-    </div>
+    <span className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--chip-border)] bg-[color:var(--chip-bg)] text-[color:var(--text-muted)] transition-all hover:border-[rgba(var(--accent-rgb),0.35)] hover:text-[rgb(var(--accent-rgb))]">
+      <Icon className="h-5 w-5" aria-hidden />
+      <span className="sr-only">{label}</span>
+    </span>
   );
 }
 
 export default function Page() {
   return (
-    <section className="animate-entry">
-      <h1 className="sm:text-4xl text-3xl h-fit mb-4 tracking-tight flex gap-2 mt-5">
-        <span className={`h-fit font-black text-black ${serif.className}`}>
-          Tanav Poswal
+    <section className="animate-entry flex flex-col gap-12">
+      <header className="flex flex-col gap-6 text-balance">
+        <span className="inline-flex w-fit items-center gap-2 self-start rounded-full border border-[color:var(--border)] bg-[color:var(--surface-soft)] px-4 py-2 text-xs font-medium uppercase tracking-[0.35em] text-[color:var(--text-muted)]">
+          <HiOutlineSparkles className="h-4 w-4" />
+          shipping future-proof experiences
         </span>
-      </h1>
-      <p className="text-black">
-        I'm a full-stack developer and ML enthusiast passionate about building
-        scalable web apps and solving real-world problems with AI. I love
-        pushing technical boundaries and collaborating on meaningful projects.
-      </p>
-
-      <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-        <ChannelLink
-          img={"/images/linkedin.jpg"}
-          name="Get In Touch"
-          link="https://cal.com/tanavposwal"
-          count={"schedule a call"}
-        />
-        <ChannelLink
-          img={"/images/x.jpg"}
-          name="Twitter"
-          link="https://x.com/tanavtwt"
-          count={"150+"}
-        />
-      </div>
-
-      <div className="text-black">
-        <p>technologies I have been using since 2023,</p>
-      </div>
-
-      <div className="w-full gap-2 my-5">
-        <h2>Web Development</h2>
-        <div className="flex flex-wrap mt-3 mb-5">
-          <LangCard comp={<FaReact />} />
-          <LangCard comp={<GrGraphQl />} />
-          <LangCard comp={<SiNextdotjs />} />
-          <LangCard comp={<SiTailwindcss />} />
-          <LangCard comp={<SiTurborepo />} />
-          <LangCard comp={<SiPostman />} />
-          <LangCard comp={<SiTypescript />} />
-          <LangCard comp={<SiShadcnui />} />
-          <LangCard comp={<SiFramer />} />
-        </div>
-        <h2>Machine Learning</h2>
-        <div className="flex flex-wrap mt-3 mb-5">
-          <LangCard comp={<SiFlask />} />
-          <LangCard comp={<SiPython />} />
-          <LangCard comp={<SiTensorflow />} />
-          <LangCard comp={<SiNvidia />} />
-          <LangCard comp={<SiScikitlearn />} />
-          <LangCard comp={<SiPandas />} />
-          <LangCard comp={<SiPlotly />} />
-          <LangCard comp={<SiPytorch />} />
-        </div>
-        <h2>Cloud</h2>
-        <div className="flex flex-wrap mt-2 mb-5">
-          <LangCard comp={<SiRust />} />
-          <LangCard comp={<SiKubernetes />} />
-          <LangCard comp={<SiRedis />} />
-          <LangCard comp={<SiApachekafka />} />
-          <LangCard comp={<SiDocker />} />
-          <LangCard comp={<SiAwslambda />} />
-        </div>
-      </div>
-      <div className="text-black">
-        <p>
-          I've worked with some opensource projects, on
-          <a
-            href="https://github.com/thetanav"
-            className="hover:text-400 text-black transition-all ml-1">
-            github here
-          </a>
+        <h1 className="text-4xl font-semibold tracking-tight text-[color:var(--text)] sm:text-5xl">
+          <span
+            className={`text-5xl font-black leading-[1.05] text-[color:var(--text)] sm:text-6xl ${serif.className}`}>
+            Tanav Poswal
+          </span>
+        </h1>
+        <p className="max-w-2xl text-base leading-relaxed text-[color:var(--text-muted)] sm:text-lg">
+          Full-stack engineer and ML practitioner focused on crafting minimal,
+          purposeful products. I combine modern web tooling with intelligent
+          systems to move fast, design boldly, and deliver reliable, scalable
+          outcomes.
         </p>
-      </div>
 
-      <div className="text-black text-sm mt-8 mb-6">
-        #Let’s Build Together #BuildInPublic #Opensource
-      </div>
+        <div className="flex flex-wrap gap-3">
+          {featuredLinks.map((link) => (
+            <QuickLink key={link.href} {...link} />
+          ))}
+        </div>
+      </header>
 
-      <div className="text-sm mt-8 flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-4 md:space-y-0 text-black/60">
-        <ExternalLink
-          text={"linkedin"}
-          href={"https://linkedin.com/in/tanav-poswal"}
-        />
-        <ExternalLink
-          text={"mail me"}
-          href={"mailto:tanavposwal939@gmail.com"}
-        />
-      </div>
+      <section className="grid gap-4 md:grid-cols-2" aria-label="Focus areas">
+        {focus.map((item) => (
+          <FocusCard key={item.heading} {...item} />
+        ))}
+      </section>
+
+      <section className="flex flex-col gap-6" aria-label="Stacks">
+        <div className="flex flex-col gap-2">
+          <h2 className="text-xl font-semibold text-[color:var(--text)]">
+            Stacks that stay in rotation
+          </h2>
+          <p className="max-w-2xl text-sm text-[color:var(--text-muted)]">
+            Since 2023, these tools have helped me ship products that balance
+            experimentation with robustness.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {stacks.map(({ title, copy, tools }) => (
+            <article
+              key={title}
+              className="flex flex-col gap-4 rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-[0_20px_80px_-70px_rgba(15,23,42,0.85)] backdrop-blur-xl">
+              <header className="flex flex-col gap-1">
+                <h3 className="text-base font-semibold text-[color:var(--text)]">
+                  {title}
+                </h3>
+                <p className="text-xs leading-relaxed text-[color:var(--text-muted)]">
+                  {copy}
+                </p>
+              </header>
+              <div className="flex flex-wrap gap-2.5">
+                {tools.map((Icon, index) => (
+                  <TechIcon
+                    key={`${title}-${index}`}
+                    icon={Icon}
+                    label={Icon.name}
+                  />
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-3 text-sm text-[color:var(--text-muted)]">
+        <p>
+          Currently collaborating with teams and founders to experiment,
+          validate, and scale ideas in public. #Let’sBuildTogether
+        </p>
+        <div className="flex flex-wrap gap-4 text-[color:var(--text)]">
+          <ExternalLink
+            text="linkedin"
+            href="https://linkedin.com/in/tanav-poswal"
+          />
+          <ExternalLink text="mail" href="mailto:tanavposwal939@gmail.com" />
+          <ExternalLink text="github" href="https://github.com/thetanav" />
+        </div>
+      </section>
     </section>
   );
 }
@@ -165,12 +231,12 @@ export default function Page() {
 const ExternalLink = ({ text, href }: { text: string; href: string }) => {
   return (
     <a
-      className="flex items-center transition-all w-fit hover:text-400"
+      className="group inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-[color:var(--surface-soft)] px-4 py-2 text-xs font-medium uppercase tracking-[0.3em] text-[color:var(--text-muted)] transition-all hover:border-[rgba(var(--accent-rgb),0.35)] hover:text-[rgb(var(--accent-rgb))]"
       rel="noopener noreferrer"
       target="_blank"
       href={href}>
-      <ArrowTopRightIcon className="w-5 h-5" />
-      <p className="ml-2 h-7">{text}</p>
+      <ArrowTopRightIcon className="h-4 w-4" />
+      <span>{text}</span>
     </a>
   );
 };

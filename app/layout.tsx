@@ -2,10 +2,14 @@ import "./global.css";
 import type { Metadata } from "next";
 import { Navbar } from "./components/nav";
 import NextTopLoader from "nextjs-toploader";
-import { JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { PostHogProvider } from "./components/PostHogProvider";
 
-const sans = JetBrains_Mono({ weight: "400", subsets: ["latin"] });
+const sans = Plus_Jakarta_Sans({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -44,16 +48,24 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`h-screen antialiased max-w-3xl mx-auto overflow-y-auto font-normal ${sans.className}`}
-      >
+        className={`relative min-h-screen bg-transparent text-base antialiased font-normal ${sans.variable} ${sans.className}`}>
         <PostHogProvider>
-          <NextTopLoader showSpinner={false} color="#000000" />
-          <Navbar />
-          <main className="flex-1 flex flex-col px-4 mb-12">
-            <div className="p-5 md:p-6">
-              {children}
-            </div>
-          </main>
+          <NextTopLoader showSpinner={false} color="#5d6aff" />
+          <div className="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-10 px-4 py-8 md:px-6 md:py-12">
+            <Navbar />
+            <main className="flex-1">
+              <div className="relative overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-[0_28px_90px_-60px_rgba(15,23,42,0.85)] backdrop-blur-2xl md:p-10">
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-[0.22]"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 20% -10%, rgba(var(--accent-rgb), 0.25), transparent 55%)",
+                  }}
+                />
+                <div className="relative z-10">{children}</div>
+              </div>
+            </main>
+          </div>
         </PostHogProvider>
       </body>
     </html>
