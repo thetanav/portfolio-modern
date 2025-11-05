@@ -49,8 +49,31 @@ function ProjectCard({ img, link, name, brief }: Project) {
 }
 
 export const metadata: Metadata = {
-  title: "Web Projects",
+  title: "Web Projects • Tanav Poswal",
   description: "My top projects",
+  openGraph: {
+    title: "Web Projects • Tanav Poswal",
+    description: "My top projects",
+    url: "https://tanav.is-a.dev/projects",
+    siteName: "Tanav Poswal",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Tanav Poswal - Projects",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Projects • Tanav Poswal",
+    description: "My top projects",
+    images: "/opengraph-image.png",
+    creator: "@tanavtwt",
+  },
 };
 
 export default function Page() {

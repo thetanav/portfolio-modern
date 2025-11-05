@@ -42,8 +42,39 @@ export const generateStaticParams = async () => {
 export async function generateMetadata(props) {
   const params = await props.params;
   const id = params?.slug ? params?.slug : "";
+  const post = getPostContent(id);
+  const title = post.data.title || id.replaceAll("_", " ");
+  const description =
+    post.data.description ||
+    post.content.slice(0, 160).replace(/[#*`]/g, "") + "...";
+
   return {
-    title: id.replaceAll("_", " "),
+    title: `${title} • Tanav Poswal`,
+    description,
+    openGraph: {
+      title: `${title} • Tanav Poswal`,
+      description,
+      url: `https://tanav.is-a.dev/blog/${id}`,
+      siteName: "Tanav Poswal",
+      images: [
+        {
+          url: "/opengraph-image.png",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      locale: "en_US",
+      type: "article",
+      publishedTime: post.data.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} • Tanav Poswal`,
+      description,
+      images: "/opengraph-image.png",
+      creator: "@tanavtwt",
+    },
   };
 }
 
