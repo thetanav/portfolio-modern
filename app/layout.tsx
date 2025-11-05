@@ -67,17 +67,15 @@ export default function RootLayout({
           <NextTopLoader showSpinner={false} color="#5d6aff" />
           <div className="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-4 px-4 py-4 md:px-6 md:py-6">
             <Navbar />
-            <main className="flex-1">
-              <div className="relative overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-[0_28px_90px_-60px_rgba(15,23,42,0.85)] backdrop-blur-2xl md:p-10">
-                <div
-                  className="pointer-events-none absolute inset-0 opacity-[0.22]"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 20% -10%, rgba(var(--accent-rgb), 0.25), transparent 55%)",
-                  }}
-                />
-                <div className="relative z-10">{children}</div>
-              </div>
+            <main className="flex-1 mt-4">
+              <div
+                className="pointer-events-none absolute inset-0 opacity-[0.22]"
+                style={{
+                  background:
+                    "radial-gradient(circle at 20% -10%, rgba(var(--accent-rgb), 0.25), transparent 55%)",
+                }}
+              />
+              <div className="relative z-10">{children}</div>
             </main>
           </div>
         </PostHogProvider>

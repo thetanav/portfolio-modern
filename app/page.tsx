@@ -1,7 +1,7 @@
 import { Instrument_Serif } from "next/font/google";
 import { FiCalendar, FiTwitter, FiGithub } from "react-icons/fi";
 import { HiOutlineSparkles } from "react-icons/hi";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaUps } from "react-icons/fa";
 import { GrGraphQl } from "react-icons/gr";
 import {
   SiNextdotjs,
@@ -35,6 +35,8 @@ import {
   SiLangchain,
 } from "react-icons/si";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import GitHubCalendar from "react-github-calendar";
+import { ArrowUpNarrowWide } from "lucide-react";
 
 const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
@@ -94,16 +96,16 @@ const stacks = [
 
 const focus = [
   {
-    heading: "Iterative product velocity",
+    heading: "Learning in public",
     description:
-      "Shipping ideas fast with a discover-build-measure loop, pairing thoughtful UX with type-safe systems.",
+      "Sharing knowledge through blog posts, open source contributions, and community engagement.",
     icon: <HiOutlineSparkles className="h-6 w-6" />,
   },
   {
-    heading: "Data-informed decisions",
+    heading: "Hackathon Winner",
     description:
-      "Experimentation-ready foundations, analytics, and observability to guide every release.",
-    icon: <SiPostman className="h-6 w-6" />,
+      "Building rapid prototypes that solve real problems, earning top honors at major hackathons.",
+    icon: <ArrowUpNarrowWide className="h-6 w-6" />,
   },
 ];
 
@@ -165,14 +167,10 @@ export default function Page() {
   return (
     <section className="animate-entry flex flex-col gap-12">
       <header className="flex flex-col gap-6 text-balance">
-        <span className="inline-flex w-fit items-center gap-2 self-start rounded-full border border-[color:var(--border)] bg-[color:var(--surface-soft)] px-4 py-2 text-xs font-medium uppercase tracking-[0.35em] text-[color:var(--text-muted)]">
-          <HiOutlineSparkles className="h-4 w-4" />
-          shipping future-proof experiences
-        </span>
         <h1 className="text-4xl font-semibold tracking-tight text-[color:var(--text)] sm:text-5xl">
           <span
             className={`text-5xl font-black leading-[1.05] text-[color:var(--text)] sm:text-6xl ${serif.className}`}>
-            Tanav Poswal
+            Hi! I am Tanav Poswal
           </span>
         </h1>
         <p className="max-w-2xl text-base leading-relaxed text-[color:var(--text-muted)] sm:text-lg">
@@ -195,12 +193,8 @@ export default function Page() {
         ))}
       </section>
 
-      <section className="relative overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-8 shadow-[0_22px_80px_-70px_rgba(15,23,42,0.9)] backdrop-blur-xl">
-        <img
-          src="https://ghchart.rshah.org/thetanav"
-          className="w-full"
-          alt="GitHub Contributions Chart"
-        />
+      <section>
+        <GitHubCalendar username="thetanav" />
       </section>
 
       <section className="flex flex-col gap-6" aria-label="Stacks">

@@ -15,7 +15,7 @@ const navItems = {
 
 export function Navbar() {
   return (
-    <nav className="flex items-center justify-between rounded-full border border-[color:var(--border)] bg-[color:var(--surface-soft)] px-3 py-2 text-sm shadow-[0_18px_60px_-50px_rgba(15,23,42,0.7)] backdrop-blur-xl">
+    <nav className="flex items-center justify-between px-3 py-2 text-sm">
       <ThemeToggle />
       <div className="flex items-center gap-1.5 sm:gap-3">
         {Object.entries(navItems).map(([path, { name }]) => {
