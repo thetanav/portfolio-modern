@@ -195,6 +195,14 @@ export default function Page() {
         ))}
       </section>
 
+      <section className="relative overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-8 shadow-[0_22px_80px_-70px_rgba(15,23,42,0.9)] backdrop-blur-xl">
+        <img
+          src="https://ghchart.rshah.org/thetanav"
+          className="w-full"
+          alt="GitHub Contributions Chart"
+        />
+      </section>
+
       <section className="flex flex-col gap-6" aria-label="Stacks">
         <div className="flex flex-col gap-2">
           <h2 className="text-xl font-semibold text-[color:var(--text)]">
