@@ -12,6 +12,7 @@ const sans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tanav.is-a.dev"),
   title: {
     default: "Tanav Poswal",
     template: "Tanav Poswal • %s",

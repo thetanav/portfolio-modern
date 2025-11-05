@@ -1,27 +1,16 @@
 import { Instrument_Serif } from "next/font/google";
 import { FiCalendar, FiTwitter, FiGithub } from "react-icons/fi";
 import { HiOutlineSparkles } from "react-icons/hi";
-import { FaReact, FaUps } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
 import { GrGraphQl } from "react-icons/gr";
 import {
-  SiNextdotjs,
-  SiTailwindcss,
-  SiTurborepo,
-  SiPostman,
   SiFlask,
   SiPython,
-  SiRust,
   SiTypescript,
-  SiShadcnui,
-  SiFramer,
   SiDocker,
   SiTensorflow,
-  SiNvidia,
   SiScikitlearn,
-  SiPandas,
-  SiPlotly,
   SiPytorch,
-  SiKubernetes,
   SiAwslambda,
   SiApachekafka,
   SiRedis,
@@ -30,9 +19,7 @@ import {
   SiTrpc,
   SiSocketdotio,
   SiKaggle,
-  SiTableau,
   SiGo,
-  SiLangchain,
 } from "react-icons/si";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import GitHubCalendar from "react-github-calendar";
@@ -78,14 +65,7 @@ const stacks = [
   {
     title: "Intelligent systems",
     copy: "Applied machine learning workflows from research to production and MLOps.",
-    tools: [
-      SiLangchain,
-      SiPython,
-      SiPytorch,
-      SiTensorflow,
-      SiScikitlearn,
-      SiKaggle,
-    ],
+    tools: [SiPython, SiPytorch, SiTensorflow, SiScikitlearn, SiKaggle],
   },
   {
     title: "Cloud scale",
