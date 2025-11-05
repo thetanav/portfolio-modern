@@ -34,10 +34,6 @@ export default async function Page() {
             Latest writing
           </span>
         </h1>
-        <p className="max-w-2xl text-base leading-relaxed text-[color:var(--text-muted)] sm:text-lg">
-          Notes on engineering, experimentation, and the systems mindset behind
-          every ship.
-        </p>
       </header>
 
       <div className="flex flex-col gap-3" aria-label="Recent posts">
@@ -45,15 +41,15 @@ export default async function Page() {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="group relative flex flex-col gap-2 rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-5 text-[color:var(--text)] shadow-[0_18px_70px_-60px_rgba(15,23,42,0.85)] transition-all hover:-translate-y-1 hover:shadow-[0_28px_120px_-70px_rgba(93,106,255,0.35)]">
+            className="group relative flex flex-col gap-6 rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-5 text-[color:var(--text)] shadow-[0_18px_70px_-60px_rgba(15,23,42,0.85)] hover:shadow-[0_28px_120px_-70px_rgba(93,106,255,0.35)]">
+            <h2
+              className={`text-3xl font-semibold text-[color:var(--text)] sm:text-4xl font-serif ${serif.className}`}>
+              {post.title}
+            </h2>
             <div className="flex flex-wrap items-center justify-between gap-3 text-xs uppercase tracking-[0.25em] text-[color:var(--text-muted)]">
               <span>{formatDate(post.date)}</span>
               <span>read journal</span>
             </div>
-            <h2 className="text-xl font-semibold text-[color:var(--text)] sm:text-2xl">
-              {post.title}
-            </h2>
-            <span className="pointer-events-none absolute right-6 top-6 h-5 w-5 rounded-full border border-[rgba(var(--accent-rgb),0.25)] bg-[color:var(--accent-soft)] opacity-0 transition-opacity group-hover:opacity-100" />
           </Link>
         ))}
       </div>

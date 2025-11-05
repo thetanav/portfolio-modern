@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@tanavindev", // Replace with your Twitter handle
-    creator: "@tanavindev", // Replace with your Twitter handle
-    images: "https://tanavindev.tech/twitter-image.png", // Absolute URL to your OG image
+    site: "@tanavtwt", // Replace with your Twitter handle
+    creator: "@tanavtwt", // Replace with your Twitter handle
+    images: "https://tanavtwt.tech/twitter-image.png", // Absolute URL to your OG image
   },
   verification: {
     google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
@@ -51,7 +51,7 @@ export default function RootLayout({
         className={`relative min-h-screen bg-transparent text-base antialiased font-normal ${sans.variable} ${sans.className}`}>
         <PostHogProvider>
           <NextTopLoader showSpinner={false} color="#5d6aff" />
-          <div className="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-10 px-4 py-8 md:px-6 md:py-12">
+          <div className="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-4 px-4 py-4 md:px-6 md:py-6">
             <Navbar />
             <main className="flex-1">
               <div className="relative overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-[0_28px_90px_-60px_rgba(15,23,42,0.85)] backdrop-blur-2xl md:p-10">

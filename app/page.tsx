@@ -25,6 +25,14 @@ import {
   SiAwslambda,
   SiApachekafka,
   SiRedis,
+  SiPostgresql,
+  SiBun,
+  SiTrpc,
+  SiSocketdotio,
+  SiKaggle,
+  SiTableau,
+  SiGo,
+  SiLangchain,
 } from "react-icons/si";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
@@ -34,19 +42,19 @@ const featuredLinks = [
   {
     title: "Let's collaborate",
     href: "https://cal.com/tanavposwal",
-    meta: "Schedule a 20-minute call",
+    meta: "Lets call",
     icon: <FiCalendar className="h-4 w-4" />,
   },
   {
     title: "Follow the build",
     href: "https://x.com/tanavtwt",
-    meta: "150+ engineers on X",
+    meta: "Sharing what I learn",
     icon: <FiTwitter className="h-4 w-4" />,
   },
   {
     title: "Open source",
     href: "https://github.com/thetanav",
-    meta: "Recent experiments on GitHub",
+    meta: "My projects on GitHub",
     icon: <FiGithub className="h-4 w-4" />,
   },
 ];
@@ -55,17 +63,32 @@ const stacks = [
   {
     title: "Product engineering",
     copy: "Delightful interfaces with resilient architecture across web and mobile surfaces.",
-    tools: [FaReact, SiNextdotjs, SiTailwindcss, GrGraphQl, SiTurborepo],
+    tools: [
+      FaReact,
+      GrGraphQl,
+      SiPostgresql,
+      SiBun,
+      SiTypescript,
+      SiTrpc,
+      SiSocketdotio,
+    ],
   },
   {
     title: "Intelligent systems",
     copy: "Applied machine learning workflows from research to production and MLOps.",
-    tools: [SiPython, SiPytorch, SiTensorflow, SiScikitlearn, SiPlotly],
+    tools: [
+      SiLangchain,
+      SiPython,
+      SiPytorch,
+      SiTensorflow,
+      SiScikitlearn,
+      SiKaggle,
+    ],
   },
   {
     title: "Cloud scale",
     copy: "Distributed systems, data streaming, and container-first deployments.",
-    tools: [SiDocker, SiKubernetes, SiApachekafka, SiRedis, SiAwslambda],
+    tools: [SiDocker, SiApachekafka, SiRedis, SiAwslambda, SiGo, SiFlask],
   },
 ];
 
@@ -94,13 +117,12 @@ function QuickLink({
     <a
       href={href}
       target="_blank"
-      className="group relative flex min-w-[240px] flex-1 flex-col gap-1 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-4 text-sm text-[color:var(--text)] shadow-[0_20px_70px_-60px_rgba(15,23,42,0.85)] transition-all hover:-translate-y-1 hover:shadow-[0_28px_120px_-70px_rgba(93,106,255,0.35)]">
+      className="group relative flex min-w-[240px] flex-1 flex-col gap-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-4 text-sm text-[color:var(--text)] shadow-[0_20px_70px_-60px_rgba(15,23,42,0.85)] hover:shadow-[0_28px_120px_-70px_rgba(93,106,255,0.35)]">
       <span className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-[color:var(--text-muted)]">
         {icon}
         <span>{title}</span>
       </span>
-      <span className="text-sm text-[color:var(--text)]">{meta}</span>
-      <ArrowTopRightIcon className="absolute right-5 top-5 h-4 w-4 opacity-50 transition-opacity group-hover:opacity-100" />
+      <span className="text-lg text-[color:var(--text)]">{meta}</span>
     </a>
   );
 }
