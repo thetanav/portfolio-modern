@@ -41,7 +41,7 @@ export default async function Page() {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="group relative flex flex-col gap-6 rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-5 text-[color:var(--text)] shadow-[0_18px_70px_-60px_rgba(15,23,42,0.85)] hover:shadow-[0_28px_120px_-70px_rgba(93,106,255,0.35)]">
+            className="group relative flex flex-col gap-6 rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-5 text-[color:var(--text)] shadow-[0_18px_70px_-60px_rgba(15,23,42,0.85)] hover:shadow-[0_28px_120px_-70px_rgba(93,106,255,0.35)] p-3">
             <h2
               className={`text-3xl font-semibold text-[color:var(--text)] sm:text-4xl font-serif ${serif.className}`}>
               {post.title}

@@ -167,18 +167,6 @@ article.prose > *:nth-child(5) {
   animation-delay: 0.5s;
 }
 
-article.prose img {
-  border-radius: 1.5rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s ease;
-  border: 2px solid var(--border);
-}
-
-article.prose img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 30px 60px -15px rgba(var(--accent-rgb), 0.4);
-}
-
 article.prose pre {
   position: relative;
   overflow: hidden;
