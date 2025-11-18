@@ -23,6 +23,7 @@ import {
   SiYoutube,
 } from "react-icons/si";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import GitHubCalendar from "react-github-calendar";
 import { ArrowUpNarrowWide } from "lucide-react";
 import { projects } from "../lib/projects";
 import getPostMetadata from "../lib/posts";
