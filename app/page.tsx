@@ -1,4 +1,3 @@
-import { Instrument_Serif } from "next/font/google";
 import { FiCalendar, FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { HiOutlineSparkles } from "react-icons/hi";
 import { FaReact } from "react-icons/fa";
@@ -28,32 +27,34 @@ import { ArrowUpNarrowWide } from "lucide-react";
 import { projects } from "../lib/projects";
 import getPostMetadata from "../lib/posts";
 
-const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
-
 const featuredLinks = [
   {
     title: "X",
     href: "https://x.com/tanavtwt",
     meta: "@tanavtwt",
     icon: <FiTwitter className="h-5 w-5" />,
+    color: "#1DA1F2",
   },
   {
     title: "GitHub",
     href: "https://github.com/thetanav",
     meta: "thetanav",
     icon: <FiGithub className="h-5 w-5" />,
+    color: "#333",
   },
   {
     title: "LinkedIn",
     href: "https://linkedin.com/in/tanav-poswal",
     meta: "tanav-poswal",
     icon: <FiLinkedin className="h-5 w-5" />,
+    color: "#0A66C2",
   },
   {
     title: "YouTube",
     href: "https://youtube.com",
     meta: "@thetanav",
     icon: <SiYoutube className="h-5 w-5" />,
+    color: "#FF0000",
   },
 ];
 
@@ -62,24 +63,37 @@ const stacks = [
     title: "Product engineering",
     copy: "Delightful interfaces with resilient architecture across web and mobile surfaces.",
     tools: [
-      FaReact,
-      GrGraphQl,
-      SiPostgresql,
-      SiBun,
-      SiTypescript,
-      SiTrpc,
-      SiSocketdotio,
+      { icon: FaReact, label: "React" },
+      { icon: GrGraphQl, label: "GraphQL" },
+      { icon: SiPostgresql, label: "PostgreSQL" },
+      { icon: SiBun, label: "Bun" },
+      { icon: SiTypescript, label: "TypeScript" },
+      { icon: SiTrpc, label: "tRPC" },
+      { icon: SiSocketdotio, label: "Socket.io" },
     ],
   },
   {
     title: "Intelligent systems",
     copy: "Applied machine learning workflows from research to production and MLOps.",
-    tools: [SiPython, SiPytorch, SiTensorflow, SiScikitlearn, SiKaggle],
+    tools: [
+      { icon: SiPython, label: "Python" },
+      { icon: SiPytorch, label: "PyTorch" },
+      { icon: SiTensorflow, label: "TensorFlow" },
+      { icon: SiScikitlearn, label: "scikit-learn" },
+      { icon: SiKaggle, label: "Kaggle" },
+    ],
   },
   {
     title: "Cloud scale",
     copy: "Distributed systems, data streaming, and container-first deployments.",
-    tools: [SiDocker, SiApachekafka, SiRedis, SiAwslambda, SiGo, SiFlask],
+    tools: [
+      { icon: SiDocker, label: "Docker" },
+      { icon: SiApachekafka, label: "Apache Kafka" },
+      { icon: SiRedis, label: "Redis" },
+      { icon: SiAwslambda, label: "AWS Lambda" },
+      { icon: SiGo, label: "Go" },
+      { icon: SiFlask, label: "Flask" },
+    ],
   },
 ];
 
@@ -88,6 +102,7 @@ function QuickLink({
   href,
   meta,
   icon,
+  color,
 }: (typeof featuredLinks)[number]) {
   return (
     <a
@@ -96,7 +111,9 @@ function QuickLink({
       rel="noopener noreferrer"
       className="group flex items-center justify-between gap-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-sm text-[color:var(--text)] transition-all hover:shadow-[0_12px_40px_-20px_rgba(93,106,255,0.15)]">
       <div className="flex items-center gap-3">
-        <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-[color:var(--surface-soft)] text-[color:var(--text-muted)] border border-[color:var(--chip-border)]">
+        <span
+          className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-[color:var(--surface-soft)] text-[color:var(--text-muted)] border border-[color:var(--chip-border)] transition-colors group-hover:bg-[var(--hover-color)] group-hover:text-white"
+          style={{ "--hover-color": color } as React.CSSProperties}>
           {icon}
         </span>
         <div className="flex flex-col">
@@ -111,6 +128,13 @@ function QuickLink({
   );
 }
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./components/ui/tooltip";
+
 function TechIcon({
   icon: Icon,
   label,
@@ -119,14 +143,22 @@ function TechIcon({
   label: string;
 }) {
   return (
-    <span
-      title={label}
-      aria-label={label}
-      role="img"
-      className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--chip-border)] bg-[color:var(--chip-bg)] text-[color:var(--text-muted)] transition-all hover:border-[rgba(var(--accent-rgb),0.35)] hover:text-[rgb(var(--accent-rgb))]">
-      <Icon className="h-5 w-5" aria-hidden />
-      <span className="sr-only">{label}</span>
-    </span>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <span
+            aria-label={label}
+            role="img"
+            className="group inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--chip-bg)] text-[color:var(--text-muted)] transition-all hover:text-[rgb(var(--accent-rgb))]">
+            <Icon className="h-5 w-5" aria-hidden />
+            <span className="sr-only">{label}</span>
+          </span>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>{label}</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 }
 
@@ -136,10 +168,16 @@ function ProjectCard({ img, link, name, brief }: (typeof projects)[number]) {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] shadow-[0_20px_80px_-70px_rgba(15,23,42,0.85)] hover:shadow-[0_28px_120px_-70pxrgba(93,106,255,0.35)] transition-all">
-      <img src={img} alt={name} className="w-full h-32 object-cover" />
-      <div className="p-4">
-        <h3 className="text-lg font-semibold text-[color:var(--text)] mb-2">
+      className="group flex flex-col gap-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4 transition-all hover:shadow-[0_12px_40px_-20px_rgba(93,106,255,0.15)]">
+      <div className="overflow-hidden rounded-lg">
+        <img
+          src={img}
+          alt={name}
+          className="h-40 w-full object-cover transition-all group-hover:scale-105"
+        />
+      </div>
+      <div className="flex flex-col">
+        <h3 className="text-lg font-semibold text-[color:var(--text)]">
           {name}
         </h3>
         <p className="text-sm text-[color:var(--text-muted)]">{brief}</p>
@@ -154,18 +192,18 @@ function PostCard({
   slug,
 }: {
   title: string;
-  date: Date;
+  date: string;
   slug: string;
 }) {
   return (
     <a
       href={`/blog/${slug}`}
-      className="group flex flex-col gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4 shadow-[0_20px_80px_-70px_rgba(15,23,42,0.85)] hover:shadow-[0_28px_120px_-70pxrgba(93,106,255,0.35)] transition-all">
+      className="group flex flex-col gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4 transition-all hover:shadow-[0_12px_40px_-20px_rgba(93,106,255,0.15)]">
       <h3 className="text-lg font-semibold text-[color:var(--text)] group-hover:text-[rgb(var(--accent-rgb))]">
         {title}
       </h3>
       <p className="text-sm text-[color:var(--text-muted)]">
-        {date.toLocaleDateString("en-US", {
+        {new Date(date).toLocaleDateString("en-US", {
           year: "numeric",
           month: "long",
           day: "numeric",
@@ -211,21 +249,15 @@ export default function Page() {
 
   return (
     <section className="animate-entry flex flex-col gap-8">
-      <header className="flex flex-col gap-4 text-balance">
-        <h1 className="text-4xl font-semibold tracking-tight text-[color:var(--text)] sm:text-5xl">
-          <span
-            className={`text-5xl font-black leading-[1.05] text-[color:var(--text)] sm:text-6xl ${serif.className}`}>
-            Hi! I'm Tanav
-          </span>
+      <header className="flex flex-col gap-4">
+        <h1 className="text-3xl font-bold tracking-tight text-[color:var(--text)] sm:text-4xl">
+          Tanav Poswal
         </h1>
         <p className="max-w-2xl text-base leading-relaxed text-[color:var(--text-muted)] sm:text-lg">
-          Full-stack engineer and ML practitioner focused on crafting minimal,
-          purposeful products. I combine modern web tooling with intelligent
-          systems to move fast, design boldly, and deliver reliable, scalable
-          outcomes.
+          Full-stack engineer and ML practitioner. I build minimal, purposeful
+          products with modern web tools and intelligent systems.
         </p>
-
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3">
           {featuredLinks.map((link) => (
             <QuickLink key={link.href} {...link} />
           ))}
@@ -245,7 +277,7 @@ export default function Page() {
             Some of my latest work and experiments.
           </p>
         </div>
-        <div className="grid gap-3 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2">
           {recentProjects.map((project) => (
             <ProjectCard key={project.name} {...project} />
           ))}
@@ -257,6 +289,22 @@ export default function Page() {
         </a>
       </section>
 
+      <section className="flex flex-col gap-4" aria-label="My Stack">
+        <div className="flex flex-col gap-2">
+          <h2 className="text-xl font-semibold text-[color:var(--text)]">
+            My Stack
+          </h2>
+          <p className="max-w-2xl text-sm text-[color:var(--text-muted)]">
+            A look at the tools and technologies I love to use.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {stacks.flatMap((stack) => stack.tools).map((tool, index) => (
+            <TechIcon key={index} icon={tool.icon} label={tool.label} />
+          ))}
+        </div>
+      </section>
+
       <section className="flex flex-col gap-4" aria-label="Recent Posts">
         <div className="flex flex-col gap-2">
           <h2 className="text-xl font-semibold text-[color:var(--text)]">
@@ -266,9 +314,13 @@ export default function Page() {
             Thoughts on technology, learning, and building.
           </p>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="grid gap-3 md:grid-cols-2">
           {recentPosts.map((post) => (
-            <PostCard key={post.slug} {...post} />
+            <PostCard
+              key={post.slug}
+              {...post}
+              date={post.date.toString()}
+            />
           ))}
         </div>
         <a
