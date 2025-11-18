@@ -14,7 +14,7 @@ function ProjectCard({ img, link, name, brief }: Project) {
     <a
       href={link}
       target="_blank"
-      className="group relative flex flex-col gap-5 overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 text-[color:var(--text)] shadow-[0_18px_80px_-60px_rgba(15,23,42,0.85)] hover:shadow-[0_28px_120px_-70px_rgba(93,106,255,0.35)]">
+      className="group relative flex flex-col gap-5 overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-2 text-[color:var(--text)] shadow-[0_18px_80px_-60px_rgba(15,23,42,0.85)] hover:shadow-[0_28px_120px_-70px_rgba(93,106,255,0.35)]">
       <span
         className="pointer-events-none absolute inset-0 opacity-70"
         style={{
@@ -32,7 +32,7 @@ function ProjectCard({ img, link, name, brief }: Project) {
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="relative z-10 flex items-center gap-4">
+      <div className="relative z-10 flex items-center gap-4 px-3">
         <div className="flex flex-col gap-1">
           <h3 className="text-lg font-semibold leading-tight sm:text-xl capitalize">
             {name}
@@ -40,7 +40,7 @@ function ProjectCard({ img, link, name, brief }: Project) {
           <p className="text-sm text-[color:var(--text-muted)]">{brief}</p>
         </div>
       </div>
-      <div className="relative z-10 flex items-center justify-end gap-2 text-xs uppercase tracking-[0.3em] text-[color:var(--text-muted)] group-hover:text-primary">
+      <div className="relative z-10 flex items-center justify-end gap-2 text-xs uppercase tracking-[0.3em] text-[color:var(--text-muted)] group-hover:text-primary px-3 mb-3">
         <span>visit / github</span>
         <ArrowRightIcon className="h-4 w-4" />
       </div>
@@ -96,40 +96,10 @@ export default function Page() {
         </p>
       </header>
 
-      <div className="grid gap-4" aria-label="Projects">
+      <div className="grid grid-cols-2 gap-4" aria-label="Projects">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
-
-        <a
-          href="https://github.com/thetanav"
-          target="_blank"
-          className="group relative flex flex-col gap-5 overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 text-[color:var(--text)] shadow-[0_18px_80px_-60px_rgba(15,23,42,0.85)] hover:shadow-[0_28px_120px_-70px_rgba(93,106,255,0.35)]">
-          <span
-            className="pointer-events-none absolute inset-0 opacity-70"
-            style={{
-              background:
-                "radial-gradient(circle at 0% 0%, rgba(129,140,248,0.24), transparent 40%)",
-            }}
-          />
-          <div className="relative z-10 flex items-center gap-4">
-            <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[rgba(var(--accent-rgb),0.2)] bg-[color:var(--surface-soft)] text-[rgb(var(--accent-rgb))]">
-              <SiGithub className="h-6 w-6" />
-            </span>
-            <div className="flex flex-col gap-1">
-              <h3 className="text-lg font-semibold leading-tight sm:text-xl">
-                GitHub profile
-              </h3>
-              <p className="text-sm text-[color:var(--text-muted)]">
-                Explore all public experiments and source code.
-              </p>
-            </div>
-          </div>
-          <div className="relative z-10 flex items-center justify-end gap-2 text-xs uppercase tracking-[0.3em] text-[color:var(--text-muted)]">
-            <span>open workspace</span>
-            <ArrowRightIcon className="h-4 w-4" />
-          </div>
-        </a>
       </div>
     </section>
   );
