@@ -23,7 +23,7 @@ export function Navbar() {
             <Link
               key={path}
               href={path}
-              className="flex items-center rounded-full px-3 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--text-muted)] transition-all hover:bg-[rgba(var(--accent-rgb),0.12)] hover:text-[color:var(--text)]">
+              className="flex items-center px-3 py-1.5 text-xs font-medium text-[color:var(--text-muted)] transition-all hover:text-[rgba(var(--accent-rgb),0.12)]">
               {name}
             </Link>
           );
@@ -32,7 +32,7 @@ export function Navbar() {
           href="http://docs.google.com/document/d/1rOTy341rTIquz2SzYpTs7ouaR88VzCi886iT0IEGOKk/export?format=pdf"
           rel="noopener noreferrer"
           target="_blank"
-          className="flex items-center rounded-full px-3 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--text-muted)] transition-all hover:bg-[rgba(var(--accent-rgb),0.12)] hover:text-[color:var(--text)]">
+          className="flex items-center px-3 py-1.5 text-xs font-medium text-[color:var(--text-muted)] transition-all hover:text-[rgba(var(--accent-rgb),0.12)]">
           resume
         </a>
       </div>

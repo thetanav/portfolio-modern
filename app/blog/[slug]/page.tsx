@@ -5,8 +5,6 @@ import getPostMetadata from "lib/posts";
 import CodeBlock from "app/components/codeblock";
 import { Instrument_Serif, Inter } from "next/font/google";
 import ImgBlock from "app/components/imgblock";
-import { Share } from "app/components/share";
-import { HiOutlineSparkles } from "react-icons/hi";
 
 function getReadingTime(content: string): string {
   const wordsPerMinute = 200;
@@ -84,30 +82,15 @@ export default async function Page(props) {
   const readingTime = getReadingTime(post.content);
 
   return (
-    <section className="animate-entry flex flex-col gap-10">
-      <header className="relative flex flex-col gap-8 rounded-3xl border-2 border-[color:var(--border)] bg-gradient-to-br from-[color:var(--surface)] to-[color:var(--surface-soft)] p-8 shadow-[0_20px_80px_-50px_rgba(var(--accent-rgb),0.4)] backdrop-blur-xl sm:p-10 lg:p-12">
-        {/* Decorative gradient overlay */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[rgba(var(--accent-rgb),0.05)] via-transparent to-[rgba(244,114,182,0.05)] opacity-60" />
-
-        <div className="relative z-10 flex flex-wrap items-start justify-between gap-6">
-          <div className="flex flex-col gap-4 text-balance">
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border-2 border-[rgba(var(--accent-rgb),0.3)] bg-gradient-to-r from-[color:var(--accent-soft)] to-transparent px-5 py-2.5 text-xs font-bold uppercase tracking-[0.35em] text-[rgb(var(--accent-rgb))] shadow-lg">
-              <HiOutlineSparkles className="h-4 w-4 animate-pulse" />
-              field notes
-            </span>
-            <h1
-              className={`blog-title text-5xl font-black leading-[1.05] text-[color:var(--text)] sm:text-6xl lg:text-7xl ${serif.className}`}>
-              {post.data.title}
-            </h1>
-          </div>
-          <Share />
-        </div>
-        <div className="relative z-10 flex items-center gap-4">
-          <div className="h-px flex-1 bg-gradient-to-r from-[rgba(var(--accent-rgb),0.5)] to-transparent" />
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[color:var(--text-muted)]">
-            published {formatDate(post.data.date)} • {readingTime}
-          </p>
-          <div className="h-px flex-1 bg-gradient-to-l from-[rgba(var(--accent-rgb),0.5)] to-transparent" />
+    <section className="animate-entry flex flex-col gap-8">
+      <header className="flex flex-col gap-4 text-balance">
+        <h1 className="text-lg font-black leading-[1.05] text-[color:var(--text)] sm:text-4xl">
+          {post.data.title}
+        </h1>
+        <div className="flex items-center gap-4 text-sm text-[color:var(--text-muted)]">
+          <span>{formatDate(post.data.date)}</span>
+          <span>•</span>
+          <span>{readingTime}</span>
         </div>
       </header>
 

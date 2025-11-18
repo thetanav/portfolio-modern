@@ -21,12 +21,21 @@ import {
   SiKaggle,
   SiGo,
   SiYoutube,
+  SiCaldotcom,
 } from "react-icons/si";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import GitHubCalendar from "react-github-calendar";
-import { ArrowUpNarrowWide } from "lucide-react";
+import { ArrowLeftIcon, ArrowRightIcon, ArrowUpNarrowWide } from "lucide-react";
 import { projects } from "../lib/projects";
 import getPostMetadata from "../lib/posts";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./components/ui/tooltip";
+
+const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
 const featuredLinks = [
   {
@@ -48,10 +57,10 @@ const featuredLinks = [
     icon: <FiLinkedin className="h-5 w-5" />,
   },
   {
-    title: "YouTube",
-    href: "https://youtube.com",
-    meta: "@thetanav",
-    icon: <SiYoutube className="h-5 w-5" />,
+    title: "Let's Connect",
+    href: "https://cal.com/tanavposwal",
+    meta: "tanavposwal",
+    icon: <SiCaldotcom className="h-5 w-5" />,
   },
 ];
 
@@ -81,6 +90,31 @@ const stacks = [
   },
 ];
 
+function getIconLabel(Icon: React.ElementType): string {
+  const iconMap = new Map<React.ElementType, string>([
+    [FaReact, "React"],
+    [GrGraphQl, "GraphQL"],
+    [SiPostgresql, "PostgreSQL"],
+    [SiBun, "Bun"],
+    [SiTypescript, "TypeScript"],
+    [SiTrpc, "tRPC"],
+    [SiSocketdotio, "Socket.io"],
+    [SiPython, "Python"],
+    [SiPytorch, "PyTorch"],
+    [SiTensorflow, "TensorFlow"],
+    [SiScikitlearn, "Scikit-learn"],
+    [SiKaggle, "Kaggle"],
+    [SiDocker, "Docker"],
+    [SiApachekafka, "Apache Kafka"],
+    [SiRedis, "Redis"],
+    [SiAwslambda, "AWS Lambda"],
+    [SiGo, "Go"],
+    [SiFlask, "Flask"],
+  ]);
+
+  return iconMap.get(Icon) || "Unknown";
+}
+
 function QuickLink({
   title,
   href,
@@ -92,9 +126,9 @@ function QuickLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex items-center justify-between gap-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-sm text-[color:var(--text)] transition-all hover:shadow-[0_12px_40px_-20px_rgba(93,106,255,0.15)]">
+      className="group flex items-center justify-between gap-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-4 text-sm text-[color:var(--text)] transition-color hover:shadow-[0_12px_40px_-20px_rgba(93,106,255,0.15)]">
       <div className="flex items-center gap-3">
-        <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-[color:var(--surface-soft)] text-[color:var(--text-muted)] border border-[color:var(--chip-border)]">
+        <span className="inline-flex h-9 w-9 items-center justify-center">
           {icon}
         </span>
         <div className="flex flex-col">
@@ -104,17 +138,12 @@ function QuickLink({
           <span className="text-xs text-[color:var(--text-muted)]">{meta}</span>
         </div>
       </div>
-      <span className="text-[color:var(--text-muted)]">↗</span>
+      <span className="text-[color:var(--text-muted)]">
+        <ArrowRightIcon className="h-4 w-4 -rotate-45" />
+      </span>
     </a>
   );
 }
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "./components/ui/tooltip";
 
 function TechIcon({
   icon: Icon,
@@ -124,14 +153,20 @@ function TechIcon({
   label: string;
 }) {
   return (
-    <span
-      title={label}
-      aria-label={label}
-      role="img"
-      className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--chip-border)] bg-[color:var(--chip-bg)] text-[color:var(--text-muted)] transition-all hover:border-[rgba(var(--accent-rgb),0.35)] hover:text-[rgb(var(--accent-rgb))]">
-      <Icon className="h-5 w-5" aria-hidden />
-      <span className="sr-only">{label}</span>
-    </span>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <span
+          aria-label={label}
+          role="img"
+          className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--chip-border)] bg-[color:var(--chip-bg)] text-[color:var(--text-muted)] transition-all hover:border-[rgba(var(--accent-rgb))] hover:text-[rgb(var(--accent-rgb))]">
+          <Icon className="h-5 w-5" aria-hidden />
+          <span className="sr-only">{label}</span>
+        </span>
+      </TooltipTrigger>
+      <TooltipContent>
+        <p>{label}</p>
+      </TooltipContent>
+    </Tooltip>
   );
 }
 
@@ -221,80 +256,112 @@ export default function Page() {
   };
 
   return (
-    <section className="animate-entry flex flex-col gap-8">
-      <header className="flex flex-col gap-4 text-balance">
-        <h1 className="text-4xl font-semibold tracking-tight text-[color:var(--text)] sm:text-5xl">
-          <span
-            className={`text-5xl font-black leading-[1.05] text-[color:var(--text)] sm:text-6xl ${serif.className}`}>
+    <TooltipProvider>
+      <section className="animate-entry flex flex-col gap-8">
+        <header className="flex flex-col gap-4 text-balance">
+          <h1 className="text-lg font-black leading-[1.05] text-[color:var(--text)] sm:text-4xl">
             Hi! I'm Tanav
-          </span>
-        </h1>
-        <p className="max-w-2xl text-base leading-relaxed text-[color:var(--text-muted)] sm:text-lg">
-          Full-stack engineer and ML practitioner focused on crafting minimal,
-          purposeful products. I combine modern web tooling with intelligent
-          systems to move fast, design boldly, and deliver reliable, scalable
-          outcomes.
-        </p>
-
-        <div className="grid grid-cols-2 gap-4">
-          {featuredLinks.map((link) => (
-            <QuickLink key={link.href} {...link} />
-          ))}
-        </div>
-      </header>
-
-      <section>
-        <GitHubCalendar username="thetanav" theme={calendarTheme} />
-      </section>
-
-      <section className="flex flex-col gap-4" aria-label="Recent Projects">
-        <div className="flex flex-col gap-2">
-          <h2 className="text-xl font-semibold text-[color:var(--text)]">
-            Recent Projects
-          </h2>
-          <p className="max-w-2xl text-sm text-[color:var(--text-muted)]">
-            Some of my latest work and experiments.
+          </h1>
+          <p className="w-full text-base text-[color:var(--text-muted)] sm:text-md">
+            Full-stack engineer and ML practitioner focused on crafting minimal,
+            purposeful products. I combine modern web tooling with intelligent
+            systems to move fast, design boldly, and deliver reliable, scalable
+            outcomes.
           </p>
-        </div>
-        <div className="grid gap-3 md:grid-cols-3">
-          {recentProjects.map((project) => (
-            <ProjectCard key={project.name} {...project} />
-          ))}
-        </div>
-        <a
-          href="/projects"
-          className="self-start text-sm text-[color:var(--accent)] hover:underline">
-          View all projects →
-        </a>
-      </section>
 
-      <section className="flex flex-col gap-4" aria-label="Recent Posts">
-        <div className="flex flex-col gap-2">
-          <h2 className="text-xl font-semibold text-[color:var(--text)]">
-            Recent Posts
-          </h2>
-          <p className="max-w-2xl text-sm text-[color:var(--text-muted)]">
-            Thoughts on technology, learning, and building.
+          <div className="grid grid-cols-2 gap-3 my-6">
+            {featuredLinks.map((link) => (
+              <QuickLink key={link.href} {...link} />
+            ))}
+          </div>
+        </header>
+
+        <section className="flex flex-col gap-4 mb-6" aria-label="Tech Stack">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-xl font-semibold text-[color:var(--text)]">
+              Tech Stack
+            </h2>
+          </div>
+          <div className="flex flex-col gap-6">
+            {stacks.map((stack) => (
+              <div key={stack.title} className="flex flex-col gap-3">
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-sm font-medium text-[color:var(--text)]">
+                    {stack.title}
+                  </h3>
+                  <p className="text-xs text-[color:var(--text-muted)]">
+                    {stack.copy}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {stack.tools.map((Icon, index) => (
+                    <TechIcon
+                      key={index}
+                      icon={Icon}
+                      label={getIconLabel(Icon)}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-6">
+          <GitHubCalendar username="thetanav" theme={calendarTheme} />
+        </section>
+
+        <section
+          className="flex flex-col gap-4 mb-6"
+          aria-label="Recent Projects">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-xl font-semibold text-[color:var(--text)]">
+              Recent Projects
+            </h2>
+            <p className="max-w-2xl text-sm text-[color:var(--text-muted)]">
+              Some of my latest work and experiments.
+            </p>
+          </div>
+          <div className="grid gap-3 md:grid-cols-2">
+            {recentProjects.map((project) => (
+              <ProjectCard key={project.name} {...project} />
+            ))}
+          </div>
+          <a
+            href="/projects"
+            className="self-start text-sm text-[color:var(--accent)] hover:underline">
+            View all projects →
+          </a>
+        </section>
+
+        <section className="flex flex-col gap-4 mb-6" aria-label="Recent Posts">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-xl font-semibold text-[color:var(--text)]">
+              Recent Posts
+            </h2>
+            <p className="max-w-2xl text-sm text-[color:var(--text-muted)]">
+              Thoughts on technology, learning, and building.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3">
+            {recentPosts.map((post) => (
+              <PostCard key={post.slug} {...post} />
+            ))}
+          </div>
+          <a
+            href="/blog"
+            className="self-start text-sm text-[color:var(--accent)] hover:underline">
+            View all posts →
+          </a>
+        </section>
+
+        <section className="flex flex-col gap-3 text-sm text-[color:var(--text-muted)] mb-6">
+          <p>
+            Currently collaborating with teams and founders to experiment,
+            validate, and scale ideas in public. #Let'sBuildTogether
           </p>
-        </div>
-        <div className="flex flex-col gap-3">
-          {recentPosts.map((post) => (
-            <PostCard key={post.slug} {...post} />
-          ))}
-        </div>
-        <a
-          href="/blog"
-          className="self-start text-sm text-[color:var(--accent)] hover:underline">
-          View all posts →
-        </a>
+        </section>
       </section>
-
-      <section className="flex flex-col gap-3 text-sm text-[color:var(--text-muted)]">
-        <p>
-          Currently collaborating with teams and founders to experiment,
-          validate, and scale ideas in public. #Let'sBuildTogether
-        </p>
-      </section>
-    </section>
+    </TooltipProvider>
   );
 }
