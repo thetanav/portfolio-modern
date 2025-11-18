@@ -22,10 +22,15 @@ import {
   SiYoutube,
 } from "react-icons/si";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
-import GitHubCalendar from "react-github-calendar";
 import { ArrowUpNarrowWide } from "lucide-react";
 import { projects } from "../lib/projects";
 import getPostMetadata from "../lib/posts";
+import dynamic from "next/dynamic";
+
+const GitHubCalendar = dynamic(
+  () => import("react-github-calendar"),
+  { ssr: false }
+);
 
 const featuredLinks = [
   {
@@ -134,6 +139,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./components/ui/tooltip";
+import Image from "next/image";
 
 function TechIcon({
   icon: Icon,
@@ -170,9 +176,11 @@ function ProjectCard({ img, link, name, brief }: (typeof projects)[number]) {
       rel="noopener noreferrer"
       className="group flex flex-col gap-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4 transition-all hover:shadow-[0_12px_40px_-20px_rgba(93,106,255,0.15)]">
       <div className="overflow-hidden rounded-lg">
-        <img
+        <Image
           src={img}
           alt={name}
+          width={1200}
+          height={630}
           className="h-40 w-full object-cover transition-all group-hover:scale-105"
         />
       </div>
