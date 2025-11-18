@@ -181,11 +181,11 @@ function ProjectCard({ img, link, name, brief }: (typeof projects)[number]) {
         <img
           src={img}
           alt={name}
-          className="h-40 w-full object-cover transition-all group-hover:scale-105"
+          className="h-auto w-full object-contain transition-all group-hover:scale-105"
         />
       </div>
       <div className="flex flex-col">
-        <h3 className="text-lg font-semibold text-[color:var(--text)]">
+        <h3 className="text-lg font-semibold text-[color:var(--text)] capitalize">
           {name}
         </h3>
         <p className="text-sm text-[color:var(--text-muted)]">{brief}</p>
