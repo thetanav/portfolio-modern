@@ -1,7 +1,6 @@
 import "./global.css";
 import type { Metadata } from "next";
 import { Navbar } from "./components/nav";
-import { Footer } from "./components/footer";
 import NextTopLoader from "nextjs-toploader";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { PostHogProvider } from "./components/PostHogProvider";
@@ -79,7 +78,6 @@ export default function RootLayout({
               />
               <div className="relative z-10">{children}</div>
             </main>
-            <Footer />
           </div>
         </PostHogProvider>
       </body>
