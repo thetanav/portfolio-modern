@@ -1,6 +1,7 @@
 import { projects } from "../lib/projects";
 import getPostMetadata from "../lib/posts";
 import Link from "next/link";
+import NowPlaying from "./components/now-playing";
 
 export default function Page() {
   const recentProjects = projects.slice(0, 3);
@@ -17,33 +18,36 @@ export default function Page() {
           software. Currently focused on intelligent systems and scalable web
           architecture.
         </p>
-        <div className="flex gap-6 text-sm text-[var(--text-muted)]">
-          <a
-            href="https://x.com/tanavtwt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[var(--text)] transition-colors">
-            X (Twitter)
-          </a>
-          <a
-            href="https://github.com/thetanav"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[var(--text)] transition-colors">
-            GitHub
-          </a>
-          <a
-            href="https://linkedin.com/in/tanav-poswal"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[var(--text)] transition-colors">
-            LinkedIn
-          </a>
-          <a
-            href="mailto:hello@tanav.is-a.dev"
-            className="hover:text-[var(--text)] transition-colors">
-            Email
-          </a>
+        <div className="flex flex-col gap-6">
+          <div className="flex gap-6 text-sm text-[var(--text-muted)]">
+            <a
+              href="https://x.com/tanavtwt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--text)] transition-colors">
+              X (Twitter)
+            </a>
+            <a
+              href="https://github.com/thetanav"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--text)] transition-colors">
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/tanav-poswal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--text)] transition-colors">
+              LinkedIn
+            </a>
+            <a
+              href="mailto:hello@tanav.is-a.dev"
+              className="hover:text-[var(--text)] transition-colors">
+              Email
+            </a>
+          </div>
+          <NowPlaying />
         </div>
       </section>
 
