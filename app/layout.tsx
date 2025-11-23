@@ -4,6 +4,7 @@ import { Navbar } from "./components/nav";
 import NextTopLoader from "nextjs-toploader";
 import { GeistSans } from "geist/font/sans";
 import { PostHogProvider } from "./components/PostHogProvider";
+import Oneko from "./components/oneko";
 
 const sans = GeistSans;
 
@@ -73,6 +74,7 @@ export default function RootLayout({
               <Navbar />
             </header>
             <main>{children}</main>
+            <Oneko />
           </div>
         </PostHogProvider>
       </body>

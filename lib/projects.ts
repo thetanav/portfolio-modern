@@ -3,6 +3,7 @@ export interface Project {
   link: string;
   name: string;
   brief: string;
+  tech: string[];
 }
 
 export const projects: Project[] = [
@@ -11,23 +12,27 @@ export const projects: Project[] = [
     link: "https://simpchat.vercel.app/",
     name: "agentic ai chat",
     brief: "agentic ai chat with extensive tool uses.",
+    tech: ["Next.js", "OpenAI", "TailwindCSS"],
   },
   {
     img: "/images/tradex.png",
     link: "https://trading-system-theta.vercel.app/",
     name: "trade exchange",
     brief: "real-time trading app with live order book.",
+    tech: ["React", "Node.js", "WebSockets"],
   },
   {
     img: "/images/chess-app.png",
     link: "https://github.com/thetanav/chess",
     name: "multiplayer chess",
     brief: "multiplayer chess game with websockets.",
+    tech: ["Socket.io", "Express", "React"],
   },
   {
     img: "/images/linkmash.png",
     link: "https://linkmash.netlify.app/",
     name: "linkmash",
     brief: "compare your linkedin profile with others.",
+    tech: ["Vue.js", "Firebase"],
   },
 ];

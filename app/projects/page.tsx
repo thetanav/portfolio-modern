@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { projects } from "../../lib/projects";
 import type { Project } from "../../lib/projects";
 
-function ProjectCard({ img, link, name, brief }: Project) {
+function ProjectCard({ img, link, name, brief, tech }: Project) {
   return (
     <a
       href={link}
@@ -16,11 +16,22 @@ function ProjectCard({ img, link, name, brief }: Project) {
           className="aspect-[2/1] w-full object-cover"
         />
       </div>
-      <div className="flex flex-col gap-1">
-        <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
-          {name}
-        </h3>
-        <p className="text-sm text-[var(--text-muted)]">{brief}</p>
+      <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1">
+          <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
+            {name}
+          </h3>
+          <p className="text-sm text-[var(--text-muted)]">{brief}</p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {tech.map((t) => (
+            <span
+              key={t}
+              className="rounded-full border border-[var(--border)] px-2 py-0.5 text-xs text-[var(--text-muted)]">
+              {t}
+            </span>
+          ))}
+        </div>
       </div>
     </a>
   );

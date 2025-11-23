@@ -1,7 +1,7 @@
 import { projects } from "../lib/projects";
 import getPostMetadata from "../lib/posts";
 import Link from "next/link";
-import NowPlaying from "./components/now-playing";
+import RecentlyPlayed from "./components/recently-played";
 
 export default function Page() {
   const recentProjects = projects.slice(0, 3);
@@ -47,7 +47,9 @@ export default function Page() {
               Email
             </a>
           </div>
-          <NowPlaying />
+          <div className="flex flex-col gap-4">
+            <RecentlyPlayed />
+          </div>
         </div>
       </section>
 
