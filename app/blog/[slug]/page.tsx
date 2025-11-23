@@ -82,19 +82,19 @@ export default async function Page(props) {
   const readingTime = getReadingTime(post.content);
 
   return (
-    <section className="animate-entry flex flex-col gap-8">
-      <header className="flex flex-col gap-4 text-balance">
-        <h1 className="text-lg font-black leading-[1.05] text-[color:var(--text)] sm:text-4xl">
+    <section className="flex flex-col gap-8">
+      <header className="flex flex-col gap-4">
+        <h1 className="text-2xl font-medium tracking-tight text-[var(--text)]">
           {post.data.title}
         </h1>
-        <div className="flex items-center gap-4 text-sm text-[color:var(--text-muted)]">
+        <div className="flex items-center gap-3 text-sm text-[var(--text-muted)]">
           <span>{formatDate(post.data.date)}</span>
           <span>•</span>
           <span>{readingTime}</span>
         </div>
       </header>
 
-      <article className="prose prose-lg prose-white text-white">
+      <article className="prose">
         <Markdown
           options={{
             overrides: {
@@ -105,8 +105,7 @@ export default async function Page(props) {
                 component: ImgBlock,
               },
             },
-          }}
-        >
+          }}>
           {post.content}
         </Markdown>
       </article>

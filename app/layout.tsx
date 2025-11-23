@@ -59,22 +59,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`relative min-h-screen bg-transparent text-xs antialiased font-normal leading-relaxed ${sans.variable} ${sans.className}`}
-      >
+        className={`${sans.className} antialiased bg-[var(--bg)] text-[var(--text)] transition-colors duration-300`}>
         <PostHogProvider>
-          <NextTopLoader showSpinner={false} color="#22c55e" />
-          <div className="mx-auto flex min-h-screen w-full max-w-2xl flex-col gap-4 px-4 py-4 md:px-6 md:py-6">
-            <Navbar />
-            <main className="flex-1 mt-4">
-              <div
-                className="pointer-events-none absolute inset-0 opacity-[0.12]"
-                style={{
-                  background:
-                    "radial-gradient(circle at 20% -10%, rgba(var(--accent-rgb), 0.25), transparent 55%)",
-                }}
-              />
-              <div className="relative z-10">{children}</div>
-            </main>
+          <NextTopLoader
+            color="#333"
+            initialPosition={0.08}
+            crawlSpeed={200}
+            height={2}
+            showSpinner={false}
+          />
+          <div className="mx-auto max-w-xl px-6 py-12 md:py-20">
+            <header className="mb-8 flex items-center justify-between">
+              <Navbar />
+            </header>
+            <main>{children}</main>
           </div>
         </PostHogProvider>
       </body>
