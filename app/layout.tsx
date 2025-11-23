@@ -2,14 +2,10 @@ import "./global.css";
 import type { Metadata } from "next";
 import { Navbar } from "./components/nav";
 import NextTopLoader from "nextjs-toploader";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import { PostHogProvider } from "./components/PostHogProvider";
 
-const sans = Plus_Jakarta_Sans({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+const sans = GeistSans;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tanav.is-a.dev"),
@@ -63,14 +59,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`relative min-h-screen bg-transparent text-base antialiased font-normal ${sans.variable} ${sans.className}`}>
+        className={`relative min-h-screen bg-transparent text-xs antialiased font-normal leading-relaxed ${sans.variable} ${sans.className}`}
+      >
         <PostHogProvider>
-          <NextTopLoader showSpinner={false} color="#5d6aff" />
+          <NextTopLoader showSpinner={false} color="#22c55e" />
           <div className="mx-auto flex min-h-screen w-full max-w-2xl flex-col gap-4 px-4 py-4 md:px-6 md:py-6">
             <Navbar />
             <main className="flex-1 mt-4">
               <div
-                className="pointer-events-none absolute inset-0 opacity-[0.22]"
+                className="pointer-events-none absolute inset-0 opacity-[0.12]"
                 style={{
                   background:
                     "radial-gradient(circle at 20% -10%, rgba(var(--accent-rgb), 0.25), transparent 55%)",

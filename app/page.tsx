@@ -21,7 +21,7 @@ import {
   SiKaggle,
   SiGo,
   SiYoutube,
-  SiCaldotcom,
+  SiCalendly,
 } from "react-icons/si";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import GitHubCalendar from "react-github-calendar";
@@ -60,7 +60,7 @@ const featuredLinks = [
     title: "Let's Connect",
     href: "https://cal.com/tanavposwal",
     meta: "tanavposwal",
-    icon: <SiCaldotcom className="h-5 w-5" />,
+    icon: <SiCalendly className="h-5 w-5" />,
   },
 ];
 
@@ -87,6 +87,30 @@ const stacks = [
     title: "Cloud scale",
     copy: "Distributed systems, data streaming, and container-first deployments.",
     tools: [SiDocker, SiApachekafka, SiRedis, SiAwslambda, SiGo, SiFlask],
+  },
+];
+
+const experiences = [
+  {
+    title: "Full-Stack Developer",
+    company: "Tech Startup",
+    duration: "2022 - Present",
+    description:
+      "Building scalable web applications using React, Node.js, and cloud services. Led a team of 3 developers in delivering a SaaS product.",
+  },
+  {
+    title: "ML Engineer",
+    company: "AI Research Lab",
+    duration: "2021 - 2022",
+    description:
+      "Developed machine learning models for natural language processing. Published research on transformer architectures.",
+  },
+  {
+    title: "Software Intern",
+    company: "Big Tech Corp",
+    duration: "2020 - 2021",
+    description:
+      "Worked on backend services using Python and Docker. Contributed to open-source projects and improved CI/CD pipelines.",
   },
 ];
 
@@ -126,7 +150,8 @@ function QuickLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex items-center justify-between gap-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-4 text-sm text-[color:var(--text)] transition-color hover:shadow-[0_12px_40px_-20px_rgba(93,106,255,0.15)]">
+      className="group flex items-center justify-between gap-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-4 text-sm text-[color:var(--text)] transition-color hover:shadow-[0_12px_40px_-20px_rgba(34,197,94,0.15)]"
+    >
       <div className="flex items-center gap-3">
         <span className="inline-flex h-9 w-9 items-center justify-center">
           {icon}
@@ -158,7 +183,8 @@ function TechIcon({
         <span
           aria-label={label}
           role="img"
-          className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--chip-border)] bg-[color:var(--chip-bg)] text-[color:var(--text-muted)] transition-all hover:border-[rgba(var(--accent-rgb))] hover:text-[rgb(var(--accent-rgb))]">
+          className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--chip-border)] bg-[color:var(--chip-bg)] text-[color:var(--text-muted)] transition-all hover:border-[rgba(var(--accent-rgb))] hover:text-[rgb(var(--accent-rgb))]"
+        >
           <Icon className="h-5 w-5" aria-hidden />
           <span className="sr-only">{label}</span>
         </span>
@@ -176,7 +202,8 @@ function ProjectCard({ img, link, name, brief }: (typeof projects)[number]) {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col gap-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4 transition-all hover:shadow-[0_12px_40px_-20px_rgba(93,106,255,0.15)]">
+      className="group flex flex-col gap-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4 transition-all hover:shadow-[0_12px_40px_-20px_rgba(34,197,94,0.15)]"
+    >
       <div className="overflow-hidden rounded-lg">
         <img
           src={img}
@@ -206,7 +233,8 @@ function PostCard({
   return (
     <a
       href={`/blog/${slug}`}
-      className="group flex flex-col gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4 shadow-[0_20px_80px_-70px_rgba(15,23,42,0.85)] hover:shadow-[0_28px_120px_-70pxrgba(93,106,255,0.35)] transition-all">
+      className="group flex flex-col gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4 shadow-[0_20px_80px_-70px_rgba(15,23,42,0.85)] hover:shadow-[0_28px_120px_-70px_rgba(34,197,94,0.35)] transition-all"
+    >
       <h3 className="text-lg font-semibold text-[color:var(--text)] group-hover:text-[rgb(var(--accent-rgb))]">
         {title}
       </h3>
@@ -221,13 +249,38 @@ function PostCard({
   );
 }
 
+function ExperienceCard({
+  title,
+  company,
+  duration,
+  description,
+}: (typeof experiences)[number]) {
+  return (
+    <div className="flex flex-col gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4">
+      <div className="flex items-center justify-between">
+        <h3 className="text-lg font-semibold text-[color:var(--text)]">
+          {title}
+        </h3>
+        <span className="text-xs text-[color:var(--text-muted)]">
+          {duration}
+        </span>
+      </div>
+      <p className="text-sm font-medium text-[color:var(--accent)]">
+        {company}
+      </p>
+      <p className="text-sm text-[color:var(--text-muted)]">{description}</p>
+    </div>
+  );
+}
+
 const ExternalLink = ({ text, href }: { text: string; href: string }) => {
   return (
     <a
       className="group inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-[color:var(--surface-soft)] px-4 py-2 text-xs font-medium uppercase tracking-[0.3em] text-[color:var(--text-muted)] transition-all hover:border-[rgba(var(--accent-rgb),0.35)] hover:text-[rgb(var(--accent-rgb))]"
       rel="noopener noreferrer"
       target="_blank"
-      href={href}>
+      href={href}
+    >
       <ArrowTopRightIcon className="h-4 w-4" />
       <span>{text}</span>
     </a>
@@ -241,17 +294,17 @@ export default function Page() {
   const calendarTheme = {
     light: [
       "rgba(15, 23, 42, 0.08)", // level 0 - very light
-      "rgba(93, 106, 255, 0.2)", // level 1 - light accent
-      "rgba(93, 106, 255, 0.4)", // level 2 - medium accent
-      "rgba(93, 106, 255, 0.7)", // level 3 - strong accent
-      "rgb(93, 106, 255)", // level 4 - full accent color
+      "rgba(34, 197, 94, 0.2)", // level 1 - light accent
+      "rgba(34, 197, 94, 0.4)", // level 2 - medium accent
+      "rgba(34, 197, 94, 0.7)", // level 3 - strong accent
+      "rgb(34, 197, 94)", // level 4 - full accent color
     ],
     dark: [
       "rgba(148, 163, 184, 0.18)", // level 0 - dark border color
-      "rgba(129, 140, 248, 0.2)", // level 1 - light dark accent
-      "rgba(129, 140, 248, 0.4)", // level 2 - medium dark accent
-      "rgba(129, 140, 248, 0.7)", // level 3 - strong dark accent
-      "rgb(129, 140, 248)", // level 4 - full dark accent color
+      "rgba(34, 197, 94, 0.2)", // level 1 - light dark accent
+      "rgba(34, 197, 94, 0.4)", // level 2 - medium dark accent
+      "rgba(34, 197, 94, 0.7)", // level 3 - strong dark accent
+      "rgb(34, 197, 94)", // level 4 - full dark accent color
     ],
   };
 
@@ -259,10 +312,10 @@ export default function Page() {
     <TooltipProvider>
       <section className="animate-entry flex flex-col gap-8">
         <header className="flex flex-col gap-4 text-balance">
-          <h1 className="text-lg font-black leading-[1.05] text-[color:var(--text)] sm:text-4xl">
+          <h1 className="text-base font-black leading-[1.05] text-[color:var(--text)] sm:text-2xl">
             Hi! I'm Tanav
           </h1>
-          <p className="w-full text-base text-[color:var(--text-muted)] sm:text-md">
+          <p className="w-full text-sm text-[color:var(--text-muted)] sm:text-base">
             Full-stack engineer and ML practitioner focused on crafting minimal,
             purposeful products. I combine modern web tooling with intelligent
             systems to move fast, design boldly, and deliver reliable, scalable
@@ -275,6 +328,19 @@ export default function Page() {
             ))}
           </div>
         </header>
+
+        <section className="flex flex-col gap-4 mb-6" aria-label="Experience">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-xl font-semibold text-[color:var(--text)]">
+              Experience
+            </h2>
+          </div>
+          <div className="flex flex-col gap-4">
+            {experiences.map((exp, index) => (
+              <ExperienceCard key={index} {...exp} />
+            ))}
+          </div>
+        </section>
 
         <section className="flex flex-col gap-4 mb-6" aria-label="Tech Stack">
           <div className="flex flex-col gap-2">
@@ -313,7 +379,8 @@ export default function Page() {
 
         <section
           className="flex flex-col gap-4 mb-6"
-          aria-label="Recent Projects">
+          aria-label="Recent Projects"
+        >
           <div className="flex flex-col gap-2">
             <h2 className="text-xl font-semibold text-[color:var(--text)]">
               Recent Projects
@@ -329,7 +396,8 @@ export default function Page() {
           </div>
           <a
             href="/projects"
-            className="self-start text-sm text-[color:var(--accent)] hover:underline">
+            className="self-start text-sm text-[color:var(--accent)] hover:underline"
+          >
             View all projects →
           </a>
         </section>
@@ -350,7 +418,8 @@ export default function Page() {
           </div>
           <a
             href="/blog"
-            className="self-start text-sm text-[color:var(--accent)] hover:underline">
+            className="self-start text-sm text-[color:var(--accent)] hover:underline"
+          >
             View all posts →
           </a>
         </section>

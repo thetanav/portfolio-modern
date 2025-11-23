@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ThemeToggle } from "./theme-toggle";
 
 const navItems = {
   "/": {
@@ -15,15 +14,15 @@ const navItems = {
 
 export function Navbar() {
   return (
-    <nav className="flex items-center justify-between px-3 py-2 text-sm">
-      <ThemeToggle />
+    <nav className="flex items-center justify-end px-3 py-2 text-sm">
       <div className="flex items-center gap-1.5 sm:gap-3">
         {Object.entries(navItems).map(([path, { name }]) => {
           return (
             <Link
               key={path}
               href={path}
-              className="flex items-center px-3 py-1.5 text-xs font-medium text-[color:var(--text-muted)] transition-all hover:text-[rgba(var(--accent-rgb),0.12)]">
+              className="flex items-center px-3 py-1.5 text-xs font-medium text-[color:var(--text-muted)] transition-all hover:text-[rgba(var(--accent-rgb),0.12)]"
+            >
               {name}
             </Link>
           );
@@ -32,7 +31,8 @@ export function Navbar() {
           href="http://docs.google.com/document/d/1rOTy341rTIquz2SzYpTs7ouaR88VzCi886iT0IEGOKk/export?format=pdf"
           rel="noopener noreferrer"
           target="_blank"
-          className="flex items-center px-3 py-1.5 text-xs font-medium text-[color:var(--text-muted)] transition-all hover:text-[rgba(var(--accent-rgb),0.12)]">
+          className="flex items-center px-3 py-1.5 text-xs font-medium text-[color:var(--text-muted)] transition-all hover:text-[rgba(var(--accent-rgb),0.12)]"
+        >
           resume
         </a>
       </div>
