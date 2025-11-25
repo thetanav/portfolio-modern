@@ -9,11 +9,11 @@ function ProjectCard({ img, link, name, brief, tech }: Project) {
       target="_blank"
       rel="noopener noreferrer"
       className="group flex flex-col gap-3">
-      <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)]">
+      <div className="overflow-hidden rounded-md border border-[var(--border)] bg-[var(--surface)] p-8 bg-gradient-to-bl from-orange-600 to-orange-400 saturate-0 hover:saturate-100 transition-saturate">
         <img
           src={img}
           alt={name}
-          className="aspect-[2/1] w-full object-cover"
+          className="aspect-video w-full object-cover shadow"
         />
       </div>
       <div className="flex flex-col gap-2">

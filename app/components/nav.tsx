@@ -28,13 +28,6 @@ export function Navbar() {
           </Link>
         );
       })}
-      <a
-        href="http://docs.google.com/document/d/1rOTy341rTIquz2SzYpTs7ouaR88VzCi886iT0IEGOKk/export?format=pdf"
-        rel="noopener noreferrer"
-        target="_blank"
-        className="transition-colors hover:text-[var(--text)]">
-        resume
-      </a>
     </nav>
   );
 }

@@ -1,7 +1,9 @@
 import { projects } from "../lib/projects";
+import { oss } from "../lib/oss";
 import getPostMetadata from "../lib/posts";
 import Link from "next/link";
 import RecentlyPlayed from "./components/recently-played";
+import { ChevronRightIcon, GitPullRequestArrowIcon } from "lucide-react";
 
 export default function Page() {
   const recentProjects = projects.slice(0, 3);
@@ -15,36 +17,42 @@ export default function Page() {
         </h1>
         <p className="text-[var(--text-muted)] leading-relaxed max-w-prose">
           Full-stack engineer and ML practitioner. I build minimal, purposeful
-          software. Currently focused on intelligent systems and scalable web
-          architecture.
+          software. Building intelligent systems and scalable web architecture.
         </p>
         <div className="flex flex-col gap-6">
           <div className="flex gap-6 text-sm text-[var(--text-muted)]">
             <a
-              href="https://x.com/tanavtwt"
+              href="https://x.com/tnvtwt"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[var(--text)] transition-colors">
-              X (Twitter)
+              X
             </a>
             <a
               href="https://github.com/thetanav"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[var(--text)] transition-colors">
-              GitHub
+              Gh
             </a>
             <a
               href="https://linkedin.com/in/tanav-poswal"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[var(--text)] transition-colors">
-              LinkedIn
+              In
             </a>
             <a
-              href="mailto:hello@tanav.is-a.dev"
+              href="mailto:tanavposwal939@gmail.com"
               className="hover:text-[var(--text)] transition-colors">
-              Email
+              M
+            </a>
+            <a
+              href="http://docs.google.com/document/d/1rOTy341rTIquz2SzYpTs7ouaR88VzCi886iT0IEGOKk/export?format=pdf"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="hover:text-[var(--text)] transition-colors">
+              R
             </a>
           </div>
           <div className="flex flex-col gap-4">
@@ -86,6 +94,28 @@ export default function Page() {
           className="text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">
           View all projects →
         </Link>
+      </section>
+
+      <section className="flex flex-col gap-8">
+        <h2 className="text-lg font-medium text-[var(--text)]">
+          OSS Contributions
+        </h2>
+        <div className="flex flex-col gap-6">
+          {oss.map((contri) => (
+            <a
+              key={contri.name}
+              href={contri.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-4 group-hover:opacity-70 transition-opacity">
+              <GitPullRequestArrowIcon className="h-4 w-4" />
+              <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
+                {contri.name}
+              </h3>
+              <ChevronRightIcon className="ml-auto h-4 w-4 text-[var(--text-muted)]" />
+            </a>
+          ))}
+        </div>
       </section>
 
       <section className="flex flex-col gap-8">
