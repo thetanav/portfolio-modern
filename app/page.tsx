@@ -4,6 +4,8 @@ import getPostMetadata from "../lib/posts";
 import Link from "next/link";
 import RecentlyPlayed from "./components/recently-played";
 import { ChevronRightIcon, GitPullRequestArrowIcon } from "lucide-react";
+import GitHubCalendar from "react-github-calendar";
+import Image from "next/image";
 
 export default function Page() {
   const recentProjects = projects.slice(0, 3);
@@ -61,6 +63,10 @@ export default function Page() {
         </div>
       </section>
 
+      <section>
+        <GitHubCalendar username="thetanav" colorScheme="light" blockSize={8} />
+      </section>
+
       <section className="flex flex-col gap-8">
         <h2 className="text-lg font-medium text-[var(--text)]">Projects</h2>
         <div className="flex flex-col gap-6">
@@ -72,7 +78,9 @@ export default function Page() {
               rel="noopener noreferrer"
               className="group flex items-center gap-4">
               <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]">
-                <img
+                <Image
+                  width={100}
+                  height={100}
                   src={project.img}
                   alt={project.name}
                   className="h-full w-full object-cover"

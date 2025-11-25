@@ -63,7 +63,7 @@ export default function RecentlyPlayed() {
 
   return (
     <div className="flex flex-col gap-2">
-      <h3 className="text-sm font-medium text-[var(--text)]">
+      <h3 className="text-sm font-medium text-[var(--text-muted)]">
         {track.isNowPlaying ? "Now Playing" : "Recently Played"}
       </h3>
       <a

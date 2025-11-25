@@ -1,22 +1,25 @@
 import type { Metadata } from "next";
 import { projects } from "../../lib/projects";
 import type { Project } from "../../lib/projects";
+import Image from "next/image";
 
 function ProjectCard({ img, link, name, brief, tech }: Project) {
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex flex-col gap-3">
-      <div className="overflow-hidden rounded-md border border-[var(--border)] bg-[var(--surface)] p-8 bg-gradient-to-bl from-orange-600 to-orange-400 saturate-0 hover:saturate-100 transition-saturate">
-        <img
+    <div className="group flex flex-col gap-3">
+      <div className="overflow-hidden rounded-md border border-[var(--border)] bg-[var(--surface)] p-8 bg-gradient-to-bl from-orange-600 to-orange-400 saturate-0 group-hover:saturate-100 transition-all">
+        <Image
+          width={1000}
+          height={1000}
           src={img}
           alt={name}
-          className="aspect-video w-full object-cover shadow"
+          className="aspect-video w-full object-cover shadow-xl rounded"
         />
       </div>
-      <div className="flex flex-col gap-2">
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex flex-col gap-2">
         <div className="flex flex-col gap-1">
           <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
             {name}
@@ -32,8 +35,8 @@ function ProjectCard({ img, link, name, brief, tech }: Project) {
             </span>
           ))}
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   );
 }
 
