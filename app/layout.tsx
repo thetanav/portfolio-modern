@@ -6,7 +6,6 @@ import { GeistSans } from "geist/font/sans";
 import { PostHogProvider } from "./components/PostHogProvider";
 import { ThemeProvider } from "./components/theme-provider";
 import { ThemeToggle } from "./components/theme-toggle";
-import Oneko from "./components/oneko";
 
 const sans = GeistSans;
 
@@ -84,7 +83,6 @@ export default function RootLayout({
                 <ThemeToggle />
               </header>
               <main>{children}</main>
-              <Oneko />
             </div>
           </PostHogProvider>
         </ThemeProvider>
