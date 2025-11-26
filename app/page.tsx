@@ -4,7 +4,7 @@ import getPostMetadata from "../lib/posts";
 import Link from "next/link";
 import RecentlyPlayed from "./components/recently-played";
 import { ChevronRightIcon, GitPullRequestArrowIcon } from "lucide-react";
-import GitHubCalendar from "react-github-calendar";
+import GithubCalendarClient from "./components/github-calendar";
 import Image from "next/image";
 
 export default function Page() {
@@ -22,38 +22,45 @@ export default function Page() {
           software. Building intelligent systems and scalable web architecture.
         </p>
         <div className="flex flex-col gap-6">
-          <div className="flex gap-6 text-sm text-[var(--text-muted)]">
+          <div className="flex gap-6 text-sm text-[var(--text)]">
             <a
-              href="https://x.com/tnvtwt"
+              href="https://x.com/tanavtwt"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[var(--text)] transition-colors">
+              className="hover:text-[var(--text)] transition-colors"
+            >
               X
             </a>
             <a
               href="https://github.com/thetanav"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[var(--text)] transition-colors">
+              className="hover:text-[var(--text)] transition-colors"
+            >
               Gh
             </a>
             <a
               href="https://linkedin.com/in/tanav-poswal"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[var(--text)] transition-colors">
+              className="hover:text-[var(--text)] transition-colors"
+            >
               In
             </a>
             <a
               href="mailto:tanavposwal939@gmail.com"
-              className="hover:text-[var(--text)] transition-colors">
+              className="hover:text-[var(--text)] transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               M
             </a>
             <a
               href="http://docs.google.com/document/d/1rOTy341rTIquz2SzYpTs7ouaR88VzCi886iT0IEGOKk/export?format=pdf"
               rel="noopener noreferrer"
               target="_blank"
-              className="hover:text-[var(--text)] transition-colors">
+              className="hover:text-[var(--text)] transition-colors"
+            >
               R
             </a>
           </div>
@@ -64,7 +71,7 @@ export default function Page() {
       </section>
 
       <section>
-        <GitHubCalendar username="thetanav" colorScheme="light" blockSize={8} />
+        <GithubCalendarClient username="thetanav" blockSize={8} />
       </section>
 
       <section className="flex flex-col gap-8">
@@ -76,7 +83,8 @@ export default function Page() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-4">
+              className="group flex items-center gap-4"
+            >
               <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]">
                 <Image
                   width={100}
@@ -99,7 +107,8 @@ export default function Page() {
         </div>
         <Link
           href="/projects"
-          className="text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">
+          className="text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+        >
           View all projects →
         </Link>
       </section>
@@ -115,7 +124,8 @@ export default function Page() {
               href={contri.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-4 group-hover:opacity-70 transition-opacity">
+              className="group flex items-center gap-4 group-hover:opacity-70 transition-opacity"
+            >
               <GitPullRequestArrowIcon className="h-4 w-4" />
               <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
                 {contri.name}
@@ -133,7 +143,8 @@ export default function Page() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group flex flex-col gap-2">
+              className="group flex flex-col gap-2"
+            >
               <div className="flex items-baseline justify-between">
                 <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
                   {post.title}
@@ -150,7 +161,8 @@ export default function Page() {
         </div>
         <Link
           href="/blog"
-          className="text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">
+          className="text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+        >
           Read more →
         </Link>
       </section>

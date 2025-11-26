@@ -7,17 +7,15 @@ export interface Experience {
 
 export const experience: Experience[] = [
   {
-    company: "Tech Corp",
-    role: "Software Engineer",
-    period: "2023 - Present",
-    description:
-      "Building scalable web applications and microservices using Next.js and Go.",
+    company: "Hirewiser",
+    role: "Full Stack Engineer",
+    period: "Sept 2025 - Oct 2025",
+    description: "Building scalable backend using Next.js and TRPC.",
   },
   {
-    company: "Startup Inc",
-    role: "Full Stack Developer",
-    period: "2021 - 2023",
-    description:
-      "Led the development of the core product from MVP to Series A.",
+    company: "BlockSeBlock",
+    role: "Blockchain Engineer",
+    period: "July 2025 - Sept 2025",
+    description: "Building dapps on ICP blockchain with Rust.",
   },
 ];

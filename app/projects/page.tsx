@@ -5,23 +5,24 @@ import Image from "next/image";
 
 function ProjectCard({ img, link, name, brief, tech }: Project) {
   return (
-    <div className="group flex flex-col gap-3">
-      <div className="overflow-hidden rounded-md border border-[var(--border)] bg-[var(--surface)] p-8 bg-gradient-to-bl from-orange-600 to-orange-400 saturate-0 group-hover:saturate-100 transition-all">
+    <div className="group flex flex-col gap-3 cursor-pointer">
+      <div className="overflow-hidden rounded-2xl p-8 bg-gradient-to-bl from-neutral-900 to-neutral-700 squircle-24 shadow-lg max-h-96">
         <Image
           width={1000}
           height={1000}
           src={img}
           alt={name}
-          className="aspect-video w-full object-cover shadow-xl rounded"
+          className="aspect-video w-full object-cover shadow-xl -rotate-6 rounded-lg scale-125 translate-20 border border-neutral-600"
         />
       </div>
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-col gap-2">
+        className="flex flex-col gap-2"
+      >
         <div className="flex flex-col gap-1">
-          <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
+          <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity capitalize">
             {name}
           </h3>
           <p className="text-sm text-[var(--text-muted)]">{brief}</p>
@@ -30,7 +31,8 @@ function ProjectCard({ img, link, name, brief, tech }: Project) {
           {tech.map((t) => (
             <span
               key={t}
-              className="rounded-full border border-[var(--border)] px-2 py-0.5 text-xs text-[var(--text-muted)]">
+              className="rounded-full border border-[var(--border)] px-2 py-0.5 text-xs text-[var(--text-muted)]"
+            >
               {t}
             </span>
           ))}

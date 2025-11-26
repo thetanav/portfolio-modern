@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 @plugin 'tailwindcss-animate';
+@import "tw-squircle";
 
 :root {
   --bg: #fafafa;
@@ -12,6 +13,16 @@
 }
 
 [data-theme="dark"] {
+  --bg: #0a0a0a;
+  --text: #ededed;
+  --text-muted: #a1a1aa;
+  --border: #262626;
+  --accent: #a1a1aa;
+  --accent-soft: #171717;
+}
+
+/* Support class-based theming for Tailwind's `dark:` utilities */
+.dark {
   --bg: #0a0a0a;
   --text: #ededed;
   --text-muted: #a1a1aa;
@@ -36,11 +47,6 @@ body {
   color: var(--text);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   line-height: 1.6;
-}
-
-::selection {
-  background: #000;
-  color: #fff;
 }
 
 h1,

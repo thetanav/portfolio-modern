@@ -4,6 +4,8 @@ import { Navbar } from "./components/nav";
 import NextTopLoader from "nextjs-toploader";
 import { GeistSans } from "geist/font/sans";
 import { PostHogProvider } from "./components/PostHogProvider";
+import { ThemeProvider } from "./components/theme-provider";
+import { ThemeToggle } from "./components/theme-toggle";
 import Oneko from "./components/oneko";
 
 const sans = GeistSans;
@@ -11,8 +13,8 @@ const sans = GeistSans;
 export const metadata: Metadata = {
   metadataBase: new URL("https://tanav.is-a.dev"),
   title: {
-    default: "Tanav Poswal",
-    template: "Tanav Poswal • %s",
+    default: "Tanav",
+    template: "%s • Tanav",
   },
   description: "Developer, problem solver and creator.",
   openGraph: {
@@ -31,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@tanavtwt", // Replace with your Twitter handle
-    creator: "@tanavtwt", // Replace with your Twitter handle
+    site: "@tnvtwt", // Replace with your Twitter handle
+    creator: "@tnvtwt", // Replace with your Twitter handle
     images: "/opengraph-image.png", // Absolute URL to your OG image
   },
   robots: {
@@ -60,23 +62,32 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${sans.className} antialiased bg-[var(--bg)] text-[var(--text)] transition-colors duration-300`}>
-        <PostHogProvider>
-          <NextTopLoader
-            color="#333"
-            initialPosition={0.08}
-            crawlSpeed={200}
-            height={2}
-            showSpinner={false}
-          />
-          <div className="mx-auto max-w-xl px-6 py-12 md:py-20">
-            <header className="mb-8 flex items-center justify-between">
-              <Navbar />
-            </header>
-            <main>{children}</main>
-            <Oneko />
-          </div>
-        </PostHogProvider>
+        className={`${sans.className} antialiased bg-[var(--bg)] text-[var(--text)] transition-colors duration-300`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <PostHogProvider>
+            <NextTopLoader
+              color="#333"
+              initialPosition={0.08}
+              crawlSpeed={200}
+              height={2}
+              showSpinner={false}
+            />
+            <div className="mx-auto max-w-xl px-6 py-12 md:py-20">
+              <header className="mb-8 flex items-center justify-between">
+                <Navbar />
+                <ThemeToggle />
+              </header>
+              <main>{children}</main>
+              <Oneko />
+            </div>
+          </PostHogProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
