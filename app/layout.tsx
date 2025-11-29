@@ -6,6 +6,7 @@ import { GeistSans } from "geist/font/sans";
 import { PostHogProvider } from "./components/PostHogProvider";
 import { ThemeProvider } from "./components/theme-provider";
 import { ThemeToggle } from "./components/theme-toggle";
+import Oneko from "./components/cat";
 
 const sans = GeistSans;
 
@@ -61,14 +62,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${sans.className} antialiased bg-[var(--bg)] text-[var(--text)] transition-colors duration-300`}
-      >
+        className={`${sans.className} antialiased bg-[var(--bg)] text-[var(--text)] transition-colors duration-300`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
-        >
+          disableTransitionOnChange>
           <PostHogProvider>
             <NextTopLoader
               color="#333"
@@ -84,6 +83,7 @@ export default function RootLayout({
               </header>
               <main>{children}</main>
             </div>
+            <Oneko />
           </PostHogProvider>
         </ThemeProvider>
       </body>

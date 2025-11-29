@@ -10,6 +10,7 @@
   --border: #e5e5e5;
   --accent: #525252;
   --accent-soft: #f5f5f5;
+  --star-color: #111111;
 }
 
 [data-theme="dark"] {
@@ -19,6 +20,7 @@
   --border: #262626;
   --accent: #a1a1aa;
   --accent-soft: #171717;
+  --star-color: #ededed;
 }
 
 /* Support class-based theming for Tailwind's `dark:` utilities */
@@ -29,6 +31,7 @@
   --border: #262626;
   --accent: #a1a1aa;
   --accent-soft: #171717;
+  --star-color: #ededed;
 }
 
 @theme {

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { SiSpotify } from "react-icons/si";
+import { PlayIcon, PauseIcon } from "lucide-react";
 
 export default function RecentlyPlayed() {
   const [nowPlaying, setNowPlaying] = useState<{
@@ -17,6 +18,7 @@ export default function RecentlyPlayed() {
       songUrl: string;
     }[];
   } | null>(null);
+  const [isPlayerVisible, setIsPlayerVisible] = useState(false);
 
   useEffect(() => {
     const fetchNowPlaying = async () => {
@@ -57,6 +59,11 @@ export default function RecentlyPlayed() {
     ? { ...recentlyPlayed.recentlyPlayed[0], isNowPlaying: false }
     : null;
 
+  const getEmbedUrl = (url: string) => {
+    const match = url.match(/\/track\/([a-zA-Z0-9]+)/);
+    return match ? `https://open.spotify.com/embed/track/${match[1]}` : null;
+  };
+
   if (!track) {
     return null;
   }
@@ -66,18 +73,45 @@ export default function RecentlyPlayed() {
       <h3 className="text-sm font-medium text-[var(--text-muted)]">
         {track.isNowPlaying ? "Now Playing" : "Recently Played"}
       </h3>
-      <a
-        href={track.songUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors truncate max-w-full">
-        <SiSpotify className="h-4 w-4 shrink-0 text-[#1DB954]" />
-        <span className="truncate">
-          <span className="font-medium text-[var(--text)]">{track.title}</span>
-          <span className="mx-1.5 text-[var(--border)]">/</span>
-          <span>{track.artist}</span>
-        </span>
-      </a>
+      <div className="flex items-center gap-2">
+        <button
+          onClick={() => setIsPlayerVisible(!isPlayerVisible)}
+          className="flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">
+          {isPlayerVisible ? (
+            <PauseIcon className="h-4 w-4" />
+          ) : (
+            <PlayIcon className="h-4 w-4" />
+          )}
+        </button>
+        <a
+          href={track.songUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors truncate max-w-full">
+          <SiSpotify
+            className={`h-4 w-4 shrink-0 text-[#1DB954] ${
+              isPlayerVisible && "animate-spin duration-10000"
+            }`}
+          />
+          <span className="truncate">
+            <span className="font-medium text-[var(--text)]">
+              {track.title}
+            </span>
+            <span className="mx-1.5 text-[var(--text)] opacity-40">/</span>
+            <span>{track.artist}</span>
+          </span>
+        </a>
+      </div>
+      {isPlayerVisible && getEmbedUrl(track.songUrl!) && (
+        <iframe
+          src={getEmbedUrl(track.songUrl!)!}
+          width="100%"
+          height="80"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          className="rounded-xl"></iframe>
+      )}
     </div>
   );
 }

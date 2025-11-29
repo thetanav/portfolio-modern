@@ -12,15 +12,14 @@ function ProjectCard({ img, link, name, brief, tech }: Project) {
           height={1000}
           src={img}
           alt={name}
-          className="aspect-video w-full object-cover shadow-xl -rotate-6 rounded-lg scale-125 translate-20 border border-neutral-600"
+          className="aspect-video w-full object-cover shadow-xl -rotate-6 rounded-lg scale-125 translate-20 border border-neutral-600 group-hover:-rotate-4 transition-transform"
         />
       </div>
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-col gap-2"
-      >
+        className="flex flex-col gap-2">
         <div className="flex flex-col gap-1">
           <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity capitalize">
             {name}
@@ -31,8 +30,7 @@ function ProjectCard({ img, link, name, brief, tech }: Project) {
           {tech.map((t) => (
             <span
               key={t}
-              className="rounded-full border border-[var(--border)] px-2 py-0.5 text-xs text-[var(--text-muted)]"
-            >
+              className="rounded-full border border-[var(--border)] px-2 py-0.5 text-xs text-[var(--text-muted)]">
               {t}
             </span>
           ))}
