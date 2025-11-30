@@ -6,9 +6,6 @@ import RecentlyPlayed from "./components/recently-played";
 import {
   ChevronRightIcon,
   GitPullRequestArrowIcon,
-  TwitterIcon,
-  GithubIcon,
-  LinkedinIcon,
   MailIcon,
   FileTextIcon,
 } from "lucide-react";
@@ -28,48 +25,58 @@ export default function Page() {
     <section className="flex flex-col gap-16">
       <section className="flex flex-col gap-6">
         <h1 className="text-3xl font-medium tracking-tight text-[var(--text)]">
-          Hi! I am <span className="font-semibold">Tanav</span>
+          Hi! I am <span className="font-">Tanav</span>
         </h1>
         <p className="text-[var(--text-muted)] leading-relaxed max-w-prose">
           Full-stack engineer and ML practitioner. I build minimal, purposeful
           software. Building intelligent systems and scalable web architecture.
         </p>
         <div className="flex flex-col gap-6">
-          <div className="flex gap-6 text-sm text-[var(--text)]">
+          <div className="flex gap-6 text-sm text-[var(--text)] items-center">
             <a
               href="https://x.com/tanavtwt"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[var(--text)] transition-colors">
+              className="w-fit flex gap-1 justify-center items-center"
+            >
               <TwitterLogoIcon />
+              Twitter
             </a>
             <a
               href="https://github.com/thetanav"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[var(--text)] transition-colors">
+              className="w-fit flex gap-1 justify-center items-center"
+            >
               <GitHubLogoIcon />
+              Github
             </a>
             <a
               href="https://linkedin.com/in/tanav-poswal"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[var(--text)] transition-colors">
+              className="w-fit flex gap-1 justify-center items-center"
+            >
               <LinkedInLogoIcon />
+              Linkedin
             </a>
             <a
               href="mailto:tanavposwal939@gmail.com"
-              className="hover:text-[var(--text)] transition-colors"
               target="_blank"
-              rel="noopener noreferrer">
-              <MailIcon size={16} />
+              rel="noopener noreferrer"
+              className="w-fit flex gap-1 justify-center items-center"
+            >
+              <MailIcon className="w-4 h-4" />
+              Mail
             </a>
             <a
               href="http://docs.google.com/document/d/1rOTy341rTIquz2SzYpTs7ouaR88VzCi886iT0IEGOKk/export?format=pdf"
               rel="noopener noreferrer"
               target="_blank"
-              className="hover:text-[var(--text)] transition-colors">
-              <FileTextIcon size={16} />
+              className="w-fit flex gap-1 justify-center items-center"
+            >
+              <FileTextIcon className="rotate-6 w-4 h-4" />
+              Resume
             </a>
           </div>
           <div className="flex flex-col gap-4">
@@ -91,7 +98,8 @@ export default function Page() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-4">
+              className="group flex items-center gap-4"
+            >
               <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]">
                 <Image
                   width={100}
@@ -102,7 +110,7 @@ export default function Page() {
                 />
               </div>
               <div className="flex flex-col gap-1">
-                <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
+                <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity capitalize">
                   {project.name}
                 </h3>
                 <p className="text-sm text-[var(--text-muted)]">
@@ -114,7 +122,8 @@ export default function Page() {
         </div>
         <Link
           href="/projects"
-          className="text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">
+          className="text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+        >
           View all projects →
         </Link>
       </section>
@@ -130,7 +139,8 @@ export default function Page() {
               href={contri.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-4 group-hover:opacity-70 transition-opacity">
+              className="group flex items-center gap-4 group-hover:opacity-70 transition-opacity"
+            >
               <GitPullRequestArrowIcon className="h-4 w-4" />
               <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
                 {contri.name}
@@ -148,7 +158,8 @@ export default function Page() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group flex flex-col gap-2">
+              className="group flex flex-col gap-2"
+            >
               <div className="flex items-baseline justify-between">
                 <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
                   {post.title}
@@ -165,7 +176,8 @@ export default function Page() {
         </div>
         <Link
           href="/blog"
-          className="text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">
+          className="text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+        >
           Read more →
         </Link>
       </section>

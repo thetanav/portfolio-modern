@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@tnvtwt", // Replace with your Twitter handle
-    creator: "@tnvtwt", // Replace with your Twitter handle
-    images: "/opengraph-image.png", // Absolute URL to your OG image
+    site: "@tanavtwt", // Replace with your Twitter handle
+    creator: "@tanavtwt", // Replace with your Twitter handle
+    images: "/opengraph-image", // Absolute URL to your OG image
   },
   robots: {
     index: true,
@@ -62,12 +62,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${sans.className} antialiased bg-[var(--bg)] text-[var(--text)] transition-colors duration-300`}>
+        className={`${sans.className} antialiased bg-[var(--bg)] text-[var(--text)] transition-colors duration-300`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange>
+          disableTransitionOnChange
+        >
           <PostHogProvider>
             <NextTopLoader
               color="#333"

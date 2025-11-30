@@ -8,6 +8,10 @@ const RECENTLY_PLAYED_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const getAccessToken = async () => {
+  if (!client_id || !client_secret || !refresh_token) {
+    throw new Error("Spotify credentials not configured");
+  }
+
   const response = await fetch(TOKEN_ENDPOINT, {
     method: "POST",
     headers: {
