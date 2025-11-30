@@ -32,7 +32,7 @@ export default function Page() {
           software. Building intelligent systems and scalable web architecture.
         </p>
         <div className="flex flex-col gap-6">
-          <div className="flex gap-6 text-sm text-[var(--text)] items-center">
+          <div className="flex flex-wrap gap-6 text-sm text-[var(--text)] items-center">
             <a
               href="https://x.com/tanavtwt"
               target="_blank"

@@ -62,14 +62,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${sans.className} antialiased bg-[var(--bg)] text-[var(--text)] transition-colors duration-300`}
+        className={`${sans.className} antialiased bg-[var(--bg)] text-[var(--text)]`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <PostHogProvider>
             <NextTopLoader
               color="#333"
