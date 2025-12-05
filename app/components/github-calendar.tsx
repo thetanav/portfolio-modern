@@ -47,6 +47,7 @@ export default function GithubCalendarClient({
   return (
     <GitHubCalendar
       username={username}
+      hideTotalCount
       colorScheme={theme === "dark" ? "dark" : "light"}
       blockSize={blockSize}
     />
