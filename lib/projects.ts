@@ -1,43 +1,57 @@
 export interface Project {
   img: string;
-  link: string;
   name: string;
   brief: string;
+  git?: string;
+  web?: string;
+  info?: string;
   tech: string[];
 }
 
 export const projects: Project[] = [
   {
     img: "/images/scoutly.png",
-    link: "https://github.com/thetanav/scoutly/",
+    git: "https://github.com/thetanav/crawler",
+    info: "https://x.com/tanavtwt/status/1996956098310615175",
+    name: "crawler - search engine",
+    brief:
+      "a tiny serch engine that scrapes all the pages in a domain and maps to their title for searching",
+    tech: ["Bun js", "Fetch", "CLI"],
+  },
+  {
+    img: "/images/scoutly.png",
+    git: "https://github.com/thetanav/scoutly/",
+    info: "https://x.com/tanavtwt/status/1994856020099920261",
     name: "scoutly - a reseach rag",
     brief: "a dead simple perplexity clone with docling and web scraping.",
-    tech: ["Langchain", "Vector Store", "Embeddings"],
+    tech: ["Python", "Langchain", "Vector Store", "Embeddings", "Docling"],
+  },
+  {
+    img: "/images/scoutly.png",
+    git: "https://github.com/thetanav/road-vision/",
+    name: "ADAS",
+    brief:
+      "a comprehensive real-time assistance system provides intelligent driving assistance and road sign alerts.",
+    tech: ["Python", "Pytorch", "YOLOv8", "OpenCV", "Colab"],
   },
   {
     img: "/images/chess-app.png",
-    link: "https://github.com/thetanav/chess",
+    git: "https://github.com/thetanav/chess",
     name: "multiplayer chess",
     brief: "multiplayer chess game with websockets.",
-    tech: ["WS", "Next.js", "Chess.js"],
-  },
-  {
-    img: "/images/simpchat.png",
-    link: "https://simpchat.vercel.app/",
-    name: "agentic ai chat",
-    brief: "agentic ai chat with extensive tool uses.",
-    tech: ["Next.js", "Openrouter", "Redis"],
+    tech: ["WebSockets", "Next js", "Chess js", "Turborepo"],
   },
   {
     img: "/images/tradex.png",
-    link: "https://trading-system-theta.vercel.app/",
+    web: "https://trading-system-theta.vercel.app/",
+    git: "",
     name: "trade exchange",
     brief: "real-time trading app with live order book.",
-    tech: ["Node.js", "Next.js", "Redis", "Chart", "WebSockets"],
+    tech: ["Express", "Next js", "Redis", "Chart", "WebSockets"],
   },
   {
     img: "/images/linkmash.png",
-    link: "https://linkmash.netlify.app/",
+    web: "https://linkmash.netlify.app/",
     name: "linkmash",
     brief: "compare your linkedin profile with others.",
     tech: ["React", "Convex"],

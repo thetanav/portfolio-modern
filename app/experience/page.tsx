@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { experience } from "../../lib/experience";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -8,23 +9,44 @@ export const metadata: Metadata = {
 
 export default function ExperiencePage() {
   return (
-    <section className="flex flex-col gap-8">
+    <section className="flex flex-col gap-8 px-6">
       <h1 className="text-2xl font-medium tracking-tight text-[var(--text)]">
         Experience
       </h1>
       <div className="flex flex-col gap-8">
         {experience.map((job) => (
-          <div key={job.company} className="flex flex-col gap-2">
-            <div className="flex justify-between items-baseline">
-              <h3 className="font-medium text-[var(--text)]">{job.company}</h3>
-              <span className="text-sm text-[var(--text-muted)]">
-                {job.period}
-              </span>
+          <div className="flex gap-3 w-full">
+            <Image
+              alt={job.company}
+              width={100}
+              height={100}
+              className="w-13 h-13 rounded-md border border-[var(--border)]"
+              src={job.img}
+            />
+            <div key={job.company} className="flex flex-2 flex-col gap-2">
+              <div className="flex justify-between items-baseline">
+                <div>
+                  <a
+                    href={job.url}
+                    className="font-bold text-[var(--text)] hover:underline">
+                    {job.company}
+                  </a>
+                  <p className="text-sm text-[var(--text-muted)]">{job.role}</p>
+                </div>
+                <div className="flex flex-col items-end justify-end">
+                  <span className="text-sm text-[var(--text-muted)]">
+                    {job.period}
+                  </span>
+                  <span className="text-sm text-[var(--text-muted)]">
+                    {job.location}
+                  </span>
+                </div>
+              </div>
+
+              <p className="text-sm text-[var(--text-muted)]">
+                {job.description}
+              </p>
             </div>
-            <p className="text-sm text-[var(--text)]">{job.role}</p>
-            <p className="text-sm text-[var(--text-muted)]">
-              {job.description}
-            </p>
           </div>
         ))}
       </div>

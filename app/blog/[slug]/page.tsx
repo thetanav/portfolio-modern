@@ -83,8 +83,9 @@ export default async function Page(props) {
 
   return (
     <section className="flex flex-col gap-8">
-      <header className="flex flex-col gap-4">
-        <h1 className="text-2xl font-medium tracking-tight text-[var(--text)]">
+      <header className="flex flex-col gap-3">
+        <h1
+          className={`text-4xl font-bold text-[var(--text)] ${serif.className}`}>
           {post.data.title}
         </h1>
         <div className="flex items-center gap-3 text-sm text-[var(--text-muted)]">

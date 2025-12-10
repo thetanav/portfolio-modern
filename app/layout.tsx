@@ -61,9 +61,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${sans.className} antialiased bg-[var(--bg)] text-[var(--text)]`}
-      >
+      <body className={`${sans.className} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <PostHogProvider>
             <NextTopLoader
@@ -73,12 +71,12 @@ export default function RootLayout({
               height={2}
               showSpinner={false}
             />
-            <div className="mx-auto max-w-xl px-6 py-12 md:py-20">
-              <header className="mb-8 flex items-center justify-between">
+            <div className="mx-auto max-w-xl py-10 border-l border-r border-[var(--border)] min-h-screen">
+              <header className="px-6 pb-3 mb-4 border-b flex items-center justify-between border-[var(--border)]">
                 <Navbar />
                 <ThemeToggle />
               </header>
-              <main>{children}</main>
+              <main className="px-0 py-3">{children}</main>
             </div>
             <Oneko />
           </PostHogProvider>

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function GithubCalendarClient({
   username = "thetanav",
-  blockSize = 8,
+  blockSize = 1,
 }: {
   username?: string;
   blockSize?: number;
@@ -46,6 +46,10 @@ export default function GithubCalendarClient({
 
   return (
     <GitHubCalendar
+      style={{
+        width: "fit",
+      }}
+      hideColorLegend
       username={username}
       hideTotalCount
       colorScheme={theme === "dark" ? "dark" : "light"}
