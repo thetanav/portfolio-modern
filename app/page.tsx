@@ -25,6 +25,7 @@ import {
   Python,
   TypeScript,
 } from "developer-icons";
+import ViewerNumber from "./components/viewer";
 
 export default function Page() {
   const recentProjects = projects.slice(0, 3);
@@ -189,6 +190,10 @@ export default function Page() {
           className="text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">
           Read more →
         </Link>
+      </section>
+
+      <section className="flex items-center justify-center">
+        <ViewerNumber />
       </section>
     </section>
   );
