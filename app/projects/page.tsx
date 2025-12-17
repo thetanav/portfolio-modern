@@ -13,7 +13,7 @@ function ProjectCard({ img, name, brief, tech, web, git, info }: Project) {
           height={1000}
           src={img}
           alt={name}
-          className="aspect-video w-full rounded-xl object-cover shadow-xl -rotate-6 scale-105 translate-14 group-hover:-rotate-4 group-hover:translate-y-12 group-hover:translate-x-12 transition-transform ease-in ring-4 ring-blue-100/40"
+          className="aspect-video w-full rounded-xl object-cover shadow-xl ring-4 ring-white/40 group-hover:-rotate-1 ease-in transition-transform"
         />
       </div>
       <div className="flex gap-4">
@@ -36,13 +36,19 @@ function ProjectCard({ img, name, brief, tech, web, git, info }: Project) {
         </div>
         <div className="flex flex-col items-center justify-start gap-2 mr-4">
           {web && (
-            <Globe className="w-5 h-5 opacity-40 hover:opacity-100 transition" />
+            <a href={web} target="_blank" rel="noopener">
+              <Globe className="w-5 h-5 opacity-40 hover:opacity-100 transition" />
+            </a>
           )}
           {git && (
-            <Github className="w-5 h-5 opacity-40 hover:opacity-100 transition" />
+            <a href={git} target="_blank" rel="noopener">
+              <Github className="w-5 h-5 opacity-40 hover:opacity-100 transition" />
+            </a>
           )}
           {info && (
-            <TwitterIcon className="w-5 h-5 opacity-40 hover:opacity-100 transition" />
+            <a href={info} target="_blank" rel="noopener">
+              <TwitterIcon className="w-5 h-5 opacity-40 hover:opacity-100 transition" />
+            </a>
           )}
         </div>
       </div>

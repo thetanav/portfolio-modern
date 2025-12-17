@@ -10,29 +10,27 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    img: "/images/scoutly.png",
-    git: "https://github.com/thetanav/crawler",
-    info: "https://x.com/tanavtwt/status/1996956098310615175",
-    name: "crawler - search engine",
+    img: "/images/uber.png",
+    git: "https://github.com/thetanav/uber",
+    name: "End to end uber clone",
     brief:
-      "a tiny serch engine that scrapes all the pages in a domain and maps to their title for searching",
-    tech: ["Bun js", "Fetch", "CLI"],
+      "a end 2 end uber clone made with latest tech stack and best practices.",
+    tech: ["ElysiaJS", "Turbo Repo", "NextJS", "Postgres", "Websocket"],
   },
   {
     img: "/images/scoutly.png",
-    git: "https://github.com/thetanav/scoutly/",
-    info: "https://x.com/tanavtwt/status/1994856020099920261",
+    git: "https://github.com/thetanav/road-vision/",
     name: "scoutly - a reseach rag",
     brief: "a dead simple perplexity clone with docling and web scraping.",
     tech: ["Python", "Langchain", "Vector Store", "Embeddings", "Docling"],
   },
   {
-    img: "/images/scoutly.png",
+    img: "/images/crawler.png",
     git: "https://github.com/thetanav/road-vision/",
-    name: "ADAS",
+    name: "crawler - search engine",
     brief:
-      "a comprehensive real-time assistance system provides intelligent driving assistance and road sign alerts.",
-    tech: ["Python", "Pytorch", "YOLOv8", "OpenCV", "Colab"],
+      "a tiny serch engine that scrapes all the pages in a domain and maps to their title for searching",
+    tech: ["BunJS", "Fetch", "JSON", "React"],
   },
   {
     img: "/images/chess-app.png",
@@ -42,9 +40,8 @@ export const projects: Project[] = [
     tech: ["WebSockets", "Next js", "Chess js", "Turborepo"],
   },
   {
-    img: "/images/tradex.png",
-    web: "https://trading-system-theta.vercel.app/",
-    git: "",
+    img: "/images/trading.png",
+    git: "https://github.com/thetanav/trading-system",
     name: "trade exchange",
     brief: "real-time trading app with live order book.",
     tech: ["Express", "Next js", "Redis", "Chart", "WebSockets"],

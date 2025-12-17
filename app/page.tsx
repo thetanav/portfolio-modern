@@ -37,14 +37,14 @@ export default function Page() {
         <h1 className="text-3xl font-medium text-[var(--text-muted)]">
           Hi! I am <span className="text-[var(--text)]">Tanav</span>
         </h1>
-        <div className="flex gap-6">
+        <div className="flex gap-6 items-center">
           <h3 className="text-md">Knows:</h3>
-          <div className="flex gap-3">
-            <TypeScript className="w-6 h-6" />
-            <Go className="w-6 h-6" />
-            <Python className="w-6 h-6" />
-            <CPlusPlus className="w-6 h-6" />
-            <Bash className="w-6 h-6" />
+          <div className="flex gap-3 items-center">
+            <TypeScript className="w-5 h-5" />
+            <Go className="w-7 h-7" />
+            <Python className="w-5 h-5" />
+            <CPlusPlus className="w-5 h-5" />
+            <Bash className="w-5 h-5" />
           </div>
         </div>
         <p className="text-[var(--text-muted)] leading-relaxed max-w-prose">

@@ -2,10 +2,15 @@ import { Redis } from "@upstash/redis";
 
 const redis = Redis.fromEnv();
 
-export async function GET() {
+export async function GET(request: Request) {
   const now = Date.now();
   const windowMs = 24 * 60 * 60 * 1000;
   const cutoff = now - windowMs;
+
+  if (!request.url.includes("tanav.is-a.dev")) {
+    console.log("dev");
+    return Response.json({ count: "dev" });
+  }
 
   // Add new view with timestamp
   await redis.zadd("views24", {
