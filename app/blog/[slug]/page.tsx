@@ -52,7 +52,7 @@ export async function generateMetadata(props) {
     openGraph: {
       title: `${title} • Tanav Poswal`,
       description,
-      url: `https://tanav.is-a.dev/blog/${id}`,
+      url: `https://tanav.me/blog/${id}`,
       siteName: "Tanav Poswal",
       images: [
         {

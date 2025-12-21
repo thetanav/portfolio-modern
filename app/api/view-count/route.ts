@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   const windowMs = 24 * 60 * 60 * 1000;
   const cutoff = now - windowMs;
 
-  if (!request.url.includes("tanav.is-a.dev")) {
+  if (request.url.includes("localhost")) {
     console.log("dev");
     return Response.json({ count: "dev" });
   }

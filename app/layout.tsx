@@ -11,7 +11,7 @@ import Oneko from "./components/cat";
 const sans = GeistSans;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tanav.is-a.dev"),
+  metadataBase: new URL("https://tanav.me"),
   title: {
     default: "Tanav",
     template: "%s • Tanav",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://tanav.is-a.dev",
+    url: "https://tanav.me",
     siteName: "Tanav Poswal",
     images: [
       {
