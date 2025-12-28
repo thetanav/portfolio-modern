@@ -7,24 +7,24 @@ import { Github, Globe, TwitterIcon } from "lucide-react";
 function ProjectCard({ img, name, brief, tech, web, git, info }: Project) {
   return (
     <div className="group flex flex-col cursor-pointer gap-3">
-      <div className="overflow-hidden p-8 bg-gradient-to-tr from-fuchsia-500 via-orange-400 to-purple-500 shadow-lg max-h-80">
+      <div className="overflow-hidden p-8 bg-gradient-to-tr from-neutral-900 via-neutral-700 to-neutral-900 shadow-lg max-h-80">
         <Image
           width={1000}
           height={1000}
           src={img}
           alt={name}
-          className="aspect-video w-full rounded-xl object-cover shadow-xl ring-4 ring-white/40 group-hover:-rotate-1 ease-in transition-transform"
+          className="aspect-video w-full rounded-xl object-cover shadow-xl ease-in transition-transform"
         />
       </div>
       <div className="flex gap-4">
-        <div className="flex flex-col flex-2 gap-2">
-          <h3 className="text-lg text-[var(--text)] capitalize first-letter:text-xl">
+        <div className="flex flex-col flex-2 gap-1">
+          <h3 className="text-md text-[var(--text)] capitalize first-letter:text-lg">
             {name}
           </h3>
           <p className="text-md text-[var(--text-muted)] first-letter:capitalize">
             {brief}
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mt-2">
             {tech.map((t) => (
               <span
                 key={t}

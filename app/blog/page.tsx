@@ -1,4 +1,5 @@
 import getPostMetadata from "lib/posts";
+import { ArrowRight } from "lucide-react";
 import { Metadata } from "next";
 import { Instrument_Serif } from "next/font/google";
 import Link from "next/link";
@@ -32,9 +33,12 @@ export default async function Page() {
             href={`/blog/${post.slug}`}
             className="group flex flex-col gap-2">
             <div className="flex items-baseline justify-between">
-              <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
-                {post.title}
-              </h3>
+              <div className="flex gap-6 items-center">
+                <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
+                  {post.title}
+                </h3>
+                <ArrowRight className="h-4 w-4 text-[var(--text-muted)] opacity-0 -translate-x-3 group-hover:translate-x-0 group-hover:opacity-70  transition-all ease-in" />
+              </div>
               <span className="text-xs text-[var(--text-muted)] tabular-nums">
                 {formatDate(post.date)}
               </span>

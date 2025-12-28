@@ -13,9 +13,9 @@ export default function ViewsLast24() {
   }, []);
 
   return (
-    <div className="px-6 py-3 border border-[var(--border)] rounded-full text-[var(--text-muted)] inline items-center justify-center text-sm">
-      You are the <span className="font-bold text-[var(--text)]">{count}</span>
-      th viewer in last 24 hours
+    <div className="flex gap-1 items-center justify-center opacity-40">
+      <EyeIcon className="w-4 h-4" />
+      <span className="text-[var(--text)] text-sm">{count}/24h</span>
     </div>
   );
 }

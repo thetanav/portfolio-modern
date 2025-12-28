@@ -145,3 +145,8 @@ article.prose img {
   border-radius: 8px;
   margin-bottom: 1.5em;
 }
+
+.squi {
+  corner-shape: squircle;
+  border-radius: 50%;
+}

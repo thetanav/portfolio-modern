@@ -37,6 +37,37 @@ export function Navbar() {
           </div>
         );
       })}
+      <Shimmer />
     </nav>
+  );
+}
+
+export default function Shimmer() {
+  return (
+    <div className={`inline-block select-none`}>
+      <div className="relative overflow-hidden">
+        {/* Base text */}
+        <span className="text-(--text)/40">Available to work</span>
+
+        {/* Shimmering overlay */}
+        <div
+          className="absolute bg-clip-text text-transparent bg-gradient-to-r from-transparent via-(--text) to-transparent z-10 top-0 left-0 right-0 [background-size:50%_100%] [background-repeat:no-repeat]"
+          style={{
+            animation: "wave 2s linear infinite",
+          }}>
+          <style jsx>{`
+            @keyframes wave {
+              0% {
+                background-position: -150% 0;
+              }
+              100% {
+                background-position: 200% 0;
+              }
+            }
+          `}</style>
+          Available to work
+        </div>
+      </div>
+    </div>
   );
 }

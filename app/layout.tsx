@@ -7,6 +7,7 @@ import { PostHogProvider } from "./components/PostHogProvider";
 import { ThemeProvider } from "./components/theme-provider";
 import { ThemeToggle } from "./components/theme-toggle";
 import Oneko from "./components/cat";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const sans = GeistSans;
 
@@ -62,25 +63,27 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${sans.className} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <PostHogProvider>
-            <NextTopLoader
-              color="#333"
-              initialPosition={0.08}
-              crawlSpeed={200}
-              height={2}
-              showSpinner={false}
-            />
-            <div className="mx-auto max-w-xl py-10 border-l border-r border-[var(--border)] min-h-screen">
-              <header className="px-6 pb-3 mb-4 border-b flex items-center justify-between border-[var(--border)]">
-                <Navbar />
-                <ThemeToggle />
-              </header>
-              <main className="px-0 py-3">{children}</main>
-            </div>
-            <Oneko />
-          </PostHogProvider>
-        </ThemeProvider>
+        <TooltipProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <PostHogProvider>
+              <NextTopLoader
+                color="#333"
+                initialPosition={0.08}
+                crawlSpeed={200}
+                height={2}
+                showSpinner={false}
+              />
+              <div className="mx-auto max-w-xl py-10 border-l border-r border-[var(--border)] min-h-screen">
+                <header className="px-6 pb-3 mb-4 border-b flex items-center justify-between border-[var(--border)]">
+                  <Navbar />
+                  <ThemeToggle />
+                </header>
+                <main className="px-0 py-3">{children}</main>
+              </div>
+              <Oneko />
+            </PostHogProvider>
+          </ThemeProvider>
+        </TooltipProvider>
       </body>
     </html>
   );

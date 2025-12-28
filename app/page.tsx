@@ -1,13 +1,14 @@
 import { projects } from "../lib/projects";
 import { oss } from "../lib/oss";
 import getPostMetadata from "../lib/posts";
-import Link from "next/link";
 import RecentlyPlayed from "./components/recently-played";
 import {
   ChevronRightIcon,
   GitPullRequestArrowIcon,
   MailIcon,
   FileTextIcon,
+  Github,
+  SendIcon,
 } from "lucide-react";
 import GithubCalendarClient from "./components/github-calendar";
 import Image from "next/image";
@@ -22,10 +23,19 @@ import {
   Go,
   Java,
   JavaScript,
+  LinkedIn,
   Python,
   TypeScript,
 } from "developer-icons";
 import ViewerNumber from "./components/viewer";
+import { SiLeetcode, SiMedium } from "react-icons/si";
+import Link from "next/link";
+import IconLink from "./components/icon-link";
+import {
+  IconBrandLinkedin,
+  IconBrandMedium,
+  IconBrandX,
+} from "@tabler/icons-react";
 
 export default function Page() {
   const recentProjects = projects.slice(0, 3);
@@ -33,68 +43,79 @@ export default function Page() {
 
   return (
     <section className="flex flex-col divide-y divide-[var(--border)]">
-      <section className="flex flex-col gap-6 pb-8 mb-8 px-6">
-        <h1 className="text-3xl font-medium text-[var(--text-muted)]">
-          Hi! I am <span className="text-[var(--text)]">Tanav</span>
-        </h1>
-        <div className="flex gap-6 items-center">
-          <h3 className="text-md">Knows:</h3>
-          <div className="flex gap-3 items-center">
-            <TypeScript className="w-5 h-5" />
-            <Go className="w-7 h-7" />
-            <Python className="w-5 h-5" />
-            <CPlusPlus className="w-5 h-5" />
-            <Bash className="w-5 h-5" />
+      <section className="flex flex-col gap-6 pb-8 mb-8 px-6 mt-4">
+        <div className="flex items-end gap-4 relative">
+          <Image
+            alt="my pfp"
+            className="squi"
+            width={80}
+            height={80}
+            src="/pfp.png"
+          />
+
+          <div className="absolute top-0 right-0">
+            <ViewerNumber />
+          </div>
+
+          <div className="w-full flex items-center justify-between">
+            <h1 className="text-3xl font-medium text-[var(--text-muted)]">
+              Hi! I am <span className="text-[var(--text)]">Tanav</span>
+            </h1>
+            <div className="flex gap-2 items-center">
+              <TypeScript className="w-5 h-5" />
+              <Go className="w-7 h-7" />
+              <Python className="w-5 h-5" />
+              <CPlusPlus className="w-5 h-5" />
+            </div>
           </div>
         </div>
+
         <p className="text-[var(--text-muted)] leading-relaxed max-w-prose">
           Full-stack engineer and ML practitioner. I build minimal, purposeful
           software. Building intelligent systems and scalable web architecture.
           Ethusiast in Gen AI and Realtime.
         </p>
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-wrap gap-6 text-sm text-[var(--text)] items-center">
-            <a
-              href="https://x.com/tanavtwt"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-fit flex gap-2 justify-center items-center">
-              <TwitterLogoIcon />
-              Twitter
-            </a>
-            <a
-              href="https://github.com/thetanav"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-fit flex gap-2 justify-center items-center">
-              <GitHubLogoIcon />
-              Github
-            </a>
-            <a
-              href="https://linkedin.com/in/tanav-poswal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-fit flex gap-2 justify-center items-center">
-              <LinkedInLogoIcon />
-              Linkedin
-            </a>
-            <a
-              href="mailto:tanavposwal939@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-fit flex gap-2 justify-center items-center">
-              <MailIcon className="w-4 h-4" />
-              Mail
-            </a>
-            <a
-              href="http://docs.google.com/document/d/1rOTy341rTIquz2SzYpTs7ouaR88VzCi886iT0IEGOKk/export?format=pdf"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="w-fit flex gap-2 justify-center items-center">
-              <FileTextIcon className="rotate-6 w-4 h-4" />
-              Resume
-            </a>
-          </div>
+
+        <div className="flex gap-2 text-sm">
+          <a
+            href="https://dub.sh/tanav-resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 border border-(--border) rounded-lg flex gap-3 items-center justify-center cursor-pointer inset-shadow-xs">
+            <FileTextIcon className="rotate-6 w-4 h-4" />
+            Resume
+          </a>
+          <a
+            href="https://cal.com/tanavposwal"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 border border-(--border) rounded-lg flex gap-3 items-center justify-center cursor-pointer bg-(--text) text-(--bg) inset-shadow-xs inset-shadow-white/50">
+            <SendIcon className="w-4 h-4" />
+            Get a touch
+          </a>
+        </div>
+
+        <div className="flex flex-wrap gap-4 text-sm text-[var(--text)] items-center mt-2">
+          <IconLink link="https://x.com/tanavtwt" tooltip="X">
+            <IconBrandX className="w-5 h-5" />
+          </IconLink>
+          <IconLink link="https://github.com/thetanav" tooltip="Github">
+            <Github className="w-5 h-5" />
+          </IconLink>
+          <IconLink
+            link="https://linkedin.com/in/tanav-poswal"
+            tooltip="Linkedin">
+            <IconBrandLinkedin className="w-5 h-5" />
+          </IconLink>
+          <IconLink link="https://medium.com/@tanavposwal" tooltip="Medium">
+            <IconBrandMedium className="w-6 h-6" />
+          </IconLink>
+          <IconLink link="https://leetcode.com/tanavcodes" tooltip="Leetcode">
+            <SiLeetcode className="w-5 h-5" />
+          </IconLink>
+          <IconLink link="mailto:hey@tanav.me" tooltip="Email">
+            <MailIcon className="w-5 h-5" />
+          </IconLink>
         </div>
       </section>
 
@@ -102,7 +123,7 @@ export default function Page() {
         <section className="flex flex-col gap-2">
           <RecentlyPlayed />
         </section>
-        <GithubCalendarClient username="thetanav" blockSize={8} />
+        <GithubCalendarClient username="thetanav" blockSize={6} />
       </section>
 
       <section className="flex flex-col gap-8 pb-8 mb-8 px-6">
@@ -111,7 +132,12 @@ export default function Page() {
         </h2>
         <div className="flex flex-col gap-6">
           {recentProjects.map((project) => (
-            <div key={project.name} className="group flex items-center gap-4">
+            <a
+              href={project.web || project.git}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={project.name}
+              className="group flex items-center gap-4 cursor-pointer">
               <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]">
                 <Image
                   width={100}
@@ -122,14 +148,14 @@ export default function Page() {
                 />
               </div>
               <div className="flex flex-col">
-                <h3 className="text-[var(--text)] group-hover:opacity-70 transition-opacity capitalize">
+                <h3 className="text-[var(--text)] transition-opacity capitalize text-sm">
                   {project.name}
                 </h3>
                 <p className="text-sm text-[var(--text-muted)]">
                   {project.brief}
                 </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
         <Link
@@ -190,10 +216,6 @@ export default function Page() {
           className="text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">
           Read more →
         </Link>
-      </section>
-
-      <section className="flex items-center justify-center">
-        <ViewerNumber />
       </section>
     </section>
   );
