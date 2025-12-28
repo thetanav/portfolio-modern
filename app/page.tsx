@@ -43,7 +43,14 @@ export default function Page() {
 
   return (
     <section className="flex flex-col divide-y divide-[var(--border)]">
-      <section className="flex flex-col gap-6 pb-8 mb-8 px-6 mt-4">
+      <section className="flex flex-col gap-6 pb-8 mb-8 px-6">
+        <Image
+          src="/header.jpg"
+          alt="header header"
+          width={800}
+          height={800}
+          className="rounded border border-(--border)"
+        />
         <div className="flex items-end gap-4 relative">
           <Image
             alt="my pfp"
@@ -71,9 +78,11 @@ export default function Page() {
         </div>
 
         <p className="text-[var(--text-muted)] leading-relaxed max-w-prose">
-          Full-stack engineer and ML practitioner. I build minimal, purposeful
-          software. Building intelligent systems and scalable web architecture.
-          Ethusiast in Gen AI and Realtime.
+          Full-stack web developer with a strong interest in GenAI. I design
+          minimal interfaces, robust APIs, and scalable architectures built to
+          last. I prefer intelligent systems over monolithic solutions.
+          Constantly learning, execution-driven, and motivated to create
+          real-world impact while helping others grow.
         </p>
 
         <div className="flex gap-2 text-sm">
@@ -81,7 +90,7 @@ export default function Page() {
             href="https://dub.sh/tanav-resume"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 border border-(--border) rounded-lg flex gap-3 items-center justify-center cursor-pointer inset-shadow-xs">
+            className="px-4 py-2 border border-(--border) rounded-xl flex gap-3 items-center justify-center cursor-pointer inset-shadow-sm dark:inset-shadow-white/30">
             <FileTextIcon className="rotate-6 w-4 h-4" />
             Resume
           </a>
@@ -89,7 +98,7 @@ export default function Page() {
             href="https://cal.com/tanavposwal"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 border border-(--border) rounded-lg flex gap-3 items-center justify-center cursor-pointer bg-(--text) text-(--bg) inset-shadow-xs inset-shadow-white/50">
+            className="px-4 py-2 border border-(--border) rounded-xl flex gap-3 items-center justify-center cursor-pointer bg-(--text) text-(--bg) inset-shadow-sm dark:inset-shadow-black/50">
             <SendIcon className="w-4 h-4" />
             Get a touch
           </a>
