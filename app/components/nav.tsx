@@ -25,7 +25,7 @@ export function Navbar() {
   const isHome = pathname === "/";
 
   return (
-    <nav className="flex items-center gap-4 text-sm font-medium overflow-hidden">
+    <nav className="flex items-center gap-4 text-xs sm:text-sm font-medium overflow-hidden">
       {Object.entries(navItems).map(([path, { name }], index) => {
         return (
           <div key={path}>
@@ -47,7 +47,7 @@ export default function Shimmer() {
     <div className={`inline-block select-none`}>
       <div className="relative overflow-hidden">
         {/* Base text */}
-        <span className="text-(--text)/40">Available to work</span>
+        <span className="text-(--text)/40">Open to work</span>
 
         {/* Shimmering overlay */}
         <div
@@ -65,7 +65,7 @@ export default function Shimmer() {
               }
             }
           `}</style>
-          Available to work
+          Open to work
         </div>
       </div>
     </div>

@@ -67,14 +67,13 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <PostHogProvider>
               <NextTopLoader
-                color="#333"
                 initialPosition={0.08}
                 crawlSpeed={200}
                 height={2}
                 showSpinner={false}
               />
-              <div className="mx-auto max-w-xl py-10 border-l border-r border-[var(--border)] min-h-screen">
-                <header className="px-6 pb-3 mb-4 border-b flex items-center justify-between border-[var(--border)]">
+              <div className="mx-auto max-w-xl py-5 sm:py-10 border-l border-r border-[var(--border)] min-h-screen">
+                <header className="px-3 sm:px-6 pb-3 mb-4 border-b flex items-center justify-between border-[var(--border)]">
                   <Navbar />
                   <ThemeToggle />
                 </header>

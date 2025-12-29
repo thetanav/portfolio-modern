@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ExperiencePage() {
   return (
-    <section className="flex flex-col gap-8 px-6">
+    <section className="flex flex-col gap-8 px-3 sm:px-6">
       <h1 className="text-2xl font-medium tracking-tight text-[var(--text)]">
         Experience
       </h1>
@@ -18,9 +18,9 @@ export default function ExperiencePage() {
           <div className="flex gap-3 w-full">
             <Image
               alt={job.company}
-              width={100}
-              height={100}
-              className="w-13 h-13 rounded-md border border-[var(--border)]"
+              width={80}
+              height={80}
+              className="w-10 h-10 rounded-md border border-[var(--border)]"
               src={job.img}
             />
             <div key={job.company} className="flex flex-2 flex-col gap-2">

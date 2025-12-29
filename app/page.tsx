@@ -12,21 +12,7 @@ import {
 } from "lucide-react";
 import GithubCalendarClient from "./components/github-calendar";
 import Image from "next/image";
-import {
-  GitHubLogoIcon,
-  LinkedInLogoIcon,
-  TwitterLogoIcon,
-} from "@radix-ui/react-icons";
-import {
-  Bash,
-  CPlusPlus,
-  Go,
-  Java,
-  JavaScript,
-  LinkedIn,
-  Python,
-  TypeScript,
-} from "developer-icons";
+import { CPlusPlus, Go, Python, TypeScript } from "developer-icons";
 import ViewerNumber from "./components/viewer";
 import { SiLeetcode, SiMedium } from "react-icons/si";
 import Link from "next/link";
@@ -36,6 +22,10 @@ import {
   IconBrandMedium,
   IconBrandX,
 } from "@tabler/icons-react";
+import Star from "./components/star";
+import { Instrument_Serif } from "next/font/google";
+
+const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
 export default function Page() {
   const recentProjects = projects.slice(0, 3);
@@ -43,7 +33,7 @@ export default function Page() {
 
   return (
     <section className="flex flex-col divide-y divide-[var(--border)]">
-      <section className="flex flex-col gap-6 pb-8 mb-8 px-6">
+      <section className="flex flex-col gap-6 pb-8 mb-8 px-3 sm:px-6">
         <Image
           src="/header.jpg"
           alt="header header"
@@ -65,10 +55,11 @@ export default function Page() {
           </div>
 
           <div className="w-full flex items-center justify-between">
-            <h1 className="text-3xl font-medium text-[var(--text-muted)]">
+            <h1
+              className={`text-3xl font-medium text-[var(--text-muted)] ${serif.className} italic`}>
               Hi! I am <span className="text-[var(--text)]">Tanav</span>
             </h1>
-            <div className="flex gap-2 items-center">
+            <div className="gap-2 items-center hidden sm:flex">
               <TypeScript className="w-5 h-5" />
               <Go className="w-7 h-7" />
               <Python className="w-5 h-5" />
@@ -128,7 +119,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-6 pb-8 mb-8 px-6">
+      <section className="flex flex-col gap-6 pb-8 mb-8 px-3 sm:px-6">
         <section className="flex flex-col gap-2">
           <RecentlyPlayed />
         </section>
@@ -174,7 +165,7 @@ export default function Page() {
         </Link>
       </section>
 
-      <section className="flex flex-col gap-8 pb-8 mb-8 px-6">
+      <section className="flex flex-col gap-8 pb-8 mb-8 px-3 sm:px-6">
         <h2 className="text-lg font-medium text-[var(--text)]">
           Some of my Opensource Work
         </h2>
@@ -187,7 +178,7 @@ export default function Page() {
               rel="noopener noreferrer"
               className="group flex items-center gap-4 group-hover:opacity-70 transition-opacity">
               <GitPullRequestArrowIcon className="h-4 w-4" />
-              <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
+              <h3 className="text-[var(--text)] group-hover:opacity-70 text-sm transition-opacity">
                 {contri.name}
               </h3>
               <ChevronRightIcon className="ml-auto h-4 w-4 text-[var(--text-muted)]" />
@@ -196,7 +187,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-8 pb-8 mb-8 px-6">
+      <section className="flex flex-col gap-8 pb-8 mb-8 px-3 sm:px-6">
         <h2 className="text-lg font-medium text-[var(--text)]">
           Some of my Writings
         </h2>
@@ -207,7 +198,7 @@ export default function Page() {
               href={`/blog/${post.slug}`}
               className="group flex flex-col gap-2">
               <div className="flex items-baseline justify-between">
-                <h3 className="font-medium text-[var(--text)] group-hover:opacity-70 transition-opacity">
+                <h3 className="text-sm text-[var(--text)] group-hover:opacity-70 transition-opacity">
                   {post.title}
                 </h3>
                 <span className="text-xs text-[var(--text-muted)] tabular-nums">
@@ -225,6 +216,10 @@ export default function Page() {
           className="text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">
           Read more →
         </Link>
+      </section>
+
+      <section className="flex flex-col gap-8 pb-8 mb-8 px-3 sm:px-6 flex items-center">
+        <Star />
       </section>
     </section>
   );

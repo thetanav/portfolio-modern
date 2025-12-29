@@ -63,7 +63,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <section className="flex flex-col gap-8 px-6">
+    <section className="flex flex-col gap-8 px-3 sm:px-6">
       <h1 className="text-2xl font-medium tracking-tight text-[var(--text)]">
         Completed Projects
       </h1>
