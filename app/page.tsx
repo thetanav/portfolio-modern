@@ -23,9 +23,6 @@ import {
   IconBrandX,
 } from "@tabler/icons-react";
 import Star from "./components/star";
-import { Instrument_Serif } from "next/font/google";
-
-const serif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
 export default function Page() {
   const recentProjects = projects.slice(0, 3);
@@ -55,8 +52,7 @@ export default function Page() {
           </div>
 
           <div className="w-full flex items-center justify-between">
-            <h1
-              className={`text-3xl font-medium text-[var(--text-muted)] ${serif.className} italic`}>
+            <h1 className={`text-3xl font-semibold text-[var(--text-muted)]`}>
               Hi! I am <span className="text-[var(--text)]">Tanav</span>
             </h1>
             <div className="gap-2 items-center hidden sm:flex">
@@ -81,7 +77,7 @@ export default function Page() {
             href="https://dub.sh/tanav-resume"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 border border-(--border) rounded-xl flex gap-3 items-center justify-center cursor-pointer inset-shadow-sm dark:inset-shadow-white/30">
+            className="px-4 py-2 border border-(--border) rounded-xl flex gap-3 items-center justify-center cursor-pointer bg-linear-to-b from-(--bg) to-(--text)/5">
             <FileTextIcon className="rotate-6 w-4 h-4" />
             Resume
           </a>
@@ -89,7 +85,7 @@ export default function Page() {
             href="https://cal.com/tanavposwal"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 border border-(--border) rounded-xl flex gap-3 items-center justify-center cursor-pointer bg-(--text) text-(--bg) inset-shadow-sm dark:inset-shadow-black/50">
+            className="px-4 py-2 border border-(--border) rounded-xl flex gap-3 items-center justify-center cursor-pointer bg-linear-to-b from-(--text) to-(--accent) text-(--bg) ">
             <SendIcon className="w-4 h-4" />
             Get a touch
           </a>
