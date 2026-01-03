@@ -6,29 +6,29 @@ import { Github, Globe, TwitterIcon } from "lucide-react";
 
 function ProjectCard({ img, name, brief, tech, web, git, info }: Project) {
   return (
-    <div className="group flex flex-col cursor-pointer gap-3">
-      <div className="overflow-hidden p-8 bg-gradient-to-tr from-neutral-900 via-neutral-700 to-neutral-900 shadow-lg max-h-80">
+    <div className="group flex flex-col gap-3">
+      <div className="overflow-hidden p-10 bg-(--accent)/20 flex items-center justify-center">
         <Image
           width={1000}
           height={1000}
           src={img}
           alt={name}
-          className="aspect-video w-full rounded-xl object-cover shadow-xl ease-in transition-transform"
+          className="w-fit rounded-xl object-cover shadow-lg max-h-72"
         />
       </div>
       <div className="flex gap-4">
-        <div className="flex flex-col flex-2 gap-1">
-          <h3 className="text-md text-[var(--text)] capitalize first-letter:text-lg">
+        <div className="flex flex-col flex-2">
+          <h3 className="text-md font-semibold text-[var(--text)] capitalize first-letter:text-lg">
             {name}
           </h3>
-          <p className="text-md text-[var(--text-muted)] first-letter:capitalize">
+          <p className="text-sm text-[var(--text-muted)] first-letter:capitalize">
             {brief}
           </p>
           <div className="flex flex-wrap gap-2 mt-2">
             {tech.map((t) => (
               <span
                 key={t}
-                className="rounded-full hover:border-[var(--text)] hover:text-[var(--text)] transition border border-[var(--border)] px-2 py-0.5 text-xs text-[var(--text-muted)]">
+                className="transition text-xs text-(--text-muted) font-mono font-black">
                 {t}
               </span>
             ))}
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <section className="flex flex-col gap-8 px-3 sm:px-6">
+    <section className="flex flex-col gap-6 px-3 sm:px-6">
       <h1 className="text-2xl font-medium tracking-tight text-[var(--text)]">
         Completed Projects
       </h1>

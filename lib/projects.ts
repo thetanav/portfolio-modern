@@ -10,6 +10,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    img: "/images/vidora.png",
+    git: "https://github.com/thetanav/uber",
+    name: "Vidora - complete video streaming",
+    brief:
+      "a complete mux like video transcoding and streaming platform with a web interface.",
+    tech: ["Next.js", "FFMPEG", "Docker", "Redis", "R2"],
+  },
+  {
     img: "/images/uber.png",
     git: "https://github.com/thetanav/uber",
     name: "End to end uber clone",
